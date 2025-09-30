@@ -735,8 +735,7 @@ footer.sticky-bottom {
     li {
       margin-bottom: 1rem;
 
-      .preview {
-      }
+      // .preview reserved for future preview thumbnails
 
       .abbr {
         margin-bottom: 0.5rem;
@@ -900,6 +899,182 @@ figure.highlight {
 
 .search-container #bibsearch {
   flex: 1;
+}
+
+// Research interests styling
+.research-interest {
+  display: inline-block;
+  background-color: var(--global-code-bg-color);
+  color: var(--global-text-color);
+  padding: 0.1rem 0.4rem;
+  margin: 0.1rem 0.2rem 0.1rem 0;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-weight: 500;
+  border: 1px solid var(--global-divider-color);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.research-interest:hover {
+  background-color: var(--global-theme-color);
+  color: var(--global-bg-color);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-decoration: none;
+}
+
+// Google Scholar metrics styling
+.scholar-metrics {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  background-color: transparent;
+  border-radius: 0;
+  border: 1px solid currentColor; // match the text color
+}
+
+.scholar-metrics h3 {
+  margin: 0 0 1rem 0;
+  color: var(--global-text-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.metrics-container {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 120px;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--global-theme-color);
+}
+
+.metrics-note {
+  text-align: right;
+  color: var(--global-text-color-light);
+}
+
+.metrics-note a {
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+
+.metrics-note a:hover {
+  text-decoration: underline;
+}
+
+// Compact metrics list styling
+.scholar-metrics.compact {
+  padding: 0.5rem 0.75rem;
+  color: var(--global-theme-color); // ensures border uses theme color via currentColor
+}
+
+.metrics-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.metrics-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  line-height: 1.2;
+}
+
+.scholar-metrics.compact .metric-label {
+  margin: 0;
+  color: var(--global-theme-color);
+}
+
+.scholar-metrics.compact .metric-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--global-theme-color);
+}
+
+.scholar-metrics.compact .metrics-note,
+.scholar-metrics.compact .metrics-note a {
+  color: var(--global-theme-color);
+}
+
+.citations-spark {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--global-theme-color); // uses currentColor in rect fill
+}
+
+// Publications header layout
+.pub-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start; // let right column hug the right edge
+  gap: 1.5rem;
+  margin: 1rem 0 2rem 0;
+}
+
+.pub-header-left {
+  flex: 1 1 auto;
+}
+
+.pub-header-right {
+  flex: 0 0 auto; // shrink-wrap to content
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto; // push column to the far right
+  min-width: 360px; // give a bit more room for the chart
+}
+
+.pub-header-right .scholar-metrics {
+  width: auto;
+  display: inline-block;
+}
+
+@media (max-width: 992px) {
+  .pub-header {
+    flex-direction: column;
+  }
+  .pub-header-right {
+    flex: 1 1 auto;
+    justify-content: flex-start; // stack below filters on small screens
+  }
+}
+
+// Responsive design for metrics
+@media (max-width: 768px) {
+  .metrics-container {
+    gap: 1rem;
+  }
+  
+  .metric-item {
+    min-width: 100px;
+  }
+  
+  .metric-value {
+    font-size: 1.25rem;
+  }
 }
 
 .keyword-filters {

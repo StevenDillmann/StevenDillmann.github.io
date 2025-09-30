@@ -54,17 +54,17 @@ document.addEventListener("DOMContentLoaded", function () {
         .map(tag => tag.textContent.replace("#", "").trim());
       
       if (activeKeywords.length === 0) {
-        // No keyword filters active, ensure item is visible (unless hidden by text search)
-        // Don't force visibility, just don't hide based on keywords
-        return;
+        // No keyword filters active, show all items (unless hidden by text search)
+        item.classList.remove("unloaded");
       } else {
         const hasMatchingKeyword = activeKeywords.some(keyword => 
           itemKeywords.includes(keyword)
         );
         
-        // Only hide items that don't match keywords, but don't show items that are already hidden by text search
         if (!hasMatchingKeyword) {
           item.classList.add("unloaded");
+        } else {
+          item.classList.remove("unloaded");
         }
       }
     });
@@ -94,33 +94,89 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  // Clear all keyword filters
+  // Clear all keyword filters and text search
   document.getElementById("clear-keyword-filters").onclick = () => {
+    // Clear keyword filters
     document.querySelectorAll(".filter-keyword-tag").forEach(btn => {
       btn.classList.remove("active");
     });
-    applyKeywordFilters();
     
-    // Also clear the search box if it's empty or only contains whitespace
+    // Clear text search box
     const searchInput = document.getElementById("bibsearch");
-    if (!searchInput.value.trim()) {
-      // If search is empty, show all publications
-      document.querySelectorAll(".bibliography > li, .unloaded").forEach((element) => {
-        element.classList.remove("unloaded");
-      });
-      
-      // Show all year groups
-      document.querySelectorAll("h2.bibliography, h3.bibliography").forEach((element) => {
-        element.classList.remove("unloaded");
-      });
-      document.querySelectorAll("ol").forEach((element) => {
-        element.classList.remove("unloaded");
-      });
+    searchInput.value = "";
+    
+    // Clear search highlighting
+    if (CSS.highlights) {
+      // Clear CSS highlights registry
+      CSS.highlights.clear();
     }
+    // Also remove any legacy highlighted classes
+    document.querySelectorAll(".highlighted").forEach((element) => {
+      element.classList.remove("highlighted");
+    });
+    
+    // Show all publications
+    document.querySelectorAll(".bibliography > li, .unloaded").forEach((element) => {
+      element.classList.remove("unloaded");
+    });
+    
+    // Show all year groups
+    document.querySelectorAll("h2.bibliography, h3.bibliography").forEach((element) => {
+      element.classList.remove("unloaded");
+    });
+    document.querySelectorAll("ol").forEach((element) => {
+      element.classList.remove("unloaded");
+    });
   };
 
   // Initialize keyword filters
   createKeywordFilters();
+
+  // Handle research interest clicks on about page
+  document.addEventListener('DOMContentLoaded', function() {
+    const researchInterests = document.querySelectorAll('.research-interest');
+    researchInterests.forEach(interest => {
+      interest.addEventListener('click', function(e) {
+        e.preventDefault();
+        const keyword = this.getAttribute('data-keyword');
+        
+        // Navigate to publications page with the keyword filter
+        window.location.href = '/publications/?filter=' + encodeURIComponent(keyword);
+      });
+    });
+  });
+
+  // Handle keyword tag clicks within papers (on publications page)
+  function handleKeywordTagClicks() {
+    const keywordTags = document.querySelectorAll('.keyword-tag');
+    console.log('Found keyword tags within papers:', keywordTags.length);
+    keywordTags.forEach(tag => {
+      console.log('Setting up click handler for:', tag.textContent);
+      tag.addEventListener('click', function(e) {
+        e.preventDefault();
+        const keyword = this.textContent.replace('#', '').trim();
+        console.log('Keyword tag clicked:', keyword);
+        
+        // Find the corresponding filter button and toggle it
+        const filterButtons = document.querySelectorAll('.filter-keyword-tag');
+        console.log('Available filter buttons:', filterButtons.length);
+        let found = false;
+        filterButtons.forEach(button => {
+          if (button.textContent.trim() === keyword) {
+            console.log('Found matching filter button, clicking:', button.textContent.trim());
+            button.click();
+            found = true;
+          }
+        });
+        if (!found) {
+          console.log('No matching filter button found for:', keyword);
+        }
+      });
+    });
+  }
+
+  // Initialize keyword tag clicks when DOM is loaded
+  document.addEventListener('DOMContentLoaded', handleKeywordTagClicks);
 
   // actual bibsearch logic
   const filterItems = (searchTerm) => {
@@ -191,6 +247,34 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   window.addEventListener("hashchange", updateInputField); // Update the filter when the hash changes
+
+  // Handle filter parameter from URL (for research interests)
+  // This needs to run after keyword filters are created, so we'll use a timeout
+  setTimeout(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterKeyword = urlParams.get('filter');
+    
+    if (filterKeyword) {
+      // Find and click the corresponding keyword filter button
+      const keywordButtons = document.querySelectorAll('.filter-keyword-tag');
+      let found = false;
+      keywordButtons.forEach(button => {
+        if (button.textContent.trim().toLowerCase() === filterKeyword.toLowerCase()) {
+          button.click();
+          found = true;
+        }
+      });
+      
+      // If no exact match found, try partial matching
+      if (!found) {
+        keywordButtons.forEach(button => {
+          if (button.textContent.trim().toLowerCase().includes(filterKeyword.toLowerCase())) {
+            button.click();
+          }
+        });
+      }
+    }
+  }, 500);
 
   updateInputField(); // Update filter when page loads
 });

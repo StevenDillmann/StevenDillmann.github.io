@@ -36,6 +36,10 @@ Faculty at Stanford that I've worked with include [Susan Clark](https://clarkgro
 
 I also love football (soccer), tennis, poker, chess, filmmaking and movies - checkout my Top 10 series on [letterboxd](https://letterboxd.com/stevendi/lists/). 
 
+My research interests span:
+
+<span class="research-interest" data-keyword="machine learning">machine learning</span>, <span class="research-interest" data-keyword="deep learning">deep learning</span>, and <span class="research-interest" data-keyword="neural networks">neural networks</span>.
+
 
 
 
