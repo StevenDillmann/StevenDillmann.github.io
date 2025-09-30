@@ -40,6 +40,8 @@
       <a href="http://lattes.cnpq.br/{{ social[1] }}" target="_blank" title="Lattes"><i class="ai ai-lattes"></i></a>
     {% when 'leetcode_id' %}
       <a href="https://leetcode.com/u/{{ social[1] }}/" target="_blank" title="LeetCode"><i class="si si-leetcode"></i></a>
+    {% when 'letterboxd_username' %}
+      <a href="https://letterboxd.com/{{ social[1] }}" title="Letterboxd"><i class="fa-brands fa-square-letterboxd"></i></a>
     {% when 'linkedin_username' %}
       <a href="https://www.linkedin.com/in/{{ social[1] }}" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
     {% when 'mastodon_username' %}
@@ -93,7 +95,7 @@
     {% when 'work_url' %}
       <a href="{{ social[1] }}" title="Work"><i class="fa-solid fa-briefcase"></i></a>
     {% when 'x_username' %}
-      <a href="https://twitter.com/{{ social[1] }}" title="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://twitter.com/{{ social[1] }}" title="X"><i class="fa-brands fa-square-x-twitter"></i></a>
     {% when 'youtube_id' %}
       <a href="https://youtube.com/@{{ social[1] }}" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
     {% when 'zotero_username' %}

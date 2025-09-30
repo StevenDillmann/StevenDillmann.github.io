@@ -1,115 +1,170 @@
 ---
 ---
 
-@string{aps = {American Physical Society,}}
-
-@book{einstein1920relativity,
-  title={Relativity: the Special and General Theory},
-  author={Einstein, Albert},
-  year={1920},
-  publisher={Methuen & Co Ltd},
-  html={relativity.html}
-}
-
-@book{einstein1956investigations,
+@article{brixi2025genome,
+  abbr={bioRxiv},
+  title={Genome modeling and design across all domains of life with Evo 2},
+  author={Brixi, Garyk and Durrant, Matthew G and Ku, Jerome and Poli, Michael and Brockman, Greg and Chang, Daniel and Gonzalez, Gabriel A and King, Samuel H and Li, David B and Merchant, Aditi T and Naghipourfar, Mohsen and Nguyen, Eric and Ricci-Tam, Chiara and Romero, David W and Sun, Gwanggyu and Taghibakshi, Ali and Vorontsov, Anton and Yang, Brandon and Deng, Myra and Gorton, Liv and Nguyen, Nam and Wang, Nicholas K and Adams, Etowah and Baccus, Stephen A and Dillmann, Steven and Ermon, Stefano and Guo, Daniel and Ilango, Rajesh and Janik, Ken and Lu, Amy X and Mehta, Reshma and Mofrad, Mohammad R.K and Ng, Madelena Y and Pannu, Jaspreet and Ré, Christopher and Schmok, Jonathan C and St. John, John and Sullivan, Jeremy and Zhu, Kevin and Zynda, Greg and Balsam, Daniel and Collison, Patrick and Costa, Anthony B and Hernandez-Boussard, Tina and Ho, Eric and Liu, Ming-Yu and McGrath, Thomas and Powell, Kimberly and Burke, Dave P and Goodarzi, Hani and Hsu, Patrick D and Hie, Brian L},
+  journal={BioRxiv},
+  pages={2025--02},
+  year={2025},
+  publisher={Cold Spring Harbor Laboratory},
+  doi={10.1101/2025.02.18.638918}, 
+  abstract = {All of life encodes information with DNA. While tools for sequencing, synthesis, and editing of genomic code have transformed biological research, intelligently composing new biological systems would also require a deep understanding of the immense complexity encoded by genomes. We introduce Evo 2, a biological foundation model trained on 9.3 trillion DNA base pairs from a highly curated genomic atlas spanning all domains of life. We train Evo 2 with 7B and 40B parameters to have an unprecedented 1 million token context window with single-nucleotide resolution. Evo 2 learns from DNA sequence alone to accurately predict the functional impacts of genetic variation—from noncoding pathogenic mutations to clinically significant BRCA1 variants—without task-specific finetuning. Applying mechanistic interpretability analyses, we reveal that Evo 2 autonomously learns a breadth of biological features, including exon–intron boundaries, transcription factor binding sites, protein structural elements, and prophage genomic regions. Beyond its predictive capabilities, Evo 2 generates mitochondrial, prokaryotic, and eukaryotic sequences at genome scale with greater naturalness and coherence than previous methods. Guiding Evo 2 via inference-time search enables controllable generation of epigenomic structure, for which we demonstrate the first inference-time scaling results in biology. We make Evo 2 fully open, including model parameters, training code, inference code, and the OpenGenome2 dataset, to accelerate the exploration and design of biological complexity.},
   bibtex_show={true},
-  title={Investigations on the Theory of the Brownian Movement},
-  author={Einstein, Albert},
-  year={1956},
-  publisher={Courier Corporation},
-  preview={brownian-motion.gif}
+  preview={evo2.png},
+  code={https://github.com/arcinstitute/evo2},
+  arxiv={},
+  pdf = {https://www.biorxiv.org/content/10.1101/2025.02.18.638918v1.full.pdf}
 }
 
-@article{einstein1950meaning,
-  abbr={AJP},
+@article{dillmann2025representation,
+  abbr={MNRAS},
+  title={Representation learning for time-domain high-energy astrophysics: Discovery of extragalactic fast X-ray transient XRT 200515},
+  author={Dillmann, Steven and Mart{\'\i}nez-Galarza, Juan Rafael and Soria, Roberto and Stefano, Rosanne Di and Kashyap, Vinay L},
+  journal={Monthly Notices of the Royal Astronomical Society},
+  volume={537},
+  number={2},
+  pages={931--955},
+  year={2025},
+  publisher={Oxford University Press},
+  doi={10.1093/mnras/stae2808},
+  arxiv={2412.01150},
+  pdf={https://arxiv.org/pdf/2412.01150.pdf},
+  code={https://github.com/StevenDillmann/ml-xraytransients-mnras},
+  abstract={We present a novel representation learning method for downstream tasks like anomaly detection, unsupervised classification, and similarity searches in high-energy data sets. This enabled the discovery of a new extragalactic fast X-ray transient (FXT) in Chandra archival data, XRT 200515, a needle-in-the-haystack event and the first Chandra FXT of its kind. Recent serendipitous discoveries in X-ray astronomy, including FXTs from binary neutron star mergers and an extragalactic planetary transit candidate, highlight the need for systematic transient searches in X-ray archives. We introduce new event file representations, E-t maps and 
+E-t-dt cubes, that effectively encode both temporal and spectral information, enabling the seamless application of machine learning to variable-length event file time series. Our unsupervised learning approach employs PCA or sparse autoencoders to extract low-dimensional, informative features from these data representations, followed by clustering in the embedding space with DBSCAN. New transients are identified within transient-dominant clusters or through nearest-neighbour searches around known transients, producing a catalogue of 3559 candidates (3447 flares and 112 dips). XRT 200515 exhibits unique temporal and spectral variability, including an intense, hard <10 s initial burst, followed by spectral softening in an 
+approximately 800 s oscillating tail. We interpret XRT 200515 as either the first giant magnetar flare observed at low X-ray energies or the first extragalactic Type I X-ray burst from a faint, previously unknown low-mass X-ray binary in the LMC. Our method extends to data sets from other observatories such as XMM–Newton, Swift-XRT, eROSITA, Einstein Probe, and upcoming missions like AXIS.},
   bibtex_show={true},
-  title={The meaning of relativity},
-  author={Einstein, Albert and Taub, AH},
-  journal={American Journal of Physics},
-  volume={18},
-  number={6},
-  pages={403--404},
-  year={1950},
-  publisher={American Association of Physics Teachers}
+  preview={mnras.png}
 }
 
-@article{PhysRev.47.777,
-  abbr={PhysRev},
-  title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author={Einstein*†, A. and Podolsky*, B. and Rosen*, N.},
-  abstract={In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal={Phys. Rev.},
-  location={New Jersey},
-  volume={47},
-  issue={10},
-  pages={777--780},
-  numpages={0},
-  year={1935},
-  month={May},
-  publisher=aps,
-  doi={10.1103/PhysRev.47.777},
-  url={http://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html={https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf={example_pdf.pdf},
-  altmetric={248277},
-  dimensions={true},
-  google_scholar_id={qyhmnyLat1gC},
-  video={https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ},
-  additional_info={. *More Information* can be [found here](https://github.com/alshedivat/al-folio/)},
-  annotation={* Example use of superscripts<br>† Albert Einstein},
-  selected={true},
-  inspirehep_id = {3255}
-}
-
-@article{einstein1905molekularkinetischen,
-  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author={Einstein, A.},
-  journal={Annalen der physik},
-  volume={322},
-  number={8},
-  pages={549--560},
-  year={1905},
-  publisher={Wiley Online Library}
-}
-
-@article{einstein1905movement,
-  abbr={Ann. Phys.},
-  title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author={Einstein, A.},
-  journal={Ann. Phys.},
-  volume={17},
-  pages={549--560},
-  year={1905}
-}
-
-@article{einstein1905electrodynamics,
-  title={On the electrodynamics of moving bodies},
-  author={Einstein, A.},
-  year={1905}
-}
-
-@Article{einstein1905photoelectriceffect,
+@article{campolongo2025building,
+  abbr={arXiv},
+  title={Building machine learning challenges for anomaly detection in science},
+  author={Campolongo, Elizabeth G and Chou, Yuan-Tang and Govorkova, Ekaterina and Bhimji, Wahid and Chao, Wei-Lun and Harris, Chris and Hsu, Shih-Chieh and Lapp, Hilmar and Neubauer, Mark S and Namayanja, Josephine and others},
+  journal={arXiv preprint arXiv:2503.02112},
+  year={2025},
+  preview={anomalydetection.png},
+  pdf = {https://arxiv.org/pdf/2503.02112.pdf},
+  abstract = {Scientific discoveries are often made by finding a pattern or object that was not predicted by the known rules of science. Oftentimes, these anomalous events or objects that do not conform to the norms are an indication that the rules of science governing the data are incomplete, and something new needs to be present to explain these unexpected outliers. The challenge of finding anomalies can be confounding since it requires codifying a complete knowledge of the known scientific behaviors and then projecting these known behaviors on the data to look for deviations. When utilizing machine learning, this presents a particular challenge since we require that the model not only understands scientific data perfectly but also recognizes when the data is inconsistent and out of the scope of its trained behavior. In this paper, we present three datasets aimed at developing machine learning-based anomaly detection for disparate scientific domains covering astrophysics, genomics, and polar science. We present the different datasets along with a scheme to make machine learning challenges around the three datasets findable, accessible, interoperable, and reusable (FAIR). Furthermore, we present an approach that generalizes to future machine learning challenges, enabling the possibility of large, more compute-intensive challenges that can ultimately lead to scientific discovery.},
+  arxiv={2503.02112},
+  doi={10.48550/arXiv.2503.02112},
   bibtex_show={true},
-  abbr={Ann. Phys.},
-  title="{{\"U}ber einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}",
-  author={Albert Einstein},
-  abstract={This is the abstract text.},
-  journal={Ann. Phys.},
-  volume={322},
-  number={6},
-  pages={132--148},
-  year={1905},
-  doi={10.1002/andp.19053220607},
-  award={Albert Einstein receveid the **Nobel Prize in Physics** 1921 *for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect*},
-  award_name={Nobel Prize}
+  code ={}
 }
 
-@book{przibram1967letters,
+@article{song2025poisson,
+  abbr={ApJ},
+  title={A Poisson Process AutoDecoder for X-Ray Sources},
+  author={Song, Yanke and Villar, V Ashley and Mart{\'\i}nez-Galarza, Rafael and Dillmann, Steven},
+  journal={The Astrophysical Journal},
+  volume={988},
+  number={1},
+  pages={143},
+  year={2025},
+  publisher={IOP Publishing},
+  preview={poisson.png},
+  doi={10.3847/1538-4357/add72e},
+  arxiv={2502.01627},
+  pdf = {https://iopscience.iop.org/article/10.3847/1538-4357/add72e/pdf},
+  code={},
+  abstract={X-ray observing facilities, such as the Chandra X-ray Observatory and the eROSITA, have detected over a million astronomical sources associated with high-energy phenomena. The arrival of photons as a function of time follows a Poisson process and can vary by orders-of-magnitude, presenting obstacles for common tasks such as source classification, physical property derivation, and anomaly detection. Previous work has either failed to directly capture the Poisson nature of the data or only focuses on Poisson rate function reconstruction. In this work, we present the Poisson Process AutoDecoder (PPAD), which is a neural field decoder that maps fixed-length latent features to continuous Poisson rate functions across energy band and time via unsupervised learning. PPAD reconstructs the rate function and yields a representation at the same time. We demonstrate the efficacy of PPAD via reconstruction, regression, classification, and anomaly detection experiments using the Chandra Source Catalog.},
   bibtex_show={true},
-  title={Letters on wave mechanics},
-  author={Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year={1967},
-  publisher={Vision},
-  preview={wave-mechanics.gif},
-  abbr={Vision}
 }
+
+@article{sacchi2025hyperluminous,
+  abbr={ApJ},
+  title={Hyperluminous Supersoft X-Ray Sources in the Chandra Catalog},
+  author={Sacchi, Andrea and Paggeot, Kevin and Dillmann, Steven and Mart{\'\i}nez-Galarza, Juan Rafael and Kosec, Peter},
+  journal={The Astrophysical Journal},
+  volume={983},
+  number={2},
+  pages={124},
+  year={2025},
+  publisher={IOP Publishing},
+  preview={hyperlum.png},
+  abstract={Hyperluminous supersoft X-ray sources (HSSs), such as bright extragalactic sources characterized by particularly soft X-ray spectra, offer a unique opportunity to study accretion onto supermassive black holes in extreme conditions. Examples of hyperluminous supersoft sources are tidal disruption events (TDEs), systems exhibiting quasiperiodic eruptions, changing-look active galactic nuclei, and anomalous nuclear transients. Although these objects are rare phenomena among the population of X-ray sources, we developed an efficient algorithm to identify promising candidates exploiting archival observations. In this work, we present the results of a search for HSSs in the recently released Chandra catalog of serendipitous X-ray sources. This archival search has been performed via both a manual implementation of the algorithm we developed and a novel machine learning–based approach. This search identified a new TDE, which might have occurred in an intermediate-mass black hole. This event occurred between 2001 and 2002, making it one of the first TDEs ever observed by Chandra.},
+  bibtex_show={true},
+  doi={10.3847/1538-4357/adc256},
+  arxiv={2502.00097},
+  code={},
+  pdf={https://iopscience.iop.org/article/10.3847/1538-4357/adc256/pdf},
+
+
+
+}
+
+@article{dillmann2025learning,
+  abbr={arXiv},
+  title={Learning Representations of Event Time Series with Sparse Autoencoders for Anomaly Detection, Similarity Search, and Unsupervised Classification},
+  author={Dillmann, Steven and Martinez-Galarza, Juan Rafael},
+  journal={arXiv preprint arXiv:2507.11620},
+  year={2025},
+  arxiv={2507.11620},
+  doi={10.48550/arXiv.2507.11620},
+  pdf={https://arxiv.org/pdf/2507.11620.pdf},
+  code={https://github.com/StevenDillmann/ml-xraytransients-mnras},
+  abstract={Event time series are sequences of discrete events
+occurring at irregular time intervals, each associated with a domain-specific observational modality. They are common in domains such as highenergy astrophysics, computational social science,
+cybersecurity, finance, healthcare, neuroscience,
+and seismology. Their unstructured and irregular
+structure poses significant challenges for extracting meaningful patterns and identifying salient
+phenomena using conventional techniques. We
+propose novel two- and three-dimensional tensor
+representations for event time series, coupled with
+sparse autoencoders that learn physically meaningful latent representations. These embeddings
+support a variety of downstream tasks, including
+anomaly detection, similarity-based retrieval, semantic clustering, and unsupervised classification.
+We demonstrate our approach on a real-world
+dataset from X-ray astronomy, showing that these
+representations successfully capture temporal and
+spectral signatures and isolate diverse classes of
+X-ray transients. Our framework offers a flexible,
+scalable, and generalizable solution for analyzing complex, irregular event time series across
+scientific and industrial domains.},
+  bibtex_show={true},
+  preview={sae_transients.png}
+}
+}
+
+@article{slipski2024cloudspotting,
+  abbr={Icarus},
+  title={The Cloudspotting on Mars citizen science project: Seasonal and spatial cloud distributions observed by the Mars Climate Sounder},
+  author={Slipski, Marek and Kleinb{\"o}hl, Armin and Dillmann, Steven and Kass, David M and Reimuller, Jason and Wronkiewicz, Mark and Doran, Gary},
+  journal={Icarus},
+  volume={419},
+  pages={115777},
+  year={2024},
+  publisher={Elsevier},
+  preview={mars.png},
+  doi={10.1016/j.icarus.2023.115777},
+  arxiv={},
+  bibtex_show={true},
+  abstract={As tracers of the major volatile cycles of MarsCO2, H2O, and dustclouds are important for understanding the circulation of the martian atmosphere and hence martian climate. We present the spatial and seasonal distribution of laterally-confined clouds in the middle atmosphere of Mars during one Mars Year as identified in limb radiance measurements by the Mars Climate Sounder. Cloud identifications were made by citizen scientists through the "Cloudspotting on Mars" citizen science project, hosted on the citizen science platform Zooniverse. A method to aggregate the crowdsourced data using a novel clustering algorithm is developed. The derived cloud catalog is presented and the seasonal and spatial distribution of clouds is discussed in terms of key populations.},
+  pdf={},
+  code={}
+}
+
+@article{kruk2023impact,
+  abbr={Nature Astronomy},
+  title={The impact of satellite trails on Hubble Space Telescope observations},
+  author={Kruk, Sandor and Garc{\'\i}a-Mart{\'\i}n, Pablo and Popescu, Marcel and Aussel, Ben and Dillmann, Steven and Perks, Megan E and Lund, Tamina and Mer{\'\i}n, Bruno and Thomson, Ross and Karadag, Samet and others},
+  journal={Nature Astronomy},
+  volume={7},
+  number={3},
+  pages={262--268},
+  year={2023},
+  publisher={Nature Publishing Group UK London},
+  doi={10.1038/s41550-023-01903-3},
+  arxiv={-},
+  pdf={https://www.nature.com/articles/s41550-023-01903-3.pdf},
+  code={},
+  abstract={The recent launch of low Earth orbit satellite constellations is creating a growing threat for astronomical observations with ground-based telescopes1-10 that has alarmed the astronomical community 11-16. Observations affected by artificial satellites can become unusable for scientific research, wasting a growing fraction of the research budget on costly infrastructures and mitigation efforts. Here we report the first measurements, to our knowledge, of artificial satellite contamination on observations from a low Earth orbit made with the Hubble Space Telescope. With the help of volunteers on a citizen science project (www.asteroidhunter.org) and a deep learning algorithm, we scanned the archive of Hubble Space Telescope images taken between 2002 and 2021. We find that a fraction of 2.7% of the individual exposures with a typical exposure time of 11 minutes are crossed by satellites and that the fraction of satellite trails in the images increases with time. This fraction depends on the size of the field of view, exposure time, filter used and pointing. With the growing number of artificial satellites currently planned, the fraction of Hubble Space Telescope images crossed by satellites will increase in the next decade and will need further close study and monitoring.},
+  bibtex_show={true},
+  preview={hubble.png}
+
+}
+
+
+

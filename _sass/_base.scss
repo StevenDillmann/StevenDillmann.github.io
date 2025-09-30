@@ -880,6 +880,35 @@ footer.sticky-bottom {
 // Rouge Color Customization
 figure.highlight {
   margin: 0 0 1rem;
+  background-color: var(--global-code-bg-color);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+// Customize BibTeX display colors
+.bibtex figure.highlight {
+  background-color: var(--global-bg-color);
+  border: 1px dashed var(--global-text-color);
+  border-radius: 0px;
+  padding: 0px;
+  margin: 0;
+  
+  // Text color for BibTeX
+  color: var(--global-text-color);
+  
+  // Code text color
+  pre, code {
+    color: var(--global-text-color);
+    background-color: transparent;
+  }
+  
+  // Override all BibTeX syntax highlighting to use theme colors
+  * {
+    color: var(--global-theme-color) !important;
+    font-weight: normal !important;
+    text-decoration: none !important;
+    font-style: normal !important;
+  }
 }
 
 pre {

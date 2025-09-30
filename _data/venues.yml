@@ -1,9 +1,23 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+"MNRAS":
+  url: https://academic.oup.com/mnras
+  color: var(--global-theme-color)
 
-"PhysRev":
-  url: https://journals.aps.org/
+"ApJ":
+  url: https://iopscience.iop.org/journal/0004-637X
+  color: var(--global-theme-color)
 
-"Vision":
-  color: "#009f36"
+"arXiv":
+  url: https://arxiv.org
+  color: "#000000"
+
+"bioRxiv":
+  url: https://www.biorxiv.org
+  color: "#000000"
+
+"Nature Astronomy":
+  url: https://www.nature.com/natureastronomy
+  color: var(--global-theme-color)
+
+"Icarus":
+  url: https://www.sciencedirect.com/journal/icarus
+  color: var(--global-theme-color)
