@@ -189,6 +189,17 @@
       {{ entry.note | strip }}
     </div>
 
+    <!-- Keywords as hashtags -->
+    {% if entry.keywords %}
+      <div class="keywords">
+        {% assign keyword_list = entry.keywords | split: ',' %}
+        {% for keyword in keyword_list %}
+          {% assign clean_keyword = keyword | strip %}
+          <span class="keyword-tag">#{{ clean_keyword }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
     <!-- Links/Buttons -->
     <div class="links">
       {% if entry.award %}

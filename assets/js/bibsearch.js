@@ -1,6 +1,127 @@
 import { highlightSearchTerm } from "./highlight-search-term.js";
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Collect all unique keywords from publications
+  const collectKeywords = () => {
+    const keywords = new Set();
+    document.querySelectorAll(".keywords .keyword-tag").forEach(tag => {
+      const keyword = tag.textContent.replace("#", "").trim();
+      if (keyword) {
+        keywords.add(keyword);
+      }
+    });
+    return Array.from(keywords).sort();
+  };
+
+  // Create keyword filter buttons
+  const createKeywordFilters = () => {
+    const keywords = collectKeywords();
+    const container = document.getElementById("keyword-filter-container");
+    
+    if (keywords.length === 0) {
+      container.innerHTML = "<p>No keywords found in publications.</p>";
+      return;
+    }
+
+    container.innerHTML = "";
+    keywords.forEach(keyword => {
+      const button = document.createElement("span");
+      button.className = "filter-keyword-tag";
+      button.textContent = keyword;
+      button.onclick = () => toggleKeywordFilter(keyword);
+      container.appendChild(button);
+    });
+  };
+
+  // Toggle keyword filter
+  const toggleKeywordFilter = (keyword) => {
+    const button = Array.from(document.querySelectorAll(".filter-keyword-tag"))
+      .find(btn => btn.textContent === keyword);
+    
+    if (button) {
+      button.classList.toggle("active");
+      applyKeywordFilters();
+    }
+  };
+
+  // Apply keyword filters
+  const applyKeywordFilters = () => {
+    const activeKeywords = Array.from(document.querySelectorAll(".filter-keyword-tag.active"))
+      .map(btn => btn.textContent);
+    
+    document.querySelectorAll(".bibliography > li").forEach(item => {
+      const itemKeywords = Array.from(item.querySelectorAll(".keywords .keyword-tag"))
+        .map(tag => tag.textContent.replace("#", "").trim());
+      
+      if (activeKeywords.length === 0) {
+        // No keyword filters active, ensure item is visible (unless hidden by text search)
+        // Don't force visibility, just don't hide based on keywords
+        return;
+      } else {
+        const hasMatchingKeyword = activeKeywords.some(keyword => 
+          itemKeywords.includes(keyword)
+        );
+        
+        // Only hide items that don't match keywords, but don't show items that are already hidden by text search
+        if (!hasMatchingKeyword) {
+          item.classList.add("unloaded");
+        }
+      }
+    });
+
+    // Hide empty year groups
+    document.querySelectorAll("h2.bibliography").forEach(function (element) {
+      let iterator = element.nextElementSibling;
+      let hideFirstGroupingElement = true;
+      while (iterator && iterator.tagName !== "H2") {
+        if (iterator.tagName === "OL") {
+          const ol = iterator;
+          const unloadedSiblings = ol.querySelectorAll(":scope > li.unloaded");
+          const totalSiblings = ol.querySelectorAll(":scope > li");
+
+          if (unloadedSiblings.length === totalSiblings.length) {
+            ol.previousElementSibling.classList.add("unloaded");
+            ol.classList.add("unloaded");
+          } else {
+            hideFirstGroupingElement = false;
+          }
+        }
+        iterator = iterator.nextElementSibling;
+      }
+      if (hideFirstGroupingElement) {
+        element.classList.add("unloaded");
+      }
+    });
+  };
+
+  // Clear all keyword filters
+  document.getElementById("clear-keyword-filters").onclick = () => {
+    document.querySelectorAll(".filter-keyword-tag").forEach(btn => {
+      btn.classList.remove("active");
+    });
+    applyKeywordFilters();
+    
+    // Also clear the search box if it's empty or only contains whitespace
+    const searchInput = document.getElementById("bibsearch");
+    if (!searchInput.value.trim()) {
+      // If search is empty, show all publications
+      document.querySelectorAll(".bibliography > li, .unloaded").forEach((element) => {
+        element.classList.remove("unloaded");
+      });
+      
+      // Show all year groups
+      document.querySelectorAll("h2.bibliography, h3.bibliography").forEach((element) => {
+        element.classList.remove("unloaded");
+      });
+      document.querySelectorAll("ol").forEach((element) => {
+        element.classList.remove("unloaded");
+      });
+    }
+  };
+
+  // Initialize keyword filters
+  createKeywordFilters();
+
   // actual bibsearch logic
   const filterItems = (searchTerm) => {
     document.querySelectorAll(".bibliography, .unloaded").forEach((element) => element.classList.remove("unloaded"));
@@ -61,7 +182,12 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("bibsearch").addEventListener("input", function () {
     clearTimeout(timeoutId); // Clear the previous timeout
     const searchTerm = this.value.toLowerCase();
-    timeoutId = setTimeout(filterItems(searchTerm), 300);
+    timeoutId = setTimeout(() => {
+      // First apply text search
+      filterItems(searchTerm);
+      // Then apply keyword filters on top of text search results
+      applyKeywordFilters();
+    }, 300);
   });
 
   window.addEventListener("hashchange", updateInputField); // Update the filter when the hash changes

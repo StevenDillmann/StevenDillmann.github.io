@@ -885,6 +885,103 @@ figure.highlight {
   padding: 10px;
 }
 
+// Keyword filter styling
+.keyword-filter {
+  margin: 1rem 0 2rem 0;
+  padding: 0;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.search-container #bibsearch {
+  flex: 1;
+}
+
+.keyword-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-keyword-tag {
+  display: inline-block;
+  background-color: var(--global-code-bg-color);
+  color: var(--global-text-color);
+  padding: 0.3rem 0.6rem;
+  margin: 0.1rem 0.2rem 0.1rem 0;
+  border-radius: 3px;
+  font-size: 0.85em;
+  font-weight: 500;
+  border: 1px solid var(--global-divider-color);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.filter-keyword-tag:hover {
+  background-color: var(--global-theme-color);
+  color: var(--global-bg-color);
+}
+
+.filter-keyword-tag.active {
+  background-color: var(--global-theme-color);
+  color: var(--global-bg-color);
+  font-weight: 600;
+}
+
+#clear-keyword-filters {
+  background-color: transparent !important;
+  color: var(--global-theme-color) !important;
+  border: 2px solid var(--global-theme-color) !important;
+  border-radius: 0px !important;
+  padding: 0.3rem 0.8rem !important;
+  font-size: 0.85em !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+#clear-keyword-filters:hover {
+  background-color: var(--global-bg-color);
+  color: var(--global-theme-color);
+  border: 1px solid var(--global-theme-color);
+  transform: translateY(-1px);
+}
+
+// Keywords as hashtags styling
+.keywords {
+  margin: 0.5rem 0;
+  line-height: 1.8;
+}
+
+.keyword-tag {
+  display: inline-block;
+  background-color: var(--global-code-bg-color);
+  color: var(--global-text-color);
+  padding: 0.1rem 0.4rem;
+  margin: 0.1rem 0.2rem 0.1rem 0;
+  border-radius: 3px;
+  font-size: 0.75em;
+  font-weight: 500;
+  border: 1px solid var(--global-divider-color);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.keyword-tag:hover {
+  background-color: var(--global-theme-color);
+  color: var(--global-bg-color);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 // Customize BibTeX display colors
 .bibtex figure.highlight {
   background-color: var(--global-bg-color);
