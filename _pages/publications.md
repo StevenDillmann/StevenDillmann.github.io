@@ -32,23 +32,31 @@ nav_order: 2
         <li><span class="metric-label">h-index:</span> <span class="metric-value">{{ site.data.scholar_metrics.h_index }}</span></li>
         <li><span class="metric-label">i10-index:</span> <span class="metric-value">{{ site.data.scholar_metrics.i10_index }}</span></li>
       </ul>
-      <div class="metrics-note"><small><a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank">Google Scholar</a></small></div>
       {% assign per_year = site.data.scholar_metrics.per_year %}
       {% if per_year and per_year.size > 0 %}
-      <svg class="citations-spark" width="100%" height="72" viewBox="0 0 300 72" preserveAspectRatio="xMaxYMin meet">
+      <svg class="citations-spark" width="100%" height="120" viewBox="0 0 300 120" preserveAspectRatio="xMaxYMin meet">
+        {% assign series = per_year %}
         {% assign max = 0 %}
-        {% for pt in per_year %}
+        {% for pt in series %}
           {% if pt.citations > max %}{% assign max = pt.citations %}{% endif %}
         {% endfor %}
-        {% assign n = per_year.size %}
+        {% assign n = series.size %}
         {% if n > 0 and max > 0 %}
           {% assign bar_w = 300 | divided_by: n %}
-          {% for pt in per_year %}
+          {% assign half_bar = bar_w | divided_by: 2 %}
+          {% assign rect_w = bar_w | minus: 6 %}
+          {% if rect_w < 10 %}{% assign rect_w = 10 %}{% endif %}
+          {% for pt in series %}
             {% assign idx = forloop.index0 %}
-            {% assign x = bar_w | times: idx %}
-            {% assign h = pt.citations | times: 60 | divided_by: max %}
-            {% assign y = 65 | minus: h %}
-            <rect x="{{ x }}" y="{{ y }}" width="{{ bar_w | minus: 1 }}" height="{{ h }}" fill="currentColor" rx="0" ry="0" />
+            {% assign x = idx | times: bar_w %}
+            {% assign h = pt.citations | times: 75 | divided_by: max %}
+            {% assign y = 90 | minus: h %}
+            {% assign pad = bar_w | minus: rect_w | divided_by: 2 %}
+            {% assign x_bar = x | plus: pad %}
+            <rect x="{{ x_bar }}" y="{{ y }}" width="{{ rect_w }}" height="{{ h }}" fill="currentColor" rx="0" ry="0" />
+            {% assign label_y = y | minus: 4 %}
+            <text x="{{ x | plus: half_bar }}" y="{{ label_y }}" text-anchor="middle" font-size="9" fill="currentColor">{{ pt.citations }}</text>
+            <text x="{{ x | plus: half_bar }}" y="112" text-anchor="middle" font-size="10" fill="var(--global-text-color)">{{ pt.year }}</text>
           {% endfor %}
         {% endif %}
       </svg>
@@ -56,6 +64,8 @@ nav_order: 2
     </div>
   </div>
 </div>
+
+<div class="scholar-link-right"><small><a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank">Google Scholar</a></small></div>
 
 <div class="publications">
 

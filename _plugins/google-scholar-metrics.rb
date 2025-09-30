@@ -20,12 +20,17 @@ module Jekyll
 
       metrics = read_fresh_cache(cache_file)
       unless metrics
-        metrics = fetch_metrics_from_scholar(scholar_id)
-        write_cache(cache_file, metrics) if metrics
+        fetched = fetch_metrics_from_scholar(scholar_id)
+        if fetched && metrics_valid?(fetched)
+          write_cache(cache_file, fetched)
+          metrics = fetched
+        else
+          metrics = nil
+        end
       end
 
       # Expose to templates as site.data.scholar_metrics
-      site.data['scholar_metrics'] = metrics || { 'citations' => 'N/A', 'h_index' => 'N/A', 'i10_index' => 'N/A' }
+      site.data['scholar_metrics'] = metrics || { 'citations' => 'N/A', 'h_index' => 'N/A', 'i10_index' => 'N/A', 'per_year' => [] }
     end
 
     private
@@ -57,19 +62,38 @@ module Jekyll
 
     def fetch_metrics_from_scholar(scholar_id)
       profile_url = "https://scholar.google.com/citations?user=#{scholar_id}&hl=en"
-      html = URI.open(profile_url, "User-Agent" => user_agent).read
+      html = URI.open(profile_url, headers_for_request).read
 
-      # Try robust extractions
-      citations = extract_citations(html)
-      h_index = extract_simple_metric(html, /h-index\s*(\d+)/)
-      i10_index = extract_simple_metric(html, /i10-index\s*(\d+)/)
+      # Bail if blocked/consent
+      return nil if html.include?("consent") || html.include?("recaptcha")
+
+      doc = Nokogiri::HTML(html)
+
+      # Prefer parsing the stats table
+      citations_all = nil
+      h_index_all = nil
+      i10_index_all = nil
+
+      std_cells = doc.css('#gsc_rsb_st .gsc_rsb_std')
+      if std_cells && std_cells.length >= 5
+        citations_all = text_to_int(std_cells[0]&.text)
+        h_index_all = text_to_int(std_cells[2]&.text)
+        i10_index_all = text_to_int(std_cells[4]&.text)
+      end
+
+      # Fallbacks via regex if any missing
+      citations_all ||= extract_citations(html)
+      h_index_all ||= extract_simple_metric(html, /h-index\s*(\d+)/)&.to_i
+      i10_index_all ||= extract_simple_metric(html, /i10-index\s*(\d+)/)&.to_i
 
       per_year = extract_per_year_citations(html)
 
+      return nil unless citations_all && h_index_all && i10_index_all
+
       {
-        'citations' => format_citations(citations),
-        'h_index' => h_index || '0',
-        'i10_index' => i10_index || '0',
+        'citations' => format_citations(citations_all),
+        'h_index' => h_index_all.to_s,
+        'i10_index' => i10_index_all.to_s,
         'per_year' => per_year
       }
     rescue => e
@@ -89,6 +113,14 @@ module Jekyll
       per_year
     rescue
       []
+    end
+
+    def headers_for_request
+      {
+        "User-Agent" => user_agent,
+        "Accept-Language" => "en-US,en;q=0.9",
+        "Referer" => "https://scholar.google.com/"
+      }
     end
 
     def extract_citations(html)
@@ -112,6 +144,20 @@ module Jekyll
 
     def user_agent
       "Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122 Safari/537.36"
+    end
+  
+    def metrics_valid?(metrics)
+      return false unless metrics.is_a?(Hash)
+      c = metrics['citations']
+      h = metrics['h_index']
+      i = metrics['i10_index']
+      return false if [c, h, i].any? { |v| v.nil? || v.to_s == '0' || v == 'N/A' }
+      true
+    end
+
+    def text_to_int(text)
+      return nil if text.nil?
+      text.to_s.strip.gsub(',', '').to_i
     end
   end
 end

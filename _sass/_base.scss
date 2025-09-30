@@ -1021,8 +1021,20 @@ figure.highlight {
 
 .citations-spark {
   display: block;
-  margin-top: 0.4rem;
+  margin-top: 0.8rem; // push chart a little down
   color: var(--global-theme-color); // uses currentColor in rect fill
+}
+
+.scholar-link-right {
+  text-align: right;
+  margin-top: 0.2rem; // bring link a little closer to the box
+}
+.scholar-link-right a {
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+.scholar-link-right a:hover {
+  text-decoration: underline;
 }
 
 // Publications header layout
@@ -1031,7 +1043,7 @@ figure.highlight {
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start; // let right column hug the right edge
-  gap: 1.5rem;
+  gap: 2.25rem; // increase distance between filters/keywords and scholar box
   margin: 1rem 0 2rem 0;
 }
 
@@ -1044,12 +1056,13 @@ figure.highlight {
   display: flex;
   justify-content: flex-end;
   margin-left: auto; // push column to the far right
-  min-width: 360px; // give a bit more room for the chart
+  min-width: 280px; // slimmer right column to free space for keywords
 }
 
 .pub-header-right .scholar-metrics {
   width: auto;
   display: inline-block;
+  max-width: 320px; // keep metrics compact so left column has more room
 }
 
 @media (max-width: 992px) {
@@ -1513,7 +1526,7 @@ ninja-keys::part(ninja-input-wrapper) {
   outline: none;
   margin: 0px 10px 0px 0px;
   width: 100%;
-  max-width: 350px;
+  max-width: 700px; // widen publications filter input
   min-width: 100px;
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
