@@ -931,7 +931,7 @@ figure.highlight {
   padding: 0.75rem 1rem;
   background-color: transparent;
   border-radius: 0;
-  border: 1px solid currentColor; // match the text color
+  border: none;
 }
 
 .scholar-metrics h3 {
@@ -984,10 +984,11 @@ figure.highlight {
 }
 
 // Compact metrics list styling
-.scholar-metrics.compact {
-  padding: 0.5rem 0.75rem;
-  color: var(--global-theme-color); // ensures border uses theme color via currentColor
-}
+  .scholar-metrics.compact {
+    padding: 0.5rem 0.75rem;
+    color: var(--global-theme-color); // ensures border uses theme color via currentColor
+    border: none;
+  }
 
 .metrics-list {
   list-style: none;
