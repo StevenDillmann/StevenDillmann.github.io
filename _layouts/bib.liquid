@@ -195,7 +195,7 @@
         {% assign keyword_list = entry.keywords | split: ',' %}
         {% for keyword in keyword_list %}
           {% assign clean_keyword = keyword | strip %}
-          <span class="keyword-tag">#{{ clean_keyword }}</span>
+          <span class="keyword-tag">{{ clean_keyword }}</span>
         {% endfor %}
       </div>
     {% endif %}

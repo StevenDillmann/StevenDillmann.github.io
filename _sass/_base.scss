@@ -1022,12 +1022,54 @@ figure.highlight {
 .citations-spark {
   display: block;
   margin-top: 0.8rem; // push chart a little down
-  color: var(--global-theme-color); // uses currentColor in rect fill
+  color: var(--global-text-color); // base context, overridden per-bar
+}
+
+/* Bars default to the same face color as keyword chips */
+.citations-spark .bar {
+  color: var(--global-code-bg-color);
+}
+
+.citations-spark rect {
+  transition: fill 0.15s ease, stroke 0.15s ease;
+  pointer-events: all;
+  stroke: transparent;
+  stroke-width: 0;
+}
+
+/* Numbers default to text color, change on hover */
+.citations-spark .citation-count {
+  fill: var(--global-text-color);
+  transition: fill 0.15s ease, font-weight 0.15s ease;
+}
+
+/* Hover: switch bar color and number to theme; no stroke */
+.citations-spark .bar:hover {
+  color: var(--global-theme-color);
+}
+
+.citations-spark .bar:hover rect {
+  stroke: transparent;
+  stroke-width: 0;
+}
+
+.citations-spark .bar:hover .citation-count {
+  fill: var(--global-theme-color);
+  font-weight: 700;
+}
+
+/* Ensure SVG text doesn't intercept hover */
+.citations-spark text {
+  pointer-events: none;
+}
+
+.citations-spark .year-label {
+  font-weight: 700;
 }
 
 .scholar-link-right {
   text-align: right;
-  margin-top: 0.2rem; // bring link a little closer to the box
+  margin-top: 0rem; // move link further upwards (closer to the box)
 }
 .scholar-link-right a {
   color: var(--global-theme-color);
@@ -1035,6 +1077,17 @@ figure.highlight {
 }
 .scholar-link-right a:hover {
   text-decoration: underline;
+}
+
+.scholar-link-center {
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+.scholar-link-center .fetched-at {
+  margin-top: 0.15rem;
+  font-size: 0.85em;
+  color: var(--global-text-color);
 }
 
 // Publications header layout
@@ -1736,4 +1789,9 @@ figure.cover {
   a.cover-link:hover {
     color: #23212d !important;
   }
+}
+
+.citations-spark a,
+.citations-spark g.bar {
+  pointer-events: all;
 }

@@ -1,10 +1,13 @@
 import { highlightSearchTerm } from "./highlight-search-term.js";
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Scope to publications root to avoid touching header/metrics
+  const publicationsRoot = document.querySelector('.publications') || document;
+
   // Collect all unique keywords from publications
   const collectKeywords = () => {
     const keywords = new Set();
-    document.querySelectorAll(".keywords .keyword-tag").forEach(tag => {
+    publicationsRoot.querySelectorAll(".keywords .keyword-tag").forEach(tag => {
       const keyword = tag.textContent.replace("#", "").trim();
       if (keyword) {
         keywords.add(keyword);
@@ -49,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const activeKeywords = Array.from(document.querySelectorAll(".filter-keyword-tag.active"))
       .map(btn => btn.textContent);
     
-    document.querySelectorAll(".bibliography > li").forEach(item => {
+    publicationsRoot.querySelectorAll(".bibliography > li").forEach(item => {
       const itemKeywords = Array.from(item.querySelectorAll(".keywords .keyword-tag"))
         .map(tag => tag.textContent.replace("#", "").trim());
       
@@ -70,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Hide empty year groups
-    document.querySelectorAll("h2.bibliography").forEach(function (element) {
+    publicationsRoot.querySelectorAll("h2.bibliography").forEach(function (element) {
       let iterator = element.nextElementSibling;
       let hideFirstGroupingElement = true;
       while (iterator && iterator.tagName !== "H2") {
@@ -111,20 +114,20 @@ document.addEventListener("DOMContentLoaded", function () {
       CSS.highlights.clear();
     }
     // Also remove any legacy highlighted classes
-    document.querySelectorAll(".highlighted").forEach((element) => {
+    publicationsRoot.querySelectorAll(".highlighted").forEach((element) => {
       element.classList.remove("highlighted");
     });
     
     // Show all publications
-    document.querySelectorAll(".bibliography > li, .unloaded").forEach((element) => {
+    publicationsRoot.querySelectorAll(".bibliography > li, .unloaded").forEach((element) => {
       element.classList.remove("unloaded");
     });
     
     // Show all year groups
-    document.querySelectorAll("h2.bibliography, h3.bibliography").forEach((element) => {
+    publicationsRoot.querySelectorAll("h2.bibliography, h3.bibliography").forEach((element) => {
       element.classList.remove("unloaded");
     });
-    document.querySelectorAll("ol").forEach((element) => {
+    publicationsRoot.querySelectorAll("ol").forEach((element) => {
       element.classList.remove("unloaded");
     });
   };
@@ -148,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Handle keyword tag clicks within papers (on publications page)
   function handleKeywordTagClicks() {
-    const keywordTags = document.querySelectorAll('.keyword-tag');
+    const keywordTags = publicationsRoot.querySelectorAll('.keyword-tag');
     console.log('Found keyword tags within papers:', keywordTags.length);
     keywordTags.forEach(tag => {
       console.log('Setting up click handler for:', tag.textContent);
@@ -180,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // actual bibsearch logic
   const filterItems = (searchTerm) => {
-    document.querySelectorAll(".bibliography, .unloaded").forEach((element) => element.classList.remove("unloaded"));
+    publicationsRoot.querySelectorAll(".bibliography, .unloaded").forEach((element) => element.classList.remove("unloaded"));
 
     // highlight-search-term
     if (CSS.highlights) {
@@ -193,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     } else {
       // Simply add unloaded class to all non-matching items if Browser does not support CSS highlights
-      document.querySelectorAll(".bibliography > li").forEach((element, index) => {
+      publicationsRoot.querySelectorAll(".bibliography > li").forEach((element, index) => {
         const text = element.innerText.toLowerCase();
         if (text.indexOf(searchTerm) == -1) {
           element.classList.add("unloaded");
@@ -201,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    document.querySelectorAll("h2.bibliography").forEach(function (element) {
+    publicationsRoot.querySelectorAll("h2.bibliography").forEach(function (element) {
       let iterator = element.nextElementSibling; // get next sibling element after h2, which can be h3 or ol
       let hideFirstGroupingElement = true;
       // iterate until next group element (h2), which is already selected by the querySelectorAll(-).forEach(-)

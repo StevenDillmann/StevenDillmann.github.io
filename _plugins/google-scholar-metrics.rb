@@ -22,6 +22,7 @@ module Jekyll
       unless metrics
         fetched = fetch_metrics_from_scholar(scholar_id)
         if fetched && metrics_valid?(fetched)
+          fetched['fetched_at'] = Time.now.utc.iso8601
           write_cache(cache_file, fetched)
           metrics = fetched
         else
@@ -29,8 +30,17 @@ module Jekyll
         end
       end
 
+      # Ensure fetched_at exists for fresh cache without timestamp
+      if metrics && !metrics.key?('fetched_at')
+        begin
+          metrics['fetched_at'] = File.mtime(cache_file).utc.iso8601
+        rescue
+          metrics['fetched_at'] = Time.now.utc.iso8601
+        end
+      end
+
       # Expose to templates as site.data.scholar_metrics
-      site.data['scholar_metrics'] = metrics || { 'citations' => 'N/A', 'h_index' => 'N/A', 'i10_index' => 'N/A', 'per_year' => [] }
+      site.data['scholar_metrics'] = metrics || { 'citations' => 'N/A', 'h_index' => 'N/A', 'i10_index' => 'N/A', 'per_year' => [], 'fetched_at' => nil }
     end
 
     private
@@ -50,7 +60,10 @@ module Jekyll
       return nil unless File.exist?(cache_file)
       return nil if (Time.now - File.mtime(cache_file)) >= CACHE_TTL_SECONDS
       begin
-        JSON.parse(File.read(cache_file))
+        data = JSON.parse(File.read(cache_file))
+        # Backfill fetched_at if missing
+        data['fetched_at'] ||= File.mtime(cache_file).utc.iso8601
+        data
       rescue
         nil
       end

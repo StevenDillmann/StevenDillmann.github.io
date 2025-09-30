@@ -53,19 +53,30 @@ nav_order: 2
             {% assign y = 90 | minus: h %}
             {% assign pad = bar_w | minus: rect_w | divided_by: 2 %}
             {% assign x_bar = x | plus: pad %}
-            <rect x="{{ x_bar }}" y="{{ y }}" width="{{ rect_w }}" height="{{ h }}" fill="currentColor" rx="0" ry="0" />
-            {% assign label_y = y | minus: 4 %}
-            <text x="{{ x | plus: half_bar }}" y="{{ label_y }}" text-anchor="middle" font-size="9" fill="currentColor">{{ pt.citations }}</text>
-            <text x="{{ x | plus: half_bar }}" y="112" text-anchor="middle" font-size="10" fill="var(--global-text-color)">{{ pt.year }}</text>
+            {% assign ylo = pt.year %}
+            {% assign yhi = pt.year %}
+            {% assign scholar_url = 'https://scholar.google.com/scholar?hl=en&q=author:%22Steven%20Dillmann%22&as_ylo=' | append: ylo | append: '&as_yhi=' | append: yhi %}
+            <a xlink:href="{{ scholar_url }}" target="_blank" rel="noopener noreferrer">
+              <g class="bar">
+                <rect x="{{ x_bar }}" y="{{ y }}" width="{{ rect_w }}" height="{{ h }}" fill="currentColor" rx="0" ry="0" />
+                {% assign label_y = y | minus: 4 %}
+                <text x="{{ x | plus: half_bar }}" y="{{ label_y }}" text-anchor="middle" font-size="9" class="citation-count" fill="currentColor">{{ pt.citations }}</text>
+                <text x="{{ x | plus: half_bar }}" y="112" text-anchor="middle" font-size="10" class="year-label" fill="var(--global-text-color)">{{ pt.year }}</text>
+              </g>
+            </a>
           {% endfor %}
         {% endif %}
       </svg>
       {% endif %}
+      <div class="scholar-link-center">
+        <small><a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank">Google Scholar</a></small>
+        {% if site.data.scholar_metrics.fetched_at %}
+          <div class="fetched-at">Last updated: {{ site.data.scholar_metrics.fetched_at | date: "%B %e, %Y" }}</div>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>
-
-<div class="scholar-link-right"><small><a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank">Google Scholar</a></small></div>
 
 <div class="publications">
 
