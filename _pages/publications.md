@@ -34,7 +34,7 @@ nav_order: 2
       </ul>
       {% assign per_year = site.data.scholar_metrics.per_year %}
       {% if per_year and per_year.size > 0 %}
-      <svg class="citations-spark" width="100%" height="120" viewBox="0 0 300 120" preserveAspectRatio="xMaxYMin meet">
+      <svg class="citations-spark" width="100%" height="185" viewBox="0 0 300 185" preserveAspectRatio="xMaxYMin meet">
         {% assign series = per_year %}
         {% assign max = 0 %}
         {% for pt in series %}
@@ -49,8 +49,8 @@ nav_order: 2
           {% for pt in series %}
             {% assign idx = forloop.index0 %}
             {% assign x = idx | times: bar_w %}
-            {% assign h = pt.citations | times: 75 | divided_by: max %}
-            {% assign y = 90 | minus: h %}
+            {% assign h = pt.citations | times: 200 | divided_by: max %}
+            {% assign y = 220 | minus: h %}
             {% assign pad = bar_w | minus: rect_w | divided_by: 2 %}
             {% assign x_bar = x | plus: pad %}
             {% assign ylo = pt.year %}
@@ -60,8 +60,8 @@ nav_order: 2
               <g class="bar">
                 <rect x="{{ x_bar }}" y="{{ y }}" width="{{ rect_w }}" height="{{ h }}" fill="currentColor" rx="0" ry="0" />
                 {% assign label_y = y | minus: 4 %}
-                <text x="{{ x | plus: half_bar }}" y="{{ label_y }}" text-anchor="middle" font-size="9" class="citation-count" fill="currentColor">{{ pt.citations }}</text>
-                <text x="{{ x | plus: half_bar }}" y="112" text-anchor="middle" font-size="10" class="year-label" fill="var(--global-text-color)">{{ pt.year }}</text>
+                <text x="{{ x | plus: half_bar }}" y="{{ label_y }}" text-anchor="middle" font-size="15" class="citation-count" fill="currentColor">{{ pt.citations }}</text>
+                <text x="{{ x | plus: half_bar }}" y="240" text-anchor="middle" font-size="15" class="year-label" fill="var(--global-text-color)">{{ pt.year }}</text>
               </g>
             </a>
           {% endfor %}

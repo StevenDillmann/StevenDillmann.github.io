@@ -820,7 +820,6 @@ footer.sticky-bottom {
           height: 100%;
           padding-right: 0.5rem;
           vertical-align: middle;
-
           &:hover {
             text-decoration: underline;
           }
@@ -888,6 +887,7 @@ figure.highlight {
 .keyword-filter {
   margin: 1rem 0 2rem 0;
   padding: 0;
+  max-width: 500px; // match the filter input width
 }
 
 .search-container {
@@ -927,7 +927,7 @@ figure.highlight {
 
 // Google Scholar metrics styling
 .scholar-metrics {
-  margin: 1rem 0;
+  margin: 0.75rem 0;
   padding: 0.75rem 1rem;
   background-color: transparent;
   border-radius: 0;
@@ -1082,7 +1082,7 @@ figure.highlight {
 
 .scholar-link-center {
   text-align: center;
-  margin-top: 0.25rem;
+  margin-top: 0.1rem;
 }
 
 .scholar-link-center .fetched-at {
@@ -1097,9 +1097,11 @@ figure.highlight {
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start; // let right column hug the right edge
-  gap: 2.25rem; // increase distance between filters/keywords and scholar box
+  gap: 3rem; // bigger gap between filters/keywords and scholar box
   margin: 1rem 0 2rem 0;
+  position: relative;
 }
+
 
 .pub-header-left {
   flex: 1 1 auto;
@@ -1110,13 +1112,13 @@ figure.highlight {
   display: flex;
   justify-content: flex-end;
   margin-left: auto; // push column to the far right
-  min-width: 280px; // slimmer right column to free space for keywords
+  min-width: 220px; // much smaller right column to free maximum space for keywords
 }
 
 .pub-header-right .scholar-metrics {
   width: auto;
   display: inline-block;
-  max-width: 320px; // keep metrics compact so left column has more room
+  max-width: 240px; // much smaller metrics box to maximize filter space
 }
 
 @media (max-width: 992px) {
@@ -1179,8 +1181,8 @@ figure.highlight {
 
 #clear-keyword-filters {
   background-color: transparent !important;
-  color: var(--global-theme-color) !important;
-  border: 2px solid var(--global-theme-color) !important;
+  color: var(--global-text-color) !important;
+  border: 2px solid var(--global-text-color) !important;
   border-radius: 0px !important;
   padding: 0.3rem 0.8rem !important;
   font-size: 0.85em !important;
@@ -1190,9 +1192,9 @@ figure.highlight {
 }
 
 #clear-keyword-filters:hover {
-  background-color: var(--global-bg-color);
-  color: var(--global-theme-color);
-  border: 1px solid var(--global-theme-color);
+  background-color: transparent;
+  color: var(--global-theme-color) !important;
+  border: 2px solid var(--global-theme-color) !important;
   transform: translateY(-1px);
 }
 
@@ -1580,7 +1582,7 @@ ninja-keys::part(ninja-input-wrapper) {
   outline: none;
   margin: 0px 10px 0px 0px;
   width: 100%;
-  max-width: 700px; // widen publications filter input
+  max-width: 500px; // reduced publications filter input
   min-width: 100px;
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
