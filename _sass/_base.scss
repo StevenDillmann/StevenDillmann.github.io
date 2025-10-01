@@ -217,13 +217,21 @@ ul.task-list input[type="checkbox"] {
 
 @media (min-width: 576px) {
   .profile {
-    width: 30%;
+    width: 28%;
 
     .address {
       p {
         display: block;
       }
     }
+  }
+  
+  .profile.float-left ~ .clearfix {
+    margin-left: calc(28% + 1rem);
+  }
+  
+  .profile.float-right ~ .clearfix {
+    margin-right: calc(28% + 1rem);
   }
 }
 

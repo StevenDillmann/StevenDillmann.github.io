@@ -9,7 +9,7 @@ profile:
   image: sd_cambridge.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>340 Gates Computer Science</p>
+    <p>338 Gates Computer Science</p>
     <p>353 Jane Stanford Way</p>
     <p>Stanford, CA 94305</p>
     <p><a href="mailto:stevendi@stanford.edu">stevendi@stanford.edu</a></p>
@@ -28,17 +28,16 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am PhD student at [Stanford University](https://www.stanford.edu/) working on AI for Science, and am advised by [Sanmi Koyejo](https://cs.stanford.edu/~sanmi/) (CS) and [Risa Wechsler](https://www.risawechsler.com/) (Physics). My current research focuses on developing scientific foundation models, advancing agentic AI for scientific discovery, and designing rigorous evaluations of LLMs and agents on scientific tasks.
+I am PhD student at [Stanford University](https://www.stanford.edu/) working on AI for Science, and am advised by [Sanmi Koyejo](https://cs.stanford.edu/~sanmi/) (CS) and [Risa Wechsler](https://www.risawechsler.com/) (Physics). My current research interests are:
+* multi-modal, data-based <a href="/publications/?keyword=foundation+models" class="research-interest">foundation models</a> for science
+* developing AI <a href="/publications/?keyword=agents" class="research-interest">agents</a> for scientific discovery
+* designing rigorous <a href="/publications/?keyword=evaluation" class="research-interest">evaluation</a> systems of LLMs and agents on scientific tasks
 
-I am affiliated with [Stanford AI Lab](https://ai.stanford.edu/), [Stanford ICME](https://icme.stanford.edu/), [KIPAC](https://kipac.stanford.edu/), [SLAC](https://www6.slac.stanford.edu/), and [Center for Decoding the Universe @ Stanford](https://datascience.stanford.edu/kipacsds-center-decoding-universe). Previously, I obtained an MPhil in Data Intensive Science from the [University of Cambridge](https://kipac.stanford.edu/) and an MEng in Aeronautics with Spacecraft Engineering from [Imperial College London](https://www.imperial.ac.uk/). I have also done research at [Harvard](https://www.harvard.edu/), [NASA JPL](https://www.jpl.nasa.gov/), [ESA](https://www.esa.int/), [DLR](https://www.dlr.de/en), and interned at Amazon, Airbus, and BMW.
+I am affiliated with [Stanford AI Lab](https://ai.stanford.edu/), [Stanford ICME](https://icme.stanford.edu/), [KIPAC](https://kipac.stanford.edu/), [SLAC](https://www6.slac.stanford.edu/), and [Center for Decoding the Universe @ Stanford](https://datascience.stanford.edu/kipacsds-center-decoding-universe). Previously, I obtained an MPhil in Data Intensive Science from the [University of Cambridge](https://kipac.stanford.edu/) and an MEng in Aerospace Engineering from [Imperial College London](https://www.imperial.ac.uk/). I have also done research at [Harvard](https://www.harvard.edu/), [NASA JPL](https://www.jpl.nasa.gov/), [ESA](https://www.esa.int/), [DLR](https://www.dlr.de/en), and interned at Amazon, Airbus, and BMW.
 
 Faculty at Stanford that I've worked with include [Susan Clark](https://clarkgroup.stanford.edu/index.html#me), [Surya Ganguli](https://ganguli-gang.stanford.edu/surya.html), [Tina Hernandez-Boussard](https://med.stanford.edu/profiles/tina-hernandez-boussard), [Brian Hie](https://brianhie.com/), [Sanmi Koyejo](https://cs.stanford.edu/~sanmi/), [Phil Marshall](https://kipac.stanford.edu/people/phil-marshall), [Ludwig Schmidt](https://people.csail.mit.edu/ludwigs/), [Risa Wechsler](https://www.risawechsler.com/who.html), [Diyi Yang](https://cs.stanford.edu/~diyiy/), [James Zou](https://www.james-zou.com/).
 
 I also love football (soccer), tennis, poker, chess, filmmaking and movies - checkout my Top 10 series on [letterboxd](https://letterboxd.com/stevendi/lists/). 
-
-My research interests span:
-
-<span class="research-interest" data-keyword="machine learning">machine learning</span>, <span class="research-interest" data-keyword="deep learning">deep learning</span>, and <span class="research-interest" data-keyword="neural networks">neural networks</span>.
 
 
 
