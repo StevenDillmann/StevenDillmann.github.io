@@ -1,0 +1,417 @@
+{
+  "basics": {
+    "name": "Steven Dillmann",
+    "label": "PhD Student @ Stanford",
+    "image": "",
+    "email": "stevendi@stanford.edu",
+    "website": "https://stevendillmann.github.io/",
+    "summary": "PhD Student at Stanford University working on AI for Science",
+    "location": {
+      "address": "338 Gates Computer Science",
+      "postalCode": "CA 94305",
+      "city": "Stanford",
+      "countryCode": "US",
+      "region": "California"
+    },
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "StevenDillmann",
+        "url": "https://twitter.com/AlbertEinstein"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "Stanford University",
+      "location": "Stanford, CA",
+      "url": "https://stanford.edu/",
+      "logo": "/assets/img/logos/stanford_sblock.png",
+      "studyType": "PhD Computational Mathematics",
+      "startDate": "2024-09",
+      "endDate": "",
+      "score": "4.0+",
+      "thesis": "AI for Scientific Discovery",
+      "courses": []
+    },
+    {
+      "institution": "University of Cambridge, St John's College",
+      "location": "Cambridge, UK",
+      "url": "https://www.cam.ac.uk/",
+      "logo": "/assets/img/logos/cambridge_crest.png",
+      "studyType": "MPhil Data Intensive Science",
+      "startDate": "2023-10",
+      "endDate": "2024-07",
+      "score": "88% (Valedictorian)",
+      "thesis": "Deep Learning for the Detection of Gravitational Waves (97%)",
+      "thesisUrl": "https://www.researchgate.net/profile/Steven_Dillmann/publication/390393159_Fostering_Gravitational_Wave_Multi-messenger_Astronomy_Machine_Learning_for_the_Detection_of_Gravitational_Wave_Signals_from_Binary_Neutron_Star_Mergers/links/67ec3cbd03b8d7280e19ee5e/Fostering-Gravitational-Wave-Multi-messenger-Astronomy-Machine-Learning-for-the-Detection-of-Gravitational-Wave-Signals-from-Binary-Neutron-Star-Mergers.pdf",
+      "courses": []
+    },
+    {
+      "institution": "Imperial College London",
+      "location": "London, UK",
+      "url": "https://www.imperial.ac.uk/",
+      "logo": "/assets/img/logos/imperial_crest.png",
+      "studyType": "MEng Aeronautics with Spacecraft Engineering",
+      "startDate": "2022-10",
+      "endDate": "2023-07",
+      "score": "83% (Valedictorian)",
+      "thesis": "Representation Learning for X-ray Transient Discovery (90%)",
+      "thesisUrl": "https://www.researchgate.net/profile/Steven_Dillmann/publication/383982517_Data-Driven_Discovery_Machine_Learning_for_the_Detection_and_Characterization_of_X-ray_Transients/links/66e331c8b1606e24c2264a6f/Data-Driven-Discovery-Machine-Learning-for-the-Detection-and-Characterization-of-X-ray-Transients.pdf",
+      "courses": []
+    }
+  ],
+  "visiting": [
+    {
+      "institution": "Harvard University",
+      "location": "Cambridge, MA",
+      "summary": "Master's thesis research on `representation learning for X-ray transient discovery` as a visiting researcher at the Harvard-Smithsonian Center for Astrophysics",
+      "url": "https://www.harvard.edu/",
+      "logo": "/assets/img/logos/harvard_crest.png",
+      "studyType": "Visiting Researcher",
+      "startDate": "2023-01",
+      "endDate": "2023-07",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "Caltech",
+      "location": "Pasadena, CA",
+      "summary": "Summer intern research on `identifying Martian clouds with machine learning` as a visiting researcher at Caltech and NASA JPL",
+      "url": "https://www.caltech.edu/",
+      "logo": "/assets/img/logos/caltech.png",
+      "studyType": "Visiting Researcher",
+      "startDate": "2022-05",
+      "endDate": "2022-10",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "internships": [
+    {
+      "institution": "NASA Jet Propulsion Laboratory",
+      "location": "Pasadena, CA",
+      "url": "https://www.jpl.nasa.gov/",
+      "studyType": "Machine Learning Intern",
+      "startDate": "2022-05",
+      "endDate": "2022-10",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "Amazon",
+      "location": "Luxembourg",
+      "url": "https://amazon.com/",
+      "studyType": "Data Science Intern",
+      "startDate": "2022-01",
+      "endDate": "2022-05",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "Airbus Defence and Space",
+      "location": "Friedrichshafen, DE",
+      "url": "https://openai.com/",
+      "studyType": "Data Science Intern",
+      "startDate": "2022-01",
+      "endDate": "2022-05",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "European Space Agency (ESA)",
+      "location": "Noordwijk, NE",
+      "url": "https://www.esa.int/",
+      "studyType": "Machine Learning Intern",
+      "startDate": "2021-07",
+      "endDate": "2021-10",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "German Aerospace Center (DLR)",
+      "location": "Brunswick, DE",
+      "url": "https://www.dlr.de/",
+      "studyType": "Research and Development Intern",
+      "startDate": "2020-07",
+      "endDate": "2020-10",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "BMW Group",
+      "location": "Munich, DE",
+      "url": "https://www.bmw.com/",
+      "studyType": "Data Science Intern",
+      "startDate": "2019-07",
+      "endDate": "2019-09",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "reviewing": [
+    {
+      "title": "Program Committee Member",
+      "date": "2024-01",
+      "venue": "International Conference on Machine Learning (ICML)",
+      "url": "https://icml.cc/"
+    },
+    {
+      "title": "Reviewer",
+      "date": "2023-06",
+      "venue": "Neural Information Processing Systems (NeurIPS)",
+      "url": "https://neurips.cc/"
+    },
+    {
+      "title": "Reviewer",
+      "date": "2023-01",
+      "venue": "Journal of Machine Learning Research (JMLR)",
+      "url": "https://jmlr.org/"
+    }
+  ],
+  "work": [
+    {
+      "name": "Institute for Advanced Study, Princeton University",
+      "position": "Professor of Theoretical Physics",
+      "url": "https://example.com",
+      "startDate": "1933-01-01",
+      "endDate": "1955-01-01",
+      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
+      "highlights": ["Relativity"]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "People's Climate March",
+      "location": "Zurich, Switzerland",
+      "position": "Lead Organizer",
+      "url": "https://example.com",
+      "startDate": "2014-04-01",
+      "endDate": "2015-07-01",
+      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
+      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Stanford VPGE EDGE Fellowship",
+      "date": "2024",
+      "awarder": "Stanford University",
+      "url": "https://vpge.stanford.edu/fellowships-funding/EDGE"
+    },
+    {
+      "title": "Head of Department Award",
+      "date": "2023",
+      "awarder": "Imperial College London",
+      "url": "https://www.imperial.ac.uk/aeronautics/study/ug/current-students/undergraduate-prizes/",
+      "summary": "Graduating student of greatest overall merit in Aerospace Engineering at Imperial College London"
+    },
+    {
+      "title": "Best Computational Thesis Award",
+      "date": "2023",
+      "awarder": "Imperial College London, Department of Aeronautics",
+      "url": "https://www.imperial.ac.uk/aeronautics/study/ug/current-students/undergraduate-prizes/",
+      "summary": "Student of greatest merit in a computational Master's thesis in the Department of Aeronautics at Imperial College London"
+    },
+    {
+      "title": "Dean's List",
+      "date": "2018-2023",
+      "awarder": "Imperial College London, Department of Aeronautics",
+      "url": "https://www.imperial.ac.uk/aeronautics/study/ug/current-students/undergraduate-prizes/",
+      "summary": "Top 10% of students in the Department of Aeronautics at Imperial College London across all years"
+    },
+    {
+      "title": "Turing Scheme Award",
+      "date": "2023",
+      "awarder": "UK Government",
+      "url": "https://www.gov.uk/government/collections/turing-scheme",
+      "summary": "Master's thesis abroad and visiting research at Harvard University, funded by the UK government"
+    },
+    {
+      "title": "Engineers in Business Fellowship",
+      "date": "2023",
+      "awarder": "Engineers in Business Fellowship / Imperial Business School",
+      "url": "https://esbf.org.uk/",
+      "summary": "First prize (£1000) for the healthy food business idea 'OATOMAT' at the Imperial College Business School"
+    },
+    {
+      "title": "Engineering Leaders Scholarship",
+      "date": "2022",
+      "awarder": "Royal Academy of Engineering",
+      "url": "https://raeng.org.uk/programmes-and-prizes/programmes/uk-grants-and-prizes/support-for-education/engineering-leaders-scholarship/",
+      "summary": "Most prestigious UK engineering undergraduate scholarship for students who display the potential to become leaders and innovators in STEM, awarded by the Royal Academy of Engineering"
+    },
+    {
+      "title": "Bronze Excellence Award in Aeronautics",
+      "date": "2021",
+      "awarder": "Imperial College London, Department of Aeronautics",
+      "url": "https://www.imperial.ac.uk/aeronautics/study/ug/current-students/undergraduate-prizes/",
+      "summary": "Third best-performing student in Aerospace Engineering at Imperial College London in Year 3"
+    },
+    {
+      "title": "Silver Excellence Award in Aeronautics",
+      "date": "2021",
+      "awarder": "Imperial College London, Department of Aeronautics",
+      "url": "https://www.imperial.ac.uk/aeronautics/study/ug/current-students/undergraduate-prizes/",
+      "summary": "Second best-performing student in Aerospace Engineering at Imperial College London in Year 2"
+    },
+    {
+      "title": "Aeronautics Scholar",
+      "date": "2020",
+      "awarder": "Imperial College London, Department of Aeronautics",
+      "url": "",
+      "summary": "Excellent performance in Aerospace Engineering at Imperial College London across Year 1 and 2"
+    },
+    {
+      "title": "Ferry-Porsche-Preis",
+      "date": "2017",
+      "awarder": "Porsche AG & Baden-Württemberg Ministry of Culture, Youth and Sports",
+      "url": "https://newsroom.porsche.com/de/unternehmen/porsche-ferry-porsche-preis-2017-212-abiturienten-13754.html",
+      "summary": "Award to the top ~200 students of the German state of Baden-Württemberg in physics, mathematics, engineering, and computer science"
+    },
+    {
+      "title": "DMV Abitur Award",
+      "date": "2017",
+      "awarder": "German Mathematical Society",
+      "url": "https://www.mathematik.de/en",
+      "summary": "Best-performing graduating student of the high school in mathematics"
+    },
+    {
+      "title": "GDCh Abitur Award",
+      "date": "2017",
+      "awarder": "German Chemical Society",
+      "url": "https://en.gdch.de/gdch/prizes-and-awards/gdch-high-school-diploma.html",
+      "summary": "Best-performing graduating student of the high school in chemistry"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Machine Learning",
+      "date": "2018-01-01",
+      "issuer": "Stanford University",
+      "url": "https://example.com",
+      "icon": "fa-solid fa-location-dot"
+    },
+    {
+      "name": "Quantum Computing",
+      "date": "2018-01-01",
+      "issuer": "Stanford University",
+      "url": "https://example.com",
+      "icon": "fa-solid fa-tag"
+    },
+    {
+      "name": "Quantum Information",
+      "date": "2018-01-01",
+      "issuer": "Stanford University",
+      "url": "https://example.com",
+      "icon": "fa-solid fa-envelope"
+    },
+    {
+      "name": "Quantum Cryptography",
+      "date": "2018-01-01",
+      "issuer": "Stanford University",
+      "url": "https://example.com",
+      "icon": "fa-solid fa-hashtag"
+    },
+    {
+      "name": "Quantum Communication",
+      "date": "2018-01-01",
+      "issuer": "Stanford University",
+      "url": "https://example.com",
+      "icon": "fa-solid fa-calendar"
+    },
+    {
+      "name": "Quantum Teleportation",
+      "date": "2018-01-01",
+      "issuer": "Stanford University",
+      "url": "https://example.com",
+      "icon": "fa-solid fa-clipboard-check"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Zur Elektrody/namik bewegter Körper",
+      "publisher": "Annalen der Physik",
+      "releaseDate": "1905-06-30",
+      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
+      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
+    },
+    {
+      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
+      "publisher": "Annalen der Physik",
+      "releaseDate": "1905-03-18",
+      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
+      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
+    },
+    {
+      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
+      "publisher": "Annalen der Physik",
+      "releaseDate": "1916-03-20",
+      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
+      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Physics",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Quantum Mechanics",
+        "Quantum Computing",
+        "Quantum Information",
+        "Quantum Cryptography",
+        "Quantum Communication",
+        "Quantum Teleportation"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "German",
+      "fluency": "Native speaker",
+      "icon": ""
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent",
+      "icon": ""
+    }
+  ],
+  "interests": [
+    {
+      "name": "Physics",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "Quantum Mechanics",
+        "Quantum Computing",
+        "Quantum Information",
+        "Quantum Cryptography",
+        "Quantum Communication",
+        "Quantum Teleportation"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Professor John Doe",
+      "icon": "fa-solid fa-laptop",
+      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
+    },
+    {
+      "name": "Professor John Doe",
+      "icon": "fa-solid fa-thumbtack",
+      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Quantum Computing",
+      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
+      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
+      "startDate": "2018-01-01",
+      "endDate": "2018-01-01",
+      "url": "https://example.com"
+    }
+  ]
+}

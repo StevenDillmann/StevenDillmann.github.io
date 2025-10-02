@@ -28,6 +28,20 @@
         - Description 1.
         - Description 2.
 
+- title: Visiting
+  type: time_table
+  contents:
+    - title: Visiting Researcher
+      institution: Harvard University, Cambridge, MA
+      year: 2024 - Present
+      description:
+        - Description 1.
+        - Description 2.
+        - title: Description 3.
+          contents:
+            - Sub-description 1.
+            - Sub-description 2.
+
 - title: Experience
   type: time_table
   contents:

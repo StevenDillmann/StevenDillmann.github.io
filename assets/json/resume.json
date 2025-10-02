@@ -7,7 +7,7 @@
     "website": "https://stevendillmann.github.io/",
     "summary": "PhD Student at Stanford University working on AI for Science",
     "location": {
-      "address": "340 Gates Computer Science",
+      "address": "338 Gates Computer Science",
       "postalCode": "CA 94305",
       "city": "Stanford",
       "countryCode": "US",
@@ -21,6 +21,54 @@
       }
     ]
   },
+  "education": [
+    {
+      "institution": "Stanford University",
+      "location": "Stanford, CA",
+      "url": "https://stanford.edu/",
+      "logo": "/assets/img/logos/stanford_sblock.png",
+      "studyType": "PhD Computational Mathematics",
+      "startDate": "2024-09",
+      "endDate": "2029-06",
+      "score": "",
+      "courses": ["Machine Learning", "AI for Science", "Deep Learning"]
+    },
+    {
+      "institution": "University of Cambridge, St John's College",
+      "location": "Cambridge, UK",
+      "url": "https://www.cam.ac.uk/",
+      "logo": "/assets/img/logos/cambridge_crest.png",
+      "studyType": "MPhil Data Intensive Science",
+      "startDate": "2023-10",
+      "endDate": "2024-07",
+      "score": "",
+      "courses": ["Data Science", "Machine Learning", "Statistics"]
+    },
+    {
+      "institution": "Imperial College London",
+      "location": "London, UK",
+      "url": "https://www.imperial.ac.uk/",
+      "logo": "/assets/img/logos/imperial_crest.png",
+      "studyType": "MEng Aeronautics with Spacecraft Engineering",
+      "startDate": "2022-10",
+      "endDate": "2023-07",
+      "score": "",
+      "courses": ["Aerospace Engineering", "Machine Learning", "Statistics"]
+    }
+  ],
+  "visiting": [
+    {
+      "institution": "Harvard University",
+      "location": "Cambridge, MA",
+      "url": "https://www.harvard.edu/",
+      "logo": "/assets/img/logos/harvard_crest.png",
+      "studyType": "Visiting Researcher",
+      "startDate": "2024-09",
+      "endDate": "2029-06",
+      "score": "",
+      "courses": ["Machine Learning", "AI for Science", "Deep Learning"]
+    }
+  ],
   "work": [
     {
       "name": "Institute for Advanced Study, Princeton University",
@@ -44,19 +92,7 @@
       "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
     }
   ],
-  "education": [
-    {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
-    }
-  ],
+
   "awards": [
     {
       "title": "Nobel Prize in Physics",
