@@ -1,0 +1,48 @@
+name: Refresh Google Scholar citations
+
+on:
+  schedule:
+    - cron: '0 4 * * *' # every day at 04:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-citations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install --jobs 4 --retry 3
+
+      - name: Build site (refreshes Scholar cache)
+        env:
+          LANG: en_US.UTF-8
+          LC_ALL: en_US.UTF-8
+        run: bundle exec jekyll build
+
+      - name: Commit updated Scholar cache
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Only commit cache/data changes that affect citations rendering
+          if [ -n "$(git status --porcelain -- _cache/ _data/ | tr -d ' ')" ]; then
+            git add _cache/ _data/
+            git commit -m "chore: refresh Google Scholar cache [skip ci]"
+            git push
+          else
+            echo "No citation-related changes to commit."
+          fi
+
+
