@@ -76,3 +76,9 @@ scholar_userid: tzcJtSAAAAAJ # your Google Scholar ID
 #   url: https://www.alberteinstein.com/
 
 # Stanford profile (custom logo link)
+
+# Hugging Face profile
+# huggingface:
+#   logo: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
+#   title: Hugging Face
+#   url: https://huggingface.co/stevendillmann
