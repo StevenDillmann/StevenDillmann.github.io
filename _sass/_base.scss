@@ -595,6 +595,27 @@ footer.sticky-bottom {
 .post .clearfix {
   text-align: justify;
   margin-bottom: 2rem !important; // Add spacing after the about content
+  
+  // Fix numbered list alignment
+  ol {
+    padding-left: 1.5rem;
+    
+    li {
+      text-align: left !important;
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  // Style unordered lists with square bullets
+  ul {
+    list-style-type: square;
+    padding-left: 1.5rem;
+    
+    li {
+      text-align: left !important;
+      margin-bottom: 0.5rem;
+    }
+  }
 }
 
 // Full width sections (selected publications, news, etc.)

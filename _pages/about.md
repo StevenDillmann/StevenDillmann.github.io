@@ -31,9 +31,10 @@ latest_posts:
 <!-- #### About Me -->
 
 I am PhD student at [Stanford University](https://www.stanford.edu/) working on AI for Science, and am advised by [Sanmi Koyejo](https://cs.stanford.edu/~sanmi/) (Computer Science) and [Risa Wechsler](https://www.risawechsler.com/) (Physics). My current research interests are:
-1. multi-modal, data-based <a href="/publications/?keyword=foundation+models" class="research-interest">foundation models</a> for science
-2. developing AI <a href="/publications/?keyword=agents" class="research-interest">agents</a> for scientific discovery
-3. designing rigorous <a href="/publications/?keyword=evaluation" class="research-interest">evaluation</a> systems of LLMs and agents on scientific tasks
+
+* multi-modal, data-based <a href="/publications/?keyword=foundation+models" class="research-interest">foundation models</a> for science
+* developing AI <a href="/publications/?keyword=agents" class="research-interest">agents</a> for scientific discovery
+* designing rigorous <a href="/publications/?keyword=evaluation" class="research-interest">evaluation</a> systems of LLMs and agents on scientific tasks
 
 <!-- #### Education & Affiliations -->
 
