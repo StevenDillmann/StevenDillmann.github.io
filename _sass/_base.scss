@@ -595,6 +595,9 @@ footer.sticky-bottom {
 .post .clearfix {
   text-align: justify;
   margin-bottom: 2rem !important; // Add spacing after the about content
+  margin-left: 32% !important; // Position text box to the right of profile section
+  padding-left: 0rem !important; // Add padding inside the text box
+  padding-right: 0rem !important; // Add right padding
   
   // Fix numbered list alignment
   ol {
