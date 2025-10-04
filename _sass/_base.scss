@@ -409,23 +409,23 @@ ul.task-list input[type="checkbox"] {
   text-align: center;
 
   .contact-icons {
-    font-size: 4rem;
+    font-size: 2rem;
 
     a {
       img {
-        width: 3.2rem;
-        height: 3.2rem;
-        margin-bottom: 1rem;
+        width: 1.8rem;
+        height: 1.8rem;
+        margin-bottom: 0.5rem;
       }
 
       svg {
-        width: 3.5rem;
-        height: 4rem;
-        margin-bottom: 0.5rem;
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: 0.25rem;
 
         image {
-          width: 3.5rem;
-          height: 3.5rem;
+          width: 2rem;
+          height: 2rem;
         }
       }
 
@@ -589,6 +589,28 @@ footer.sticky-bottom {
   mjx-container[jax="CHTML"][display="true"] {
     display: unset;
   }
+}
+
+// About page text alignment
+.post .clearfix {
+  text-align: justify;
+}
+
+// Full width sections (selected publications, news, etc.)
+.full-width-section {
+  clear: both;
+  width: 120%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Ensure publications content spans full width within the content area
+.full-width-section .publications {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .post-list {
