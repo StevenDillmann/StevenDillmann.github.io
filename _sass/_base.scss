@@ -593,11 +593,24 @@ footer.sticky-bottom {
 
 // About page text alignment
 .post .clearfix {
-  text-align: justify;
+  text-align: justify !important;
   margin-bottom: 2rem !important; // Add spacing after the about content
   margin-left: 32% !important; // Position text box to the right of profile section
   padding-left: 0rem !important; // Add padding inside the text box
   padding-right: 0rem !important; // Add right padding
+  
+  // Ensure all text content is justified
+  p {
+    text-align: justify !important;
+  }
+  
+  ul {
+    text-align: justify !important;
+    
+    li {
+      text-align: justify !important;
+    }
+  }
 }
 
   
