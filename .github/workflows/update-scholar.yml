@@ -39,7 +39,7 @@ jobs:
           # Only commit cache/data changes that affect citations rendering
           if [ -n "$(git status --porcelain -- _cache/ _data/ | tr -d ' ')" ]; then
             git add _cache/ _data/
-            git commit -m "chore: refresh Google Scholar cache [skip ci]"
+            git commit -m "chore: refresh Google Scholar cache (main metrics + individual papers) [skip ci]"
             git push
           else
             echo "No citation-related changes to commit."
