@@ -199,6 +199,7 @@ ul.task-list input[type="checkbox"] {
     margin-bottom: 5px;
     margin-top: 5px;
     font-family: monospace;
+    text-align: center;
 
     p {
       display: inline-block;
@@ -217,7 +218,7 @@ ul.task-list input[type="checkbox"] {
 
 @media (min-width: 576px) {
   .profile {
-    width: 28%;
+    width: 32%; // Make image bigger (was 28%)
 
     .address {
       p {
@@ -227,11 +228,11 @@ ul.task-list input[type="checkbox"] {
   }
   
   .profile.float-left ~ .clearfix {
-    margin-left: calc(28% + 1rem);
+    margin-left: calc(32% + 1rem); // Adjust margin for bigger image
   }
   
   .profile.float-right ~ .clearfix {
-    margin-right: calc(28% + 1rem);
+    margin-right: calc(32% + 1rem); // Adjust margin for bigger image
   }
 }
 
@@ -595,7 +596,7 @@ footer.sticky-bottom {
 .post .clearfix {
   text-align: justify !important;
   margin-bottom: 2rem !important; // Add spacing after the about content
-  margin-left: 32% !important; // Position text box to the right of profile section
+  margin-left: 35% !important; // Position text box to the right of profile section (adjusted for bigger image)
   padding-left: 0rem !important; // Add padding inside the text box
   padding-right: 0rem !important; // Add right padding
   
@@ -624,43 +625,59 @@ footer.sticky-bottom {
     }
   }
 
-// Stanford profile icon theme adaptation
-// For dark theme, invert the black logo to make it white
-[data-theme="dark"] .social .contact-icons a[href*="profiles.stanford.edu"] svg {
-  filter: invert(1);
+
+
+
+
+
+// Stanford logo theme adaptation - change color based on theme
+[data-theme="dark"] .social .contact-icons a[href*="stanford.edu"] svg,
+.dark .social .contact-icons a[href*="stanford.edu"] svg,
+body.dark .social .contact-icons a[href*="stanford.edu"] svg,
+html[data-theme="dark"] .social .contact-icons a[href*="stanford.edu"] svg,
+.theme-dark .social .contact-icons a[href*="stanford.edu"] svg {
+  filter: invert(1) !important;
 }
 
-// Fix Stanford logo alignment
-.social .contact-icons a[href*="profiles.stanford.edu"] svg {
-  vertical-align: middle !important;
-}
-
-
-
-
-// Social media icons layout - 2 rows of 4 icons each
+// Social media icons layout - constrained to image width
 .social .contact-icons {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   width: 100%;
+  justify-content: center;
+  max-width: 100%; // Constrain to parent container width
 }
 
 .social .contact-icons a {
-  flex: 0 0 25%; // Each icon takes 25% width (4 per row)
-  max-width: 25%;
+  flex: 1; // Equal distribution of space
   text-align: center;
-  margin-bottom: 0.5rem;
-  font-size: 2.5rem !important; // Make Font Awesome icons bigger
+  margin: 0 0.05rem; // Much closer together
+  font-size: 2rem !important; // Bigger Font Awesome icons
   
-  // Make SVG icons bigger too
-  svg, img {
-    width: 2.5rem !important;
-    height: 2.5rem !important;
+  // Make ALL icons (SVG, img, Font Awesome) the same size
+  svg, img, i {
+    width: 2rem !important;
+    height: 2rem !important;
+    font-size: 2rem !important;
+    max-width: 2rem !important;
+    max-height: 2rem !important;
   }
   
-  // Make Font Awesome icons bigger
-  i {
-    font-size: 2.5rem !important;
+  // Handle custom SVG logos (they use <image> inside <svg>)
+  svg image {
+    width: 2rem !important;
+    height: 2rem !important;
+    max-width: 2rem !important;
+    max-height: 2rem !important;
+  }
+  
+  // Ensure custom logos respect the size constraints
+  img[src*="stanford"], img[src*="logos"] {
+    width: 2rem !important;
+    height: 2rem !important;
+    max-width: 2rem !important;
+    max-height: 2rem !important;
+    object-fit: contain !important;
   }
 }
 
