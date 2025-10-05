@@ -46,6 +46,13 @@ ninja.data = [{
           
         },
       },{
+        id: 'social-stanford_profile',
+        title: 'Stanford_profile',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://profiles.stanford.edu/steven-dillmann", "_blank");
+        },
+      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
@@ -72,13 +79,6 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("", "_blank");
-        },
-      },{
-        id: 'social-stanford_profile',
-        title: 'Stanford_profile',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://profiles.stanford.edu/steven-dillmann", "_blank");
         },
       },{
         id: 'social-github',
