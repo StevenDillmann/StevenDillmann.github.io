@@ -23,6 +23,13 @@ email: stevendi@stanford.edu # your email address
 linkedin_username: stevendillmann # your LinkedIn user name
 x_username: DillmannSteven # your X handle
 letterboxd_username: stevendi # your Letterboxd username
+
+# Stanford profile (custom logo link)
+stanford_profile:
+  logo: assets/img/logos/stanford_black.svg
+  title: Stanford Profile
+  url: https://profiles.stanford.edu/steven-dillmann
+  
 github_username: StevenDillmann # your GitHub user name
 orcid_id: 0000-0002-4773-1463 # your ORCID ID
 scholar_userid: tzcJtSAAAAAJ # your Google Scholar ID
@@ -75,7 +82,7 @@ scholar_userid: tzcJtSAAAAAJ # your Google Scholar ID
 #   title: Custom Social
 #   url: https://www.alberteinstein.com/
 
-# Stanford profile (custom logo link)
+
 
 # Hugging Face profile
 # huggingface:
