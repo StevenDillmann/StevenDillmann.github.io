@@ -639,8 +639,8 @@ jsonresume:
   - education
   - visiting
   - internships
+  - academic_service
   - awards
-  # - reviewing
   # - publications
   # - projects
   # - volunteer

@@ -55,7 +55,7 @@
       "studyType": "MEng Aeronautics with Spacecraft Engineering",
       "startDate": "2022-10",
       "endDate": "2023-07",
-      "score": "83% (Valedictorian)",
+      "score": "83% (Valedictorian), Dean's List 2019-2023",
       "thesis": "Representation Learning for X-ray Transient Discovery (90%)",
       "thesisUrl": "https://www.researchgate.net/profile/Steven_Dillmann/publication/383982517_Data-Driven_Discovery_Machine_Learning_for_the_Detection_and_Characterization_of_X-ray_Transients/links/66e331c8b1606e24c2264a6f/Data-Driven-Discovery-Machine-Learning-for-the-Detection-and-Characterization-of-X-ray-Transients.pdf",
       "courses": []
@@ -192,6 +192,23 @@
       "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
     }
   ],
+  "academic_service": [
+    {
+      "year": "2025",
+      "conferences": [
+        {
+          "name": "Open Conference of AI Agents for Science 2025",
+          "url": "https://agents4science.stanford.edu/"
+        }
+      ],
+      "workshops": [
+        {
+          "name": "Machine Learning and the Physical Sciences (NeurIPS 2025 Workshop)",
+          "url": "https://ml4physicalsciences.github.io/2025/"
+        }
+      ]
+    }
+  ],
   "awards": [
     {
       "title": "Stanford VPGE EDGE Fellowship",
@@ -212,13 +229,6 @@
       "awarder": "Imperial College London, Department of Aeronautics",
       "url": "https://www.imperial.ac.uk/aeronautics/study/ug/current-students/undergraduate-prizes/",
       "summary": "Student of greatest merit in a computational Master's thesis in the Department of Aeronautics at Imperial College London"
-    },
-    {
-      "title": "Dean's List",
-      "date": "2018-2023",
-      "awarder": "Imperial College London, Department of Aeronautics",
-      "url": "https://www.imperial.ac.uk/aeronautics/study/ug/current-students/undergraduate-prizes/",
-      "summary": "Top 10% of students in the Department of Aeronautics at Imperial College London across all years"
     },
     {
       "title": "Turing Scheme Award",

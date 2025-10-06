@@ -1,0 +1,33 @@
+<ul class="card-text font-weight-light list-group list-group-flush">
+  {% for year_data in data[1] %}
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-xs-2 cl-sm-2 col-md-2 text-center date-column">
+          <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">{{ year_data.year }}</span>
+        </div>
+        <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
+          {% if year_data.conferences %}
+            <h6 class="title font-weight-bold ml-1 ml-md-4">Conferences</h6>
+            <div class="ml-1 ml-md-4" style="font-size: 0.95rem; margin-bottom: 0.5rem;">
+              {% for conference in year_data.conferences %}
+                <div style="margin-bottom: 0.25rem;">
+                  <a href="{{ conference.url }}" target="_blank" rel="noopener noreferrer">{{ conference.name }}</a>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+          {% if year_data.workshops %}
+            <h6 class="title font-weight-bold ml-1 ml-md-4">Workshops</h6>
+            <div class="ml-1 ml-md-4" style="font-size: 0.95rem; margin-bottom: 0;">
+              {% for workshop in year_data.workshops %}
+                <div style="margin-bottom: 0.25rem;">
+                  <a href="{{ workshop.url }}" target="_blank" rel="noopener noreferrer">{{ workshop.name }}</a>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+</ul>

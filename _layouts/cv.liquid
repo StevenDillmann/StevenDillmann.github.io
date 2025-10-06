@@ -93,7 +93,7 @@ layout: default
                 Visiting Research
               {% elsif data[0] == 'internships' %}
                 Internships
-              {% elsif data[0] == 'reviewing' %}
+              {% elsif data[0] == 'academic_service' %}
                 Academic Service
               {% else %}
                 {{ data[0] | capitalize }}
@@ -129,8 +129,8 @@ layout: default
                   {% include resume/visiting.liquid %}
                 {% when 'internships' %}
                   {% include resume/internships.liquid %}
-                {% when 'reviewing' %}
-                  {% include resume/reviewing.liquid %}
+                {% when 'academic_service' %}
+                  {% include resume/academic_service.liquid %}
                 {% else %}
 
               {% endcase %}
