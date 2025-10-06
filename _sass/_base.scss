@@ -940,6 +940,14 @@ html[data-theme="dark"] .social .contact-icons a[href*="stanford.edu"] svg,
             text-decoration: underline;
           }
         }
+        a {
+          display: inline-block;
+          margin-right: 0.5rem;
+          vertical-align: middle;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
       }
 
       .hidden {
