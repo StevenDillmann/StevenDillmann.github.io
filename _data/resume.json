@@ -197,14 +197,12 @@
       "year": "2025",
       "conferences": [
         {
-          "name": "Reviewer for Open Conference of AI Agents for Science 2025",
-          "url": "https://agents4science.stanford.edu/"
+          "name": "Reviewer for [Open Conference of AI Agents for Science 2025](https://agents4science.stanford.edu/)"
         }
       ],
       "workshops": [
         {
-          "name": "Reviewer for Machine Learning and the Physical Sciences (NeurIPS 2025 Workshop)",
-          "url": "https://ml4physicalsciences.github.io/2025/"
+          "name": "Reviewer for [Machine Learning and the Physical Sciences (NeurIPS 2025 Workshop)](https://ml4physicalsciences.github.io/2025/)"
         }
       ]
     }
