@@ -39,6 +39,22 @@ module Jekyll
         end
       end
 
+      # Validate and fix any invalid timestamps (e.g., future dates)
+      if metrics && metrics['fetched_at']
+        begin
+          parsed_time = Time.parse(metrics['fetched_at'])
+          # If timestamp is in the future, update it to now
+          if parsed_time > Time.now + 3600 # Allow 1 hour tolerance
+            metrics['fetched_at'] = Time.now.utc.iso8601
+            write_cache(cache_file, metrics) # Update the cache file
+          end
+        rescue
+          # If timestamp is invalid, update it to now
+          metrics['fetched_at'] = Time.now.utc.iso8601
+          write_cache(cache_file, metrics)
+        end
+      end
+
       # Expose to templates as site.data.scholar_metrics
       site.data['scholar_metrics'] = metrics || { 'citations' => 'N/A', 'h_index' => 'N/A', 'i10_index' => 'N/A', 'per_year' => [], 'fetched_at' => nil }
     end
@@ -58,11 +74,31 @@ module Jekyll
 
     def read_fresh_cache(cache_file)
       return nil unless File.exist?(cache_file)
-      return nil if (Time.now - File.mtime(cache_file)) >= CACHE_TTL_SECONDS
+      
       begin
+        # Check file modification time
+        file_mtime = File.mtime(cache_file)
+        cache_age = Time.now - file_mtime
+        
+        # If cache is too old, return nil to force refresh
+        return nil if cache_age >= CACHE_TTL_SECONDS
+        
         data = JSON.parse(File.read(cache_file))
+        
+        # Validate fetched_at timestamp
+        if data['fetched_at']
+          begin
+            fetched_time = Time.parse(data['fetched_at'])
+            # If the fetched_at time is too old or invalid, return nil
+            return nil if (Time.now - fetched_time) >= CACHE_TTL_SECONDS
+          rescue
+            # If timestamp is invalid, return nil to force refresh
+            return nil
+          end
+        end
+        
         # Backfill fetched_at if missing
-        data['fetched_at'] ||= File.mtime(cache_file).utc.iso8601
+        data['fetched_at'] ||= file_mtime.utc.iso8601
         data
       rescue
         nil
