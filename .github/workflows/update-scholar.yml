@@ -3,10 +3,8 @@ name: Refresh Google Scholar citations
 
 on:
   schedule:
-    - cron: '0 4 * * *' # every day at 04:00 UTC
+    - cron: '0 2 * * *' # every day at 02:00 UTC (before pages deployment at 03:00)
   workflow_dispatch: {}
-  push:
-    branches: [ main ]
 
 permissions:
   contents: write
