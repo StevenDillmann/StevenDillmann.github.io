@@ -1,8 +1,6 @@
 require "active_support/all"
 require 'nokogiri'
 require 'open-uri'
-require 'json'
-require 'fileutils'
 
 module Helpers
   extend ActiveSupport::NumberHelper
@@ -11,7 +9,6 @@ end
 module Jekyll
   class GoogleScholarCitationsTag < Liquid::Tag
     Citations = { }
-    CACHE_TTL_SECONDS = 24 * 60 * 60  # 24 hours
 
     def initialize(tag_name, params, tokens)
       super
@@ -33,18 +30,12 @@ module Jekyll
       scholar_id = context[@scholar_id.strip]
       article_url = "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=#{scholar_id}&citation_for_view=#{scholar_id}:#{article_id}"
 
-      # Check persistent cache first
-      cached_count = read_from_cache(article_id)
-      if cached_count
-        return cached_count
-      end
-
-      # Check in-memory cache
-      if GoogleScholarCitationsTag::Citations[article_id]
-        return GoogleScholarCitationsTag::Citations[article_id]
-      end
-
       begin
+          # If the citation count has already been fetched, return it
+          if GoogleScholarCitationsTag::Citations[article_id]
+            return GoogleScholarCitationsTag::Citations[article_id]
+          end
+
           # Sleep for a random amount of time to avoid being blocked
           sleep(rand(1.5..3.5))
 
@@ -85,47 +76,8 @@ module Jekyll
         puts "Error fetching citation count for #{article_id} in #{article_url}: #{e.class} - #{e.message}"
       end
 
-      # Store in both caches
       GoogleScholarCitationsTag::Citations[article_id] = citation_count
-      write_to_cache(article_id, citation_count)
-      
       return "#{citation_count}"
-    end
-
-    private
-
-    def cache_file_path(article_id)
-      File.join("_cache", "paper_citations_#{article_id}.json")
-    end
-
-    def read_from_cache(article_id)
-      cache_file = cache_file_path(article_id)
-      return nil unless File.exist?(cache_file)
-      
-      begin
-        # Check if cache is still valid (within 24 hours)
-        return nil if (Time.now - File.mtime(cache_file)) >= CACHE_TTL_SECONDS
-        
-        data = JSON.parse(File.read(cache_file))
-        return data['citation_count']
-      rescue
-        nil
-      end
-    end
-
-    def write_to_cache(article_id, citation_count)
-      cache_file = cache_file_path(article_id)
-      FileUtils.mkdir_p(File.dirname(cache_file))
-      
-      begin
-        data = {
-          'citation_count' => citation_count,
-          'cached_at' => Time.now.utc.iso8601
-        }
-        File.write(cache_file, data.to_json)
-      rescue => e
-        puts "Error writing cache for #{article_id}: #{e.message}"
-      end
     end
   end
 end

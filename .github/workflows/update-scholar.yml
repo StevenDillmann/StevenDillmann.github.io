@@ -2,13 +2,8 @@ name: Refresh Google Scholar citations
 
 on:
   schedule:
-    - cron: '0 2 * * *' # every day at 02:00 UTC (before site deployment)
+    - cron: '0 4 * * *' # every day at 04:00 UTC
   workflow_dispatch: {}
-  push:
-    branches: [ main ]
-    paths:
-      - '_plugins/google-scholar*.rb'
-      - '.github/workflows/update-scholar.yml'
 
 permissions:
   contents: write
@@ -21,7 +16,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -29,48 +23,24 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential libffi-dev libxml2-dev libxslt1-dev pkg-config
-
       - name: Install dependencies
         run: bundle install --jobs 4 --retry 3
-
-      - name: Clear old cache
-        run: |
-          rm -rf _cache/scholar_*.json
-          rm -rf _cache/paper_citations_*.json
 
       - name: Build site (refreshes Scholar cache)
         env:
           LANG: en_US.UTF-8
           LC_ALL: en_US.UTF-8
-          JEKYLL_ENV: production
         run: bundle exec jekyll build
 
-      - name: Check for changes
-        id: check-changes
-        run: |
-          if [ -n "$(git status --porcelain -- _cache/ _data/ | tr -d ' ')" ]; then
-            echo "changes=true" >> $GITHUB_OUTPUT
-          else
-            echo "changes=false" >> $GITHUB_OUTPUT
-          fi
-
       - name: Commit updated Scholar cache
-        if: steps.check-changes.outputs.changes == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _cache/ _data/
-          git commit -m "chore: refresh Google Scholar cache (main metrics + individual papers) [skip ci]"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: No changes message
-        if: steps.check-changes.outputs.changes == 'false'
-        run: echo "No citation-related changes to commit."
-
-
+          # Only commit cache/data changes that affect citations rendering
+          if [ -n "$(git status --porcelain -- _cache/ _data/ | tr -d ' ')" ]; then
+            git add _cache/ _data/
+            git commit -m "chore: refresh Google Scholar cache [skip ci]"
+            git push
+          else
+            echo "No citation-related changes to commit."
+          fi
