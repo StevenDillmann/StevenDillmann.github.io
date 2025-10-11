@@ -43,12 +43,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
-          # Check if there are any changes in cache or data directories
-          if git diff --quiet -- _cache/ _data/; then
+          # Add cache and data directories
+          git add _cache/ _data/
+          
+          # Check if there are any staged changes
+          if git diff --staged --quiet; then
             echo "No citation-related changes to commit."
           else
             echo "Changes detected, committing..."
-            git add _cache/ _data/
             git commit -m "chore: refresh Google Scholar cache [skip ci]"
             git push
             echo "Successfully committed and pushed changes."
