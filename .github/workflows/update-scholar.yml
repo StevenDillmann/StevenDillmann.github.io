@@ -1,4 +1,5 @@
 name: Refresh Google Scholar citations
+# Triggered manually to fix citation display
 
 on:
   schedule:
