@@ -5,6 +5,8 @@ on:
   schedule:
     - cron: '0 4 * * *' # every day at 04:00 UTC
   workflow_dispatch: {}
+  push:
+    branches: [ main ]
 
 permissions:
   contents: write
