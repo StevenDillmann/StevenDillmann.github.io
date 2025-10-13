@@ -20,13 +20,16 @@ module Jekyll
 
       metrics = read_fresh_cache(cache_file)
       unless metrics
+        # Try to fetch new data
         fetched = fetch_metrics_from_scholar(scholar_id)
         if fetched && metrics_valid?(fetched)
           fetched['fetched_at'] = Time.now.utc.iso8601
           write_cache(cache_file, fetched)
           metrics = fetched
         else
-          metrics = nil
+          # If fetch failed, try to use stale cache as fallback
+          metrics = read_stale_cache(cache_file)
+          puts "Warning: Failed to fetch fresh Scholar data, using stale cache" if metrics
         end
       end
 
@@ -64,6 +67,19 @@ module Jekyll
         # Backfill fetched_at if missing
         data['fetched_at'] ||= File.mtime(cache_file).utc.iso8601
         data
+      rescue
+        nil
+      end
+    end
+
+    def read_stale_cache(cache_file)
+      # Read cache regardless of age, as fallback when fetch fails
+      return nil unless File.exist?(cache_file)
+      begin
+        data = JSON.parse(File.read(cache_file))
+        data['fetched_at'] ||= File.mtime(cache_file).utc.iso8601
+        # Only return if data is valid
+        metrics_valid?(data) ? data : nil
       rescue
         nil
       end

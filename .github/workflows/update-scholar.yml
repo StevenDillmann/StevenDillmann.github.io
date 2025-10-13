@@ -24,13 +24,10 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
-      - name: Install dependencies
-        run: bundle install --jobs 4 --retry 3
+            - name: Install dependencies
+              run: bundle install --jobs 4 --retry 3
 
-      - name: Clear old cache
-        run: rm -rf _cache/scholar_*.json _cache/paper_citations_*.json
-
-      - name: Build site (refreshes Scholar cache)
+            - name: Build site (refreshes Scholar cache)
         env:
           LANG: en_US.UTF-8
           LC_ALL: en_US.UTF-8
