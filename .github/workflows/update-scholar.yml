@@ -1,9 +1,9 @@
 name: Refresh Google Scholar citations
-# Triggered manually to fix citation display
+# Runs every 3 days to balance freshness and rate limiting
 
 on:
   schedule:
-    - cron: '0 2 * * *' # every day at 02:00 UTC (before pages deployment at 03:00)
+    - cron: '0 2 */3 * *' # every 3 days at 02:00 UTC
   workflow_dispatch: {}
 
 permissions:

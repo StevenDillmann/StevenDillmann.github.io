@@ -9,7 +9,7 @@ module Jekyll
     safe true
     priority :low
 
-    CACHE_TTL_SECONDS = 24 * 60 * 60
+    CACHE_TTL_SECONDS = 3 * 24 * 60 * 60 # 3 days
 
     def generate(site)
       scholar_id = resolve_scholar_id(site)
