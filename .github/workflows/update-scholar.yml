@@ -1,9 +1,7 @@
 name: Refresh Google Scholar citations
-# Runs every 3 days to balance freshness and rate limiting
+# Manual trigger only - update whenever you want, complete control over timing
 
 on:
-  schedule:
-    - cron: '0 2 */3 * *' # every 3 days at 02:00 UTC
   workflow_dispatch: {}
 
 permissions:
