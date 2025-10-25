@@ -42,7 +42,10 @@ I am affiliated with [Stanford AI Lab](https://ai.stanford.edu/), [Stanford ICME
 
 <!-- #### Collaborators -->
 
-Faculty at Stanford that I've worked with include [Susan Clark](https://clarkgroup.stanford.edu/index.html#me), [Surya Ganguli](https://ganguli-gang.stanford.edu/surya.html), [Tina Hernandez-Boussard](https://med.stanford.edu/profiles/tina-hernandez-boussard), [Brian Hie](https://brianhie.com/), [Sanmi Koyejo](https://cs.stanford.edu/~sanmi/), [Phil Marshall](https://kipac.stanford.edu/people/phil-marshall), [Ludwig Schmidt](https://people.csail.mit.edu/ludwigs/), [Risa Wechsler](https://www.risawechsler.com/who.html), [Diyi Yang](https://cs.stanford.edu/~diyiy/), [James Zou](https://www.james-zou.com/).
+Faculty at Stanford that I've worked with include [Surya Ganguli](https://ganguli-gang.stanford.edu/surya.html), [Tina Hernandez-Boussard](https://med.stanford.edu/profiles/tina-hernandez-boussard), [Brian Hie](https://brianhie.com/), [Sanmi Koyejo](https://cs.stanford.edu/~sanmi/), [Phil Marshall](https://kipac.stanford.edu/people/phil-marshall), [Ludwig Schmidt](https://people.csail.mit.edu/ludwigs/), [Risa Wechsler](https://www.risawechsler.com/who.html), [Diyi Yang](https://cs.stanford.edu/~diyiy/).
+
+<!-- [Susan Clark](https://clarkgroup.stanford.edu/index.html#me), -->
+<!-- [James Zou](https://www.james-zou.com/). -->
 
 <!-- ## Personal Interests -->
 
