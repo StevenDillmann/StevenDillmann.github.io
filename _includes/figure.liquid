@@ -73,6 +73,10 @@
       {% endif %}
       {% if include.loading %}
         loading="{{ include.loading }}"
+        {% if include.loading == "eager" %}
+          fetchpriority="high"
+          decoding="sync"
+        {% endif %}
       {% elsif site.lazy_loading_images %}
         loading="lazy"
       {% endif %}

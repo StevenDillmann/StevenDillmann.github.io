@@ -187,3 +187,9 @@
 {% if page.tikzjax %}
   <link defer rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
 {% endif %}
+
+{% if page.profile and page.profile.image %}
+  <!-- Preload profile image for faster display -->
+  {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+  <link rel="preload" as="image" href="{{ profile_image_path | relative_url | bust_file_cache }}" fetchpriority="high">
+{% endif %}

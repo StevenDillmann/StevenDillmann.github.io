@@ -18,10 +18,20 @@
           {% endif %}
           {% if year_data.workshops %}
             <h6 class="title font-weight-bold ml-1 ml-md-4">Workshops</h6>
-            <div class="ml-1 ml-md-4" style="font-size: 0.95rem; margin-bottom: 0;">
+            <div class="ml-1 ml-md-4" style="font-size: 0.95rem; margin-bottom: 0.5rem;">
               {% for workshop in year_data.workshops %}
                 <div style="margin-bottom: 0.25rem;">
                   {{ workshop.name | markdownify }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+          {% if year_data.journals %}
+            <h6 class="title font-weight-bold ml-1 ml-md-4">Journals</h6>
+            <div class="ml-1 ml-md-4" style="font-size: 0.95rem; margin-bottom: 0;">
+              {% for journal in year_data.journals %}
+                <div style="margin-bottom: 0.25rem;">
+                  {{ journal.name | markdownify }}
                 </div>
               {% endfor %}
             </div>

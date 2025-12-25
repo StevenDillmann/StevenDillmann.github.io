@@ -53,7 +53,7 @@
       "url": "https://www.imperial.ac.uk/",
       "logo": "/assets/img/logos/imperial_crest.png",
       "studyType": "MEng Aeronautics with Spacecraft Engineering",
-      "startDate": "2022-10",
+      "startDate": "2018-10",
       "endDate": "2023-07",
       "score": "83% (Valedictorian), Dean's List 2019-2023",
       "thesis": "Representation Learning for X-ray Transient Discovery (90%)",
@@ -81,7 +81,7 @@
       "url": "https://www.caltech.edu/",
       "logo": "/assets/img/logos/caltech.png",
       "studyType": "Visiting Researcher",
-      "startDate": "2022-05",
+      "startDate": "2022-06",
       "endDate": "2022-10",
       "score": "",
       "courses": []
@@ -93,7 +93,7 @@
       "location": "Pasadena, CA",
       "url": "https://www.jpl.nasa.gov/",
       "studyType": "Machine Learning Intern",
-      "startDate": "2022-05",
+      "startDate": "2022-06",
       "endDate": "2022-10",
       "score": "",
       "courses": []
@@ -102,16 +102,6 @@
       "institution": "Amazon",
       "location": "Luxembourg",
       "url": "https://amazon.com/",
-      "studyType": "Data Science Intern",
-      "startDate": "2022-01",
-      "endDate": "2022-05",
-      "score": "",
-      "courses": []
-    },
-    {
-      "institution": "Airbus Defence and Space",
-      "location": "Friedrichshafen, DE",
-      "url": "https://openai.com/",
       "studyType": "Data Science Intern",
       "startDate": "2022-01",
       "endDate": "2022-05",
@@ -203,6 +193,11 @@
       "workshops": [
         {
           "name": "Reviewer for [Machine Learning and the Physical Sciences (NeurIPS 2025 Workshop)](https://ml4physicalsciences.github.io/2025/)"
+        }
+      ],
+      "journals": [
+        {
+          "name": "Reviewer for [Astronomy & Computing](https://www.sciencedirect.com/journal/astronomy-and-computing)"
         }
       ]
     }
