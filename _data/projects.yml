@@ -1,0 +1,20 @@
+# Projects page: one box per project, linking to the project's website.
+# Order here = order on the page. Optional: links (list of { label, url }) for extra small links.
+- title: Terminal-Bench-Science
+  description: Benchmark for AI agents on real research workflows across scientific domains (lead).
+  url: https://www.terminal-bench-science.ai/
+- title: Terminal-Bench
+  description: Benchmarking agents on hard, realistic tasks in command line interfaces.
+  url: https://www.tbench.ai/
+- title: Harbor
+  description: Framework for evaluating and optimizing agents and models in containers.
+  url: https://www.harborframework.com/
+- title: Harbor Index & Adapters
+  description: Curated meta-dataset and adapters for large-scale agentic evaluation.
+  url: https://hub.harborframework.com/
+- title: Evo 2
+  description: Genome modelling and design across all domains of life.
+  url: https://arcinstitute.org/tools/evo
+- title: OpenThoughts-Agent
+  description: Data recipes for training agentic models.
+  url: https://www.openthoughts.ai/blog/agent
