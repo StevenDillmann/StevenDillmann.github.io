@@ -32,8 +32,10 @@
     {% if page.title == null or page.title == '' %}
       {{ page.date | date: '%Y' }} | {{ title }}
     {% else %}
-      {{ page.title }} | {{ title }}
+      {{ page.title | upcase }} | {{ title }}
     {% endif %}
+  {% elsif page.url == '/' %}
+    {{ page.title | default: 'about' | upcase }} | {{ title }}
   {% else %}
     {{ title }}
   {% endif %}

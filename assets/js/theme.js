@@ -12,20 +12,30 @@ let toggleThemeSetting = () => {
   }
 };
 
+// Like next-themes (used by terminal-bench-science.ai): switch instantly by disabling every
+// transition while the theme flips, so hover fades don't animate the color change.
+let withoutTransitions = (fn) => {
+  const style = document.createElement("style");
+  style.appendChild(document.createTextNode("*,*::before,*::after{transition:none!important}"));
+  document.head.appendChild(style);
+  fn();
+  window.getComputedStyle(document.documentElement).color; // force the new colors to apply before re-enabling
+  setTimeout(() => document.head.removeChild(style), 1);
+};
+
 // Change the theme setting and apply the theme.
 let setThemeSetting = (themeSetting) => {
   localStorage.setItem("theme", themeSetting);
 
   document.documentElement.setAttribute("data-theme-setting", themeSetting);
 
-  applyTheme();
+  withoutTransitions(applyTheme);
 };
 
 // Apply the computed dark or light theme to the website.
 let applyTheme = () => {
   let theme = determineComputedTheme();
 
-  transTheme();
   setHighlight(theme);
   setGiscusTheme(theme);
   setSearchTheme(theme);
@@ -251,15 +261,8 @@ let transTheme = () => {
   }, 500);
 };
 
-// Determine the expected state of the theme toggle, which can be "dark" or "light".
-// Default is "dark" (no system mode).
-let determineThemeSetting = () => {
-  let themeSetting = localStorage.getItem("theme");
-  if (themeSetting != "dark" && themeSetting != "light") {
-    themeSetting = "dark";
-  }
-  return themeSetting;
-};
+// The site is dark-only: always use the dark theme, ignoring any saved "light" choice.
+let determineThemeSetting = () => "dark";
 
 // Determine the computed theme, which can be "dark" or "light".
 let determineComputedTheme = () => {
@@ -275,6 +278,7 @@ let initTheme = () => {
   // Add event listener to the theme toggle button.
   document.addEventListener("DOMContentLoaded", function () {
     const mode_toggle = document.getElementById("light-toggle");
+    if (!mode_toggle) return; // no toggle in the dark-only navbar
 
     mode_toggle.addEventListener("click", function () {
       toggleThemeSetting();

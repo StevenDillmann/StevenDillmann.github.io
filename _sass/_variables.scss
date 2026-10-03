@@ -44,10 +44,37 @@ $stanford-stone-dark: #544948;
 $stanford-stone-light: #D4D1D1;
 $stanford-archway-dark: #2F2424;
 
+// Terminal-Bench-Science palette (zinc greys + teal accent)
+$tbsci-teal: #038f99;
+$tbsci-teal-ivory: #02727a; // light-mode accent: TB-Science teal darkened for contrast on ivory
+$vesper-peach: #ffc799; // accent in dark mode (Cursor Vesper theme)
+// Light surfaces: Nature "stone" palette (naturestone1/2) with Anthropic's slate text
+$stone-1: #f6f3ec; // page background (naturestone1)
+$stone-card: #fbf9f5; // cards, a touch lighter than the page
+$stone-footer: #eeeae0; // footer and code blocks, between stone-1 and stone-2
+$stone-2: #e0dbc7; // dividers and borders (naturestone2)
+$anthropic-slate: #141413; // text
+$stone-muted: #63625c; // secondary text, warm grey readable on stone-1
+
+// Dark surfaces from the Cursor setup (Vesper ++ with editor/sidebar overrides)
+$cursor-editor-bg: #1e1e1e; // page background
+$cursor-sidebar-bg: #252526; // cards, code blocks
+$vesper-bg: #101010; // footer
+$cursor-divider: #333336; // dividers and borders on $cursor-editor-bg
+$zinc-50: #fafafa;
+$zinc-100: #f4f4f5;
+$zinc-200: #e4e4e7;
+$zinc-400: #9f9fa9;
+$zinc-500: #71717b;
+$zinc-750: #2e2e33; // dividers on the zinc-900 dark background
+$zinc-800: #27272a;
+$zinc-900: #18181b;
+$zinc-950: #09090b;
+
 // Theme colors
 
-$code-bg-color-light: #D4D1D1;
-$code-bg-color-dark: #2c3237 !default;
+$code-bg-color-light: $zinc-100;
+$code-bg-color-dark: $zinc-800 !default;
 
 
 // Font awesome location

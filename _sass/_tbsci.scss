@@ -1,0 +1,709 @@
+/*******************************************************************************
+ * Site typography: Geist for text; Outfit for the name (heavy) and for navigation and
+ * headings (medium); uppercase navigation and titles
+ ******************************************************************************/
+
+$tbsci-font: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+$title-font: "Outfit", $tbsci-font;
+$tbsci-code-font: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+body,
+.btn,
+.dropdown-menu,
+footer {
+  font-family: $tbsci-font;
+}
+
+// Navigation, page titles and section headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar {
+  font-family: $title-font;
+  font-weight: 500;
+}
+
+// The name (homepage title and navbar brand): one heavy weight throughout
+.name-title,
+.navbar.navbar-light .navbar-brand {
+  font-family: $title-font;
+  font-weight: 700 !important;
+
+  .font-weight-bold {
+    font-weight: inherit !important;
+  }
+}
+
+code,
+pre {
+  font-family: $tbsci-code-font;
+}
+
+// Links in running text: main text color with an underline (like TB-Science), teal only on hover
+article p a:not(.pub-filter),
+.post p a:not(.pub-filter),
+.post-content p a:not(.pub-filter),
+.news-text a {
+  color: var(--global-text-color);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--global-text-color) 40%, transparent);
+  text-underline-offset: 3px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+
+  &:hover {
+    color: var(--global-theme-color);
+    text-decoration-color: var(--global-theme-color);
+  }
+}
+
+// Paragraphs match TB-Science's markdown prose: 16px / 1.75, justified, 90% foreground
+article p,
+.post p,
+.post-content p {
+  font-size: 1rem;
+  line-height: 1.75;
+  text-align: justify;
+  color: color-mix(in oklab, var(--global-text-color) 90%, transparent) !important;
+}
+
+h1,
+h2,
+.post-title,
+.page-title {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.navbar.navbar-light {
+  .navbar-brand {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+footer.fixed-bottom,
+footer.sticky-bottom {
+  border-top: 1px solid var(--global-divider-color);
+}
+
+// Publications page: lean list generated from Google Scholar
+// Search + topic tags on the left; Scholar stats and chart spanning both rows on the right
+.scholar-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 1rem 2rem;
+}
+
+.pub-controls {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.pub-search {
+  width: 100%;
+  min-width: 0;
+  padding: 0.4rem 0.75rem;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--global-text-color);
+  background: transparent;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+
+  &::placeholder {
+    color: var(--global-text-color-light);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--global-theme-color);
+  }
+}
+
+// Compact Scholar summary: stacked stats + a Scholar-style column chart,
+// stretched to the height of the search box + topic row
+.scholar-mini {
+  display: flex;
+  align-items: stretch;
+  gap: 1.75rem;
+  font-size: 0.8rem;
+  color: var(--global-text-color-light);
+
+  // The whole block links to Scholar, but only the hovered piece lights up
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Google Scholar icon in the empty top-left of the chart
+.scholar-badge {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  z-index: 1;
+  padding-right: 3px;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: var(--global-text-color-light);
+  background: var(--global-bg-color); // keeps the top gridline from running through it
+  transition: color 0.15s;
+
+  .ai {
+    color: inherit;
+  }
+
+  &:hover {
+    color: var(--global-theme-color);
+    text-decoration: none;
+  }
+}
+
+.scholar-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: nowrap;
+  line-height: 1.3;
+
+  .stat-label {
+    display: inline-block;
+    min-width: 4.25rem;
+    color: var(--global-text-color-light);
+  }
+
+  strong {
+    color: var(--global-text-color);
+    font-weight: 600;
+    transition: color 0.15s;
+  }
+
+  > span:hover strong {
+    color: var(--global-theme-color);
+  }
+}
+
+// Chart grid: plot | y-axis on the right, year labels under the plot
+$cites-col-width: 18px;
+$cites-col-gap: 4px;
+
+.cites-chart {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr auto;
+  column-gap: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.cites-plot {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: $cites-col-gap;
+  min-height: 36px;
+}
+
+.cites-grid {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--global-divider-color);
+}
+
+.cites-mini-col {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: $cites-col-width;
+  height: 100%;
+
+  &:hover .cites-mini-bar {
+    filter: brightness(1.25);
+  }
+
+  // Hover tooltip with the year and count
+  &:hover::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    right: 0;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    color: var(--global-bg-color);
+    background: var(--global-text-color);
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 2;
+  }
+}
+
+.cites-mini-bar {
+  position: relative; // above the gridlines
+  width: 12px;
+  min-height: 2px;
+  border-radius: 3px 3px 0 0;
+  background: var(--global-theme-color);
+}
+
+.cites-axis {
+  position: relative;
+  min-width: 2rem;
+
+  span {
+    position: absolute;
+    left: 0;
+    transform: translateY(50%);
+    font-size: 0.65rem;
+    line-height: 1;
+    color: var(--global-text-color-light);
+  }
+}
+
+.cites-years {
+  display: flex;
+  gap: $cites-col-gap;
+  margin-top: 3px;
+
+  span {
+    width: $cites-col-width;
+    text-align: center;
+    font-size: 0.65rem;
+    line-height: 1;
+    color: var(--global-text-color-light);
+  }
+}
+
+// Topic labels (filter row and under each paper): small boxed tags, active one in teal
+.pub-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.pub-filter {
+  display: inline-block;
+  padding: 0.05rem 0.45rem;
+  font: inherit;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--global-text-color-light);
+  background: none;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+
+  &:hover {
+    color: var(--global-text-color);
+    border-color: var(--global-text-color-light);
+    text-decoration: none;
+  }
+
+  &[aria-pressed="true"] {
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+  }
+}
+
+.pub-empty {
+  margin-top: 1.5rem;
+  color: var(--global-text-color-light);
+}
+
+.scholar-pubs {
+  // Section header: left-aligned with the papers, separated by whitespace only
+  .pub-section {
+    margin: 3.5rem 0 1rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.03em;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .pub-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  // Google Scholar-style rows: details | cited by | year
+  .pub-item,
+  .pub-cols-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 4.5rem 3.5rem;
+    column-gap: 1rem;
+  }
+
+  .pub-item {
+    padding: 0.6rem 0;
+  }
+
+  .pub-col {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+  }
+
+  .pub-cols-header {
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--global-divider-color);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+
+    span {
+      color: inherit;
+    }
+
+    .pub-col {
+      font-size: inherit;
+    }
+
+    // Sortable column headers (All publications)
+    .pub-sort {
+      padding: 0;
+      font: inherit;
+      letter-spacing: inherit;
+      text-transform: inherit;
+      color: inherit;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.15s;
+
+      &:hover {
+        color: var(--global-text-color);
+      }
+
+      // Like Google Scholar: the active sort column is white, the others stay grey
+      &[aria-pressed="true"] {
+        color: var(--global-text-color);
+      }
+    }
+  }
+
+  .pub-title {
+    font-weight: 500;
+    color: var(--global-text-color);
+
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+
+  .pub-authors,
+  .pub-meta {
+    font-size: 0.875rem;
+    color: var(--global-text-color-light);
+  }
+
+  .pub-authors strong {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .pub-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+  }
+
+  .pub-venue {
+    font-style: italic;
+  }
+
+  // Same look as the topic filters above the list
+  .pub-topics {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .pub-cites {
+    color: var(--global-theme-color);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Homepage: keep the selected-publications panel inside the content column
+.full-width-section.scholar-pubs {
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+// Contact lines under the profile photo: body font, centered, not justified
+.profile .more-info {
+  font-family: $tbsci-font;
+
+  p {
+    display: block;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    text-align: center !important;
+    white-space: nowrap;
+    color: var(--global-text-color-light) !important;
+  }
+
+  // The contact note is a full sentence, so it wraps
+  p.contact-note {
+    white-space: normal;
+    margin: 0.4rem 0 0.15rem;
+    color: var(--global-text-color) !important;
+  }
+}
+
+// Homepage social icons: identical rounded squares, each glyph optically sized to look equal
+$social-icon-glyph: 0.95rem;
+
+.social .contact-icons.social-uniform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.75rem 0 0.5rem;
+
+  // Squares share the row equally so it spans exactly the photo's width
+  a {
+    flex: 1 1 0;
+    min-width: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    margin: 0;
+    font-size: inherit !important;
+    line-height: 0;
+    color: var(--global-text-color-light);
+    border: 1px solid var(--global-divider-color);
+    border-radius: 5px;
+    transition: color 0.15s, border-color 0.15s;
+
+    &:hover {
+      color: var(--global-theme-color);
+      border-color: var(--global-theme-color);
+    }
+
+    // Font glyphs (LinkedIn "in", Google Scholar) sized to match the SVGs
+    i {
+      width: auto !important;
+      height: auto !important;
+      max-width: none !important;
+      max-height: none !important;
+      font-size: $social-icon-glyph !important;
+      line-height: 1;
+      color: inherit !important;
+
+      &::before {
+        color: inherit !important;
+      }
+    }
+
+    svg,
+    .icon-mask {
+      width: $social-icon-glyph !important;
+      height: $social-icon-glyph !important;
+      max-width: none !important;
+      max-height: none !important;
+      margin: 0;
+      fill: currentColor;
+    }
+  }
+
+  // Optical corrections: wide or light glyphs need different sizes to match the others
+  .soc-x svg { width: 0.85rem !important; height: 0.85rem !important; }
+  .soc-scholar i { font-size: 1.1rem !important; }
+  .soc-letterboxd svg { width: 1.15rem !important; height: 1.15rem !important; }
+
+  // Logos drawn from an image file, tinted with the text color
+  .icon-mask {
+    display: inline-block;
+    color: inherit; // the theme colors every <span>; keep the link's color
+    background-color: currentColor;
+    -webkit-mask: var(--icon) center / contain no-repeat;
+    mask: var(--icon) center / contain no-repeat;
+  }
+}
+
+// Stable navbar across pages: the active item changes color only (bold text is wider and
+// pushes its neighbours), and the scrollbar space is always reserved so short pages
+// without a scrollbar don't shift the centered layout.
+html {
+  scrollbar-gutter: stable;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  font-weight: inherit;
+}
+
+// Homepage subtitle under the name: same style as the navbar items (Outfit medium, uppercase)
+.post-header .desc {
+  font-family: $title-font;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--global-text-color);
+}
+
+
+// Keep the navbar the same height on every page: the name (only shown off the homepage)
+// must not be taller than the nav links, or the bar grows and the links move down.
+.navbar.navbar-light .navbar-brand.title {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 1;
+}
+
+// CV page: download/open buttons above an embedded PDF
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  a {
+    font-family: $title-font;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .cv-download {
+    padding: 0.35rem 0.9rem;
+    color: var(--global-bg-color);
+    background: var(--global-theme-color);
+    border-radius: 5px;
+
+    &:hover {
+      color: var(--global-bg-color);
+      filter: brightness(1.08);
+    }
+  }
+
+  .cv-open {
+    color: var(--global-text-color-light);
+
+    &:hover {
+      color: var(--global-theme-color);
+    }
+  }
+}
+
+.cv-embed {
+  display: block;
+  width: 100%;
+  height: 85vh;
+  min-height: 600px;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 5px;
+  background: var(--global-card-bg-color);
+}
+
+// Projects page: simple boxes with a title link, one line, and small extra links
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.project-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 5px;
+  transition: border-color 0.15s;
+
+  &:hover {
+    border-color: var(--global-text-color-light);
+  }
+
+  .project-title {
+    font-family: $title-font;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--global-text-color);
+    text-decoration: none;
+
+    span {
+      font-size: 0.85rem;
+      color: var(--global-text-color-light);
+    }
+
+    &:hover,
+    &:hover span {
+      color: var(--global-theme-color);
+    }
+  }
+
+  .project-desc {
+    margin: 0;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
+    color: var(--global-text-color-light) !important;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: auto;
+  }
+}
+
+// News rows: same look as publication rows, date in a right-aligned column like "year"
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 5rem;
+  column-gap: 1rem;
+  padding: 0.6rem 0;
+}
+
+.news-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.news-date {
+  text-align: right;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--global-text-color-light);
+}
