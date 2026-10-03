@@ -14,7 +14,7 @@
 # blogger_url: # your blogger URL
 # bluesky_url: # your bluesky URL
 # dblp_url: # your DBLP profile url
-# discord_id: # your discord id (18-digit unique numerical identifier)
+discord_id: "838241195473502219" # your discord id (18-digit unique numerical identifier)
 
 
 
@@ -27,6 +27,7 @@ stanford_profile:
 email: stevendi@stanford.edu # your email address
 linkedin_username: stevendillmann # your LinkedIn user name
 x_username: DillmannSteven # your X handle
+discord_username: stevendi11 # shown when hovering the Discord icon
 letterboxd_username: stevendi # your Letterboxd username
   
 github_username: StevenDillmann # your GitHub user name

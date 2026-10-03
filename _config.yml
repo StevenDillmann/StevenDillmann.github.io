@@ -193,7 +193,6 @@ exclude:
   - readme_preview/
   - vendor
   - _posts/
-  - _news/
   - _projects/
   - _books/
 keep_files:

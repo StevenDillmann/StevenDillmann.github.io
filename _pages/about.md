@@ -2,17 +2,17 @@
 layout: about
 title: about
 permalink: /
-subtitle: <strong>PhD Student @ Stanford University <strong> 
+subtitle: PhD Candidate at Stanford University working on AI for Scientific Discovery &amp; Terminal-Bench-Science 
 
 profile:
   align: left
-  image: sd_cambridge.png
+  image: sd_github.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>338 Gates Computer Science</p>
-    <p>353 Jane Stanford Way</p>
-    <p>Stanford, CA 94305</p>
-    <p><a href="mailto:stevendi@stanford.edu">stevendi@stanford.edu</a></p>
+    <p>Stanford Artificial Intelligence Laboratory</p>
+    <p>Gates Computer Science, Room 338</p>
+    <p>Stanford University</p>
+    <p class="contact-note">Reach out at <a href="mailto:stevendi@stanford.edu">stevendi@stanford.edu</a><br>about research or potential collaborations.</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -30,26 +30,15 @@ latest_posts:
 
 <!-- #### About Me -->
 
-I am PhD student at [Stanford University](https://www.stanford.edu/) working on AI for Science, and am advised by [Sanmi Koyejo](https://cs.stanford.edu/~sanmi/) (Computer Science) and [Risa Wechsler](https://www.risawechsler.com/) (Physics). My current research interests are:
-
-* multi-modal, data-based <a href="/publications/?keyword=foundation+models" class="research-interest">foundation models</a> for science
-* developing AI <a href="/publications/?keyword=agents" class="research-interest">agents</a> for scientific discovery
-* designing rigorous <a href="/publications/?keyword=evaluation" class="research-interest">evaluation</a> systems of LLMs and agents on scientific tasks
+I am a PhD candidate in Computational Mathematics at [Stanford University](https://www.stanford.edu/). I am advised by [Sanmi Koyejo](https://cs.stanford.edu/~sanmi/) (CS) and [Risa Wechsler](https://www.risawechsler.com/) (Physics), and work closely with [Ludwig Schmidt](https://people.csail.mit.edu/ludwigs/) (CS). My research focuses on <a class="pub-filter" href="/publications/?topic=ai+for+science">ai for science</a> and <a class="pub-filter" href="/publications/?topic=ai+evaluation">ai evaluation</a>, with the goal of accelerating the development of <a class="pub-filter" href="/publications/?topic=foundation+models">foundation models</a> and <a class="pub-filter" href="/publications/?topic=agents">agents</a> for scientific discovery. Currently, I lead [Terminal-Bench-Science](https://www.terminal-bench-science.ai/), a benchmark for evaluating AI agents on real research workflows across scientific domains. My PhD is supported by the [Stanford Interdisciplinary Graduate Fellowship (SIGF)](https://vpge.stanford.edu/fellowships-funding/vpge-fellowships/sigf-stanford-interdisciplinary-graduate-fellowship) and the [Stanford HAI Data Science Scholars Program](https://hai.stanford.edu/research/data-science-scholars).
 
 <!-- #### Education & Affiliations -->
 
-I am affiliated with [Stanford AI Lab](https://ai.stanford.edu/), [Stanford ICME](https://icme.stanford.edu/), [KIPAC](https://kipac.stanford.edu/), [SLAC](https://www6.slac.stanford.edu/), and [Center for Decoding the Universe @ Stanford](https://datascience.stanford.edu/kipacsds-center-decoding-universe). Previously, I obtained an MPhil in Data Intensive Science from the [University of Cambridge](https://kipac.stanford.edu/) and an MEng in Aerospace Engineering from [Imperial College London](https://www.imperial.ac.uk/). I have also done research at [Harvard](https://www.harvard.edu/), [NASA JPL](https://www.jpl.nasa.gov/), [ESA](https://www.esa.int/), [DLR](https://www.dlr.de/en), and interned at Amazon, Airbus, and BMW.
-
-<!-- #### Collaborators -->
-
-Faculty at Stanford that I've worked with include [Surya Ganguli](https://ganguli-gang.stanford.edu/surya.html), [Tina Hernandez-Boussard](https://med.stanford.edu/profiles/tina-hernandez-boussard), [Brian Hie](https://brianhie.com/), [Sanmi Koyejo](https://cs.stanford.edu/~sanmi/), [Phil Marshall](https://kipac.stanford.edu/people/phil-marshall), [Ludwig Schmidt](https://people.csail.mit.edu/ludwigs/), [Risa Wechsler](https://www.risawechsler.com/who.html), [Diyi Yang](https://cs.stanford.edu/~diyiy/).
-
-<!-- [Susan Clark](https://clarkgroup.stanford.edu/index.html#me), -->
-<!-- [James Zou](https://www.james-zou.com/). -->
+I am affiliated with the [Stanford AI Lab](https://ai.stanford.edu/), [Stanford HAI](https://hai.stanford.edu/), [Stanford ICME](https://icme.stanford.edu/), [KIPAC](https://kipac.stanford.edu/), [SLAC](https://www6.slac.stanford.edu/), and the [Center for Decoding the Universe @ Stanford](https://datascience.stanford.edu/kipacsds-center-decoding-universe). Previously, I obtained an MPhil in Data Intensive Science from the [University of Cambridge](https://www.cam.ac.uk/) and an MEng in Aerospace Engineering from [Imperial College London](https://www.imperial.ac.uk/). I have also done research in scientific machine learning and astrophysics at [Harvard](https://www.harvard.edu/), [NASA JPL](https://www.jpl.nasa.gov/), [ESA](https://www.esa.int/), [DLR](https://www.dlr.de/en), and interned at [Ai2](https://allenai.org/), [Amazon](https://www.amazon.science/), [Airbus](https://www.airbus.com/), and [BMW](https://www.bmwgroup.com/en.html).
 
 <!-- ## Personal Interests -->
 
-I also love football (soccer), tennis, poker, chess, filmmaking and movies - checkout my Top 10 series on [letterboxd](https://letterboxd.com/stevendi/lists/). 
+Outside of research, I love football (soccer), tennis, poker, chess, and cinema & filmmaking – check out my favorite movies on [letterboxd](https://letterboxd.com/stevendi/). 
 
 
 
