@@ -44,9 +44,24 @@ module Jekyll
 
       # Expose to templates as site.data.scholar_metrics
       site.data['scholar_metrics'] = metrics || { 'citations' => 'N/A', 'h_index' => 'N/A', 'i10_index' => 'N/A', 'per_year' => [], 'fetched_at' => nil }
+      add_chart_axis(site.data['scholar_metrics'])
     end
 
     private
+
+    # Round y-axis for the citations-per-year chart (like Scholar's): about 3 steps of 1/2/2.5/5 x 10^k
+    def add_chart_axis(metrics)
+      max = Array(metrics['per_year']).map { |pt| pt['citations'].to_i }.max.to_i
+      return if max <= 0
+
+      raw = max / 3.0
+      magnitude = 10**Math.log10(raw).floor
+      step = [1, 2, 2.5, 5, 10].map { |m| m * magnitude }.find { |v| v >= raw }
+      step = step.round == step ? step.round : step
+      axis_max = (max / step.to_f).ceil * step
+      metrics['axis_max'] = axis_max
+      metrics['axis_ticks'] = (0..(axis_max / step).round).map { |i| i * step }
+    end
 
     def resolve_scholar_id(site)
       # Expect id at site.data.socials.scholar_userid
@@ -166,9 +181,8 @@ module Jekyll
     def format_citations(num)
       return '0' unless num.is_a?(Integer)
       return '0' if num < 0
-      return num.to_s if num < 1000
-      # Show with one decimal for thousands, e.g., 1.2K
-      ((num / 100).floor / 10.0).to_s.sub(/\.0$/, '') + 'K'
+      # Full number with thousands separators, e.g. 1,724
+      num.to_s.reverse.scan(/\d{1,3}/).join(',').reverse
     end
 
     def user_agent

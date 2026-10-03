@@ -1,3 +1,22 @@
-<div class="publications">
-  {% bibliography --group_by none --query @*[selected=true]* %}
-</div>
+{% comment %}
+  Hand-picked papers (_data/selected_papers.yml) rendered from Google Scholar data,
+  in a highlighted panel. Used on the homepage and the publications page.
+  Optional: include.sortable — clickable "cited by"/"year" headers (publications page).
+  Optional: include.link — makes the heading a link, and topic words link to the filtered publications page.
+{% endcomment %}
+{% capture selected_items %}
+  {% for wanted in site.data.selected_papers %}
+    {% assign wanted_title = wanted | downcase | strip %}
+    {% for pub in site.data.scholar_publications %}
+      {% assign pub_title = pub.title | downcase | strip %}
+      {% if pub_title == wanted_title %}{% include scholar_pub.liquid pub=pub topic_links=include.link %}{% break %}{% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endcapture %}
+<section class="pub-selected" id="pub-selected">
+  <h2 class="pub-section">
+    <span>{%- if include.link -%}<a href="{{ include.link }}">selected publications</a>{%- else -%}selected publications{%- endif -%}</span>
+  </h2>
+  {% include pub_cols_header.liquid sortable=include.sortable %}
+  <ol class="pub-list">{{ selected_items }}</ol>
+</section>

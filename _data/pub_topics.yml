@@ -1,0 +1,21 @@
+# Topic tags for the publications page, assigned automatically from Google Scholar data.
+# A paper gets every topic whose keywords appear in its title or venue (case-insensitive).
+# Topics are shown in the order listed here (alphabetical).
+topics:
+  - name: agents
+    match: [agent, harbor, skills]
+  - name: ai evaluation
+    match: [bench, eval, measuring, challenges, judge, composite-stem, verification]
+  - name: ai for science
+    match: [ai scientist, for science, research, replicat, ai/ml, machine learning, anomaly detection, platonic, decision-aware ai]
+    # Science papers that also have an AI topic count as AI for science
+    also_when: [[science, agents], [science, ai evaluation], [science, foundation models]]
+  - name: foundation models
+    match: [foundation model, genome model, representation learning, autodecoder, platonic]
+  - name: science
+    match: [x-ray, lens, lsst, astro, hubble, chandra, telescope, mars, cosmolog, habitable, rubin, satellite, sky, transient, genome, dna, brain, neuro, mental health]
+
+# Extra topics for papers the keywords miss. Key: the paper's title as on Scholar.
+overrides:
+  "SWE-Marathon: Can Agents Autonomously Complete Ultra-Long-Horizon Software Work?": [ai evaluation]
+  "OpenThoughts-Agent: Data Recipes for Agentic Models": [foundation models]

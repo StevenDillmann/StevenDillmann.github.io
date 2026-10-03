@@ -1,0 +1,6 @@
+{% comment %} Column header for publication rows. include.sortable: make "title" / "cited by" / "year" sort buttons (like Google Scholar); include.default_year: list starts sorted by year {% endcomment %}
+{% if include.sortable %}
+<div class="pub-cols-header"><span><button type="button" class="pub-sort" data-sort="title" aria-pressed="false">title</button></span><button type="button" class="pub-col pub-sort" data-sort="cites" aria-pressed="false">cited by</button><button type="button" class="pub-col pub-sort" data-sort="year" aria-pressed="{% if include.default_year %}true{% else %}false{% endif %}">year</button></div>
+{% else %}
+<div class="pub-cols-header" aria-hidden="true"><span>title</span><span class="pub-col">cited by</span><span class="pub-col">year</span></div>
+{% endif %}

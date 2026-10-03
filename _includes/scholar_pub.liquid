@@ -1,0 +1,17 @@
+{% comment %} One publication row from site.data.scholar_publications, laid out like Google Scholar: details | cited by | year {% endcomment %}
+<li class="pub-item" data-cites="{{ include.pub.citations }}" data-year="{{ include.pub.year }}" data-topics="{{ include.pub.topics | join: '|' }}" data-search="{{ include.pub.title | append: ' ' | append: include.pub.authors | append: ' ' | append: include.pub.venue | append: ' ' | append: include.pub.year | downcase | escape }}">
+  <div class="pub-main">
+    <a class="pub-title" href="{{ include.pub.link | default: include.pub.url }}" target="_blank" rel="noopener noreferrer">{{ include.pub.title }}</a>
+    <div class="pub-authors">
+      {{- include.pub.authors | replace: 'Steven Dillmann', '<strong>Steven Dillmann</strong>' | replace: 'S Dillmann', '<strong>S Dillmann</strong>' -}}
+    </div>
+    <div class="pub-meta">
+      {% if include.pub.venue != '' %}<span class="pub-venue">{{ include.pub.venue }}</span>{% endif %}
+      {% if include.pub.topics.size > 0 %}<span class="pub-topics">{% for topic in include.pub.topics %}{% if include.topic_links %}<a class="pub-filter" href="{{ '/publications/' | relative_url }}?topic={{ topic | url_encode }}">{{ topic }}</a>{% else %}<button type="button" class="pub-filter" data-topic="{{ topic }}" aria-pressed="false">{{ topic }}</button>{% endif %}{% endfor %}</span>{% endif %}
+    </div>
+  </div>
+  <div class="pub-col pub-col-cites">
+    {%- if include.pub.citations > 0 -%}<a class="pub-cites" href="{{ include.pub.url }}" target="_blank" rel="noopener noreferrer">{{ include.pub.citations }}</a>{%- endif -%}
+  </div>
+  <div class="pub-col pub-col-year">{{ include.pub.year }}</div>
+</li>

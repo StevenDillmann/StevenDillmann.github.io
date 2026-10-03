@@ -1,0 +1,29 @@
+<script>
+  // Sortable publication lists (publications page and homepage), like Google Scholar:
+  // "title" (A–Z), "cited by" (most cited first) or "year" (newest first).
+  // Clicking the active header again restores the list's default order (hand-picked or Scholar's).
+  (function () {
+    document.querySelectorAll(".pub-cols-header").forEach(function (header) {
+      const buttons = header.querySelectorAll(".pub-sort");
+      const list = header.nextElementSibling;
+      if (!buttons.length || !list) return;
+      const rows = Array.from(list.children);
+      rows.forEach(function (li, i) { li.dataset.order = i; });
+      const byOrder = function (a, b) { return a.dataset.order - b.dataset.order; };
+      const titleOf = function (li) { return li.querySelector(".pub-title").textContent.trim(); };
+      const sorters = {
+        title: function (a, b) { return titleOf(a).localeCompare(titleOf(b), undefined, { sensitivity: "base" }); },
+        cites: function (a, b) { return (b.dataset.cites - a.dataset.cites) || byOrder(a, b); },
+        year: function (a, b) { return ((parseInt(b.dataset.year, 10) || 0) - (parseInt(a.dataset.year, 10) || 0)) || byOrder(a, b); },
+      };
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          const turnOff = btn.getAttribute("aria-pressed") === "true";
+          const compare = turnOff ? byOrder : sorters[btn.dataset.sort];
+          rows.slice().sort(compare).forEach(function (li) { list.appendChild(li); });
+          buttons.forEach(function (b) { b.setAttribute("aria-pressed", !turnOff && b === btn); });
+        });
+      });
+    });
+  })();
+</script>
