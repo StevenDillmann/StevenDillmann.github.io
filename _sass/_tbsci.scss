@@ -707,3 +707,34 @@ html {
   white-space: nowrap;
   color: var(--global-text-color-light);
 }
+
+// The subtitle is a heading-like line, never justified
+.post-header .desc {
+  text-align: left !important;
+}
+
+// Phones: stack the photo block above the text, use the full width, and avoid
+// justified text (it leaves big gaps between words on narrow screens)
+@media (max-width: 575.98px) {
+  .profile.float-left,
+  .profile.float-right {
+    float: none !important;
+    width: 100% !important;
+    margin: 0 0 1.5rem !important;
+  }
+
+  .profile ~ .clearfix {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  article p,
+  .post p,
+  .post-content p,
+  .post .clearfix,
+  .post .clearfix p,
+  .post .clearfix ul,
+  .post .clearfix li {
+    text-align: left !important;
+  }
+}
