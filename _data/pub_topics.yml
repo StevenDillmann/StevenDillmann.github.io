@@ -7,7 +7,7 @@ topics:
   - name: ai evaluation
     match: [bench, eval, measuring, challenges, judge, composite-stem, verification]
   - name: ai for science
-    match: [ai scientist, for science, research, replicat, ai/ml, machine learning, anomaly detection, platonic, decision-aware ai]
+    match: [ai scientist, for science, research, replicate, ai/ml, machine learning, anomaly detection, platonic, decision-aware ai]
     # Science papers that also have an AI topic count as AI for science
     also_when: [[science, agents], [science, ai evaluation], [science, foundation models]]
   - name: foundation models
