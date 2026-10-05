@@ -54,9 +54,6 @@ nav_order: 2
       {% endif %}
   </a>
 </div>
-{% if site.data.scholar_metrics.fetched_at %}
-<p class="scholar-updated">Google Scholar data updated {{ site.data.scholar_metrics.fetched_at | date: "%b %-d, %Y" }}</p>
-{% endif %}
 
 <div class="scholar-pubs">
   {% include selected_papers.liquid sortable=true %}

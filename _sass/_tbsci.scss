@@ -739,11 +739,3 @@ html {
   }
 }
 
-// "Google Scholar data updated <date>" under the publications header
-p.scholar-updated,
-.post p.scholar-updated {
-  margin: 0.5rem 0 0;
-  text-align: right !important;
-  font-size: 0.75rem !important;
-  color: var(--global-text-color-light) !important;
-}
