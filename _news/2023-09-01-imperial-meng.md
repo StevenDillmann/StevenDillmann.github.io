@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Graduated top of my class from [Imperial College London](https://www.imperial.ac.uk/) with an MEng in Aeronautics with Spacecraft Engineering, receiving the Head of Department Award.
+Graduated from [Imperial College London](https://www.imperial.ac.uk/) with an MEng in Aeronautics with Spacecraft Engineering and received the Head of Department Award.
