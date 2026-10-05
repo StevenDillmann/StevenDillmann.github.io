@@ -1,6 +1,7 @@
 # Hand-picked papers for the "Selected" section of the publications page.
 # Paste the paper's title exactly as it appears on Google Scholar (case doesn't matter).
 # Everything else (authors, venue, citations, link) is pulled from Scholar automatically.
+- "Terminal-Bench-Science: Evaluating AI agents on research workflows across scientific domains"
 - "Terminal-bench: Benchmarking agents on hard, realistic tasks in command line interfaces"
 - Genome modelling and design across all domains of life with Evo 2
 - "Representation learning for time-domain high-energy astrophysics: Discovery of extragalactic fast X-ray transient XRT 200515"
