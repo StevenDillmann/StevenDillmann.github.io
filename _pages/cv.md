@@ -4,7 +4,7 @@ permalink: /cv/
 title: cv
 nav: true
 nav_order: 5
-cv_pdf: cv2025.pdf # file in assets/pdf/ — replace it (or change this name) to update the CV
+cv_pdf: Steven_Dillmann_CV.pdf # file in assets/pdf/ — replace it (or change this name) to update the CV
 description:
 ---
 
