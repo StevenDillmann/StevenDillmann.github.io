@@ -1,10 +1,10 @@
 name: Refresh Google Scholar citations
-# Runs daily (and manually via "Run workflow"): fetches fresh Scholar data, commits the
+# Runs every 3 days (and manually via "Run workflow"): fetches fresh Scholar data, commits the
 # cache, then redeploys the site. If Scholar blocks the request, the last good cache is kept.
 
 on:
   schedule:
-    - cron: "0 10 * * *" # daily at 10:00 UTC (3am Pacific)
+    - cron: "0 10 */3 * *" # every 3 days at 10:00 UTC (3am Pacific)
   workflow_dispatch: {}
 
 permissions:
