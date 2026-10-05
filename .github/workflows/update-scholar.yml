@@ -55,9 +55,10 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      # Pushes made with GITHUB_TOKEN don't trigger other workflows, so start the deploy explicitly
+      # Pushes made with GITHUB_TOKEN don't trigger other workflows, so start the deploy explicitly.
+      # pages.yml is the workflow that publishes the site (GitHub Pages is in "workflow" mode).
       - name: Redeploy site with the new data
         if: steps.commit.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run deploy.yml --ref "${{ github.ref_name }}"
+        run: gh workflow run pages.yml --ref "${{ github.ref_name }}"
