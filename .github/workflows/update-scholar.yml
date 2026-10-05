@@ -1,11 +1,15 @@
 name: Refresh Google Scholar citations
-# Manual trigger only - update whenever you want, complete control over timing
+# Runs daily (and manually via "Run workflow"): fetches fresh Scholar data, commits the
+# cache, then redeploys the site. If Scholar blocks the request, the last good cache is kept.
 
 on:
+  schedule:
+    - cron: "0 10 * * *" # daily at 10:00 UTC (3am Pacific)
   workflow_dispatch: {}
 
 permissions:
   contents: write
+  actions: write # needed to start the deploy workflow
 
 jobs:
   update-citations:
@@ -32,6 +36,7 @@ jobs:
         run: bundle exec jekyll build
 
       - name: Commit updated Scholar cache
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -44,7 +49,15 @@ jobs:
             echo "No citation-related changes to commit."
           else
             echo "Changes detected, committing..."
-            git commit -m "chore: refresh Google Scholar cache [skip ci]"
+            git commit -m "chore: refresh Google Scholar cache"
             git push
             echo "Successfully committed and pushed changes."
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      # Pushes made with GITHUB_TOKEN don't trigger other workflows, so start the deploy explicitly
+      - name: Redeploy site with the new data
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref "${{ github.ref_name }}"

@@ -10,7 +10,7 @@ module Jekyll
     safe true
     priority :low
 
-    CACHE_TTL_SECONDS = 3 * 24 * 60 * 60 # 3 days
+    CACHE_TTL_SECONDS = 20 * 60 * 60 # 20 hours, so the daily refresh workflow always fetches
     PAGE_SIZE = 100
     DETAIL_DELAY_SECONDS = 2 # pause between per-paper requests to avoid Scholar rate limits
 
