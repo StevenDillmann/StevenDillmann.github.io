@@ -11,6 +11,17 @@
     "details_fetched": true
   },
   {
+    "id": "mwC8O9sAAAAJ:p2g8aNsByqUC",
+    "title": "OSWorld-Science: A Benchmark of Computer Use Agents for Learning and Using Scientific Software",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mwC8O9sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mwC8O9sAAAAJ:p2g8aNsByqUC",
+    "authors": "Dingyuan Dai, Heli Qi, Lei Liu, Yinxi Li, Baiding Chen, Zijun Dou, Qingcheng Zeng, Qi Kang, Oliver Sun, Eric Wang, Bo Zhou, Haixin Wang, Yufan Du, Shi Bo, Ruihan Lin, Mengqi Yuan, Dunjie Lu, Steven Dillmann, Yiming Shi, Tina Su, Amy Xin, Minghao Liu, Xi Wang, Xu Huang, Ge Zhang, Pengyu Nie, Zhen Yang, Jie Tang, Juanzi Li, Weihao Xuan, Tianyu Liu",
+    "venue": "arXiv preprint arXiv:2609.39903",
+    "year": "2026",
+    "citations": 0,
+    "link": "https://arxiv.org/abs/2609.39903",
+    "details_fetched": true
+  },
+  {
     "id": "mwC8O9sAAAAJ:SP6oXDckpogC",
     "title": "Lens Modeling and Cosmological Inference from an Impure Sample of Galaxy-Galaxy Strong Lenses",
     "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mwC8O9sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mwC8O9sAAAAJ:SP6oXDckpogC",
@@ -66,6 +77,17 @@
     "details_fetched": true
   },
   {
+    "id": "mwC8O9sAAAAJ:u9iWguZQMMsC",
+    "title": "SLSim: Strong lensing simulation pipeline",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mwC8O9sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mwC8O9sAAAAJ:u9iWguZQMMsC",
+    "authors": "Narayan Khadka, Simon Birrer, Henry Best, Paras Sharma, Katsuya T Abe, Xianzhe Tang, Carly Mistick, Felipe Urcelay, Emrecan M Sonmez, Nikki Arendse, Sydney Erickson, Jacob O Hjortlund, Phil Holloway, Alan Huang, Rahul Karthik, Mia Lamontagne, Vibhore Negi, Justin R Pierel, Bruno Sanchez, Aysu Ece Saricaoglu, Anowar Shajib, Yixuan Shao, Padma Venkatraman, Bryce Wedig, Aadya Agrawal, Timo Bessa Anguita, Clecio R Bom, Sofia Castillo, Thomas Collett, Tansu Daylan, Steven Dillmann, Margherita Grespan, Erin E Hayes, Remy Joseph, Richard Kessler, Tian Li, Phil Marshall, Anupreeta More, Veronica Motta, Gautham Narayan, Matt O'Dowd, Masamune Oguri, Graham Smith, Aprajita Verma, Giorgos Vernardos, Strong Lensing Science Collaboration, LSST Dark Energy Science Collaboration",
+    "venue": "Astrophysics Source Code Library, ascl: 2608.001",
+    "year": "2026",
+    "citations": 0,
+    "link": "https://ui.adsabs.harvard.edu/abs/2026ascl.soft08001K/abstract",
+    "details_fetched": true
+  },
+  {
     "id": "mwC8O9sAAAAJ:maZDTaKrznsC",
     "title": "OpenThoughts-Agent: Data Recipes for Agentic Models",
     "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mwC8O9sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mwC8O9sAAAAJ:maZDTaKrznsC",
@@ -78,7 +100,7 @@
   },
   {
     "id": "mwC8O9sAAAAJ:QIV2ME_5wuYC",
-    "title": "Every Eval Ever: A Unifying Schema and Community Repository for AI Evaluation Results",
+    "title": "Every eval ever: A unifying schema and community repository for AI evaluation results",
     "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mwC8O9sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mwC8O9sAAAAJ:QIV2ME_5wuYC",
     "authors": "Jan Batzner, Sree Harsha Nelaturu, Damian Stachura, Anastassia Kornilova, Jon Crall, Tommaso Cerruti, Yanan Long, Yifan Mai, Sanchit Ahuja, Asaf Yehudai, Marek Šuppa, John P Lalor, Oluwagbemike Olowe, Jatin Ganhotra, Brian H Hu, Eliya Habba, Andrew M Bean, Chang Liu, Sander Land, Steven Dillmann, Aniketh Garikaparthi, Elron Bandel, Saki Imai, James Edgell, Wm Matthew Kennedy, Jenny Chim, Patrick Meusling, Asteria Kaeberlein, Venkata Ramachandra Karthik Chundi, Manasi Patwardhan, Martin Ku, Austin Meek, Leon Knauer, Brian Wingenroth, Srishti Yadav, Usman Gohar, Felix Friedrich, Michelle Lin, Jennifer Mickel, Arman Cohan, Stella Biderman, Irene Solaiman, Zeerak Talat, Anka Reuel, Mubashara Akhtar, Gjergji Kasneci, Avijit Ghosh, Leshem Choshen",
     "venue": "arXiv preprint arXiv:2606.14516",
@@ -94,7 +116,7 @@
     "authors": "Rishi Desai, Jesse Hu, Joan Cabezas, Neel Harsola, Pratyush Shukla, Roey Ben Chaim, Adnan El Assadi, Omkaar Mukund Kamath, Fenil Faldu, Prannay Hebbar, Jiankai Sun, Yiyuan Li, Pramod Srinivasan, Ishan Gupta, Christopher Settles, Daniel Wang, Derek Chen, Pranav Raja, Albert Liu, Marek Šuppa, Nevasini Sasikumar, Luyang Kong, Erik Quintanilla, Xiangyi Li, Ivan Bercovich, Steven Dillmann",
     "venue": "arXiv preprint arXiv:2606.07682",
     "year": "2026",
-    "citations": 9,
+    "citations": 14,
     "link": "https://arxiv.org/abs/2606.07682",
     "details_fetched": true
   },
@@ -116,7 +138,7 @@
     "authors": "Garyk Brixi, Matthew G Durrant, Jerome Ku, Mohsen Naghipourfar, Michael Poli, Gwanggyu Sun, Greg Brockman, Daniel Chang, Alison Fanton, Gabriel A Gonzalez, Samuel H King, David B Li, Aditi T Merchant, Eric Nguyen, Chiara Ricci-Tam, David W Romero, Jonathan C Schmok, Ali Taghibakhshi, Anton Vorontsov, Brandon Yang, Myra Deng, Liv Gorton, Nam Nguyen, Nicholas K Wang, Michael T Pearce, Elana Simon, Etowah Adams, Zachary J Amador, Euan A Ashley, Stephen A Baccus, Haoyu Dai, Steven Dillmann, Stefano Ermon, Daniel Guo, Michael H Herschl, Rajesh Ilango, Ken Janik, Amy X Lu, Reshma Mehta, Mohammad RK Mofrad, Madelena Y Ng, Jaspreet Pannu, Christopher Ré, John St. John, Jeremy Sullivan, Joseph Tey, Ben Viggiano, Kevin Zhu, Greg Zynda, Daniel Balsam, Patrick Collison, Anthony B Costa, Tina Hernandez-Boussard, Eric Ho, Ming-Yu Liu, Thomas McGrath, Kimberly Powell, Sudarshan Pinglay, Dave P Burke, Hani Goodarzi, Patrick D Hsu, Brian L Hie",
     "venue": "Nature 652 (8112), 1349-1361",
     "year": "2026",
-    "citations": 700,
+    "citations": 716,
     "link": "https://www.nature.com/articles/s41586-026-10176-5",
     "details_fetched": true
   },
@@ -127,7 +149,7 @@
     "authors": "Mike Merrill, Alexander Shaw, Nicholas Carlini, Boxuan Li, Harsh Raj, Ivan Bercovich, Lin Shi, Jeong Shin, Thomas Walshe, E Kelly Buchanan, Junhong Shen, Guanghao Ye, Haowei Lin, Jason Poulos, Maoyu Wang, Marianna Nezhurina, Di Lu, Orfeas Menis Mastromichalakis, Zhiwei Xu, Zizhao Chen, Yue Liu, Robert Zhang, Leon Liangyu Chen, Anurag Kashyap, Jan-Lucas Uslu, Jeffrey Li, Jianbo Wu, Minghao Yan, Song Bian, Vedang Sharma, Ke Sun, Steven Dillmann, Akshay Anand, Andrew Lanpouthakoun, Bardia Koopah, Changran Hu, Etash Guha, Gabriel Dreiman, Jiacheng Zhu, Karl Krauth, Li Zhong, Niklas Muennighoff, Robert Amanfu, Shangyin Tan, Shreyas Pimpalgaonkar, Tushar Aggarwal, Xiangning Lin, Xin Lan, Xuandong Zhao, Yiqing Liang, Yuanli Wang, Zilong Ryan Wang, Changzhi Zhou, David Heineman, Hange Liu, Harsh Trivedi, John Yang, Junhong Lin, Manish Shetty, Michael Yang, Nabil Omi, Negin Raoof, Shanda Li, Terry Yue Zhuo, Wuwei Lin, Yiwei Dai, Yuxin Wang, Wenhao Chai, Shang Zhou, Dariush Wahdany, Ziyu She, Jiaming Hu, Zhikang Dong, Yuxuan Zhu, Sasha Cui, Ahson Saiyed, Arinbjörn Kolbeinsson, Christopher Rytting, Ryan Marten, Yixin Wang, Jenia Jitsev, Alex Dimakis, Andy Konwinski, Ludwig Schmidt",
     "venue": "International Conference on Learning Representations 2026, 40903-40986",
     "year": "2026",
-    "citations": 502,
+    "citations": 563,
     "link": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/444a3737adaee10d86ad2ef5f74468e6-Abstract-Conference.html",
     "details_fetched": true
   },
@@ -182,7 +204,7 @@
     "authors": "Xiangyi Li, Yimin Liu, Wenbo Chen, Bingran You, Zonglin Di, Yifeng He, Shenghan Zheng, Kyoung Whan Choe, Jiankai Sun, Shuyi Wang, Chujun Tao, Binxu Li, Xuandong Zhao, Hejia Geng, Xiaojun Wu, Junwei Zhou, Xiaokun Chen, Hanwen Xing, Yubo Li, Qunhong Zeng, Di Wang, Yuanli Wang, Roey Ben Chaim, Penghao Jiang, Haotian Shen, Luyang Kong, Xinyi Liu, Runhui Wang, Xuanqing Liu, Jiachen Li, Xin Lan, Yueqian Lin, Wengao Ye, Junwei He, Songlin Li, Yue Zhang, Yipeng Gao, Yijiang Li, Ze Ma, Liqiang Jing, Tianyu Wang, Kaixin Li, Yiqi Xue, Haoran Lyu, Yizhuo He, Yuchen Tian, Shutong Wu, Bowei Wang, Yixuan Gao, Bo Chen, Litong Liu, Sikai Cheng, Jiajun Bao, Shuaicheng Tong, Shuwen Xu, Terry Yue Zhuo, Tinghan Ye, Qi Qi, Miao Li, Longtai Liao, Zelin Tan, Chang Shi, Xilin Tang, Srinath Tankasala, Boqin Yuan, Yaoyao Qian, Jianhong Tu, Chenguang Wang, Yizhou Sun, Wei Wang, Aaron Taylor, Ziyue Yang, Changkun Guan, Zhikang Dong, Xinyu Zhang, Steven Dillmann, Han-chung Lee, Dawn Song",
     "venue": "arXiv preprint arXiv:2602.12670",
     "year": "2026",
-    "citations": 236,
+    "citations": 246,
     "link": "https://arxiv.org/abs/2602.12670",
     "details_fetched": true
   },
@@ -204,7 +226,7 @@
     "authors": "Harbor Framework Team",
     "venue": "URL https://doi.org/10.5281/zenodo 20953922",
     "year": "2026",
-    "citations": 86,
+    "citations": 95,
     "link": null,
     "details_fetched": true
   },
@@ -226,7 +248,7 @@
     "authors": "Christine Ye, Sihan Yuan, Suchetha Cooray, Steven Dillmann, Ian LV Roque, Dalya Baron, Philipp Frank, Sergio Martin-Alvarez, Nolan Koblischke, Frank J Qu, Diyi Yang, Risa Wechsler, Ioana Ciuca",
     "venue": "arXiv preprint arXiv:2510.24591",
     "year": "2025",
-    "citations": 26,
+    "citations": 28,
     "link": "https://arxiv.org/abs/2510.24591",
     "details_fetched": true
   },
@@ -239,6 +261,17 @@
     "year": "2025",
     "citations": 2,
     "link": "https://ui.adsabs.harvard.edu/abs/2025arXiv251100253K/abstract",
+    "details_fetched": true
+  },
+  {
+    "id": "mwC8O9sAAAAJ:OU6Ihb5iCvQC",
+    "title": "The Platonic Universe: Do Foundation Models See the Same Sky?",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mwC8O9sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mwC8O9sAAAAJ:OU6Ihb5iCvQC",
+    "authors": "Trinidad Borrell, Steven Dillmann, Kshitij Duraphe, Furkan Eris, Kartheik Iyer, Ashod Khederlarian, Aman Kumar, Giovanni Marraffini, Michael J Smith, Shashwat Sourav, Rocco Di Tella, John F Wu",
+    "venue": "arXiv preprint arXiv:2509.19453",
+    "year": "2025",
+    "citations": 3,
+    "link": "https://arxiv.org/abs/2509.19453",
     "details_fetched": true
   },
   {
@@ -319,6 +352,28 @@
     "details_fetched": true
   },
   {
+    "id": "mwC8O9sAAAAJ:uWQEDVKXjbEC",
+    "title": "Replication Data for Cloudspotting on Mars Citizen Science Cloud Centroids for Mars Year 29",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mwC8O9sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mwC8O9sAAAAJ:uWQEDVKXjbEC",
+    "authors": "Marek Slipski, Armin Kleinböhl, Steven Dillmann, David Kass, Jason Reimuller, Mark Wronkiewicz, Gary Doran",
+    "venue": "Jet Propulsion Laboratory Data Set, 363",
+    "year": "2023",
+    "citations": 0,
+    "link": "https://ui.adsabs.harvard.edu/abs/2023jpl..data..363S/abstract",
+    "details_fetched": true
+  },
+  {
+    "id": "mwC8O9sAAAAJ:Tiz5es2fbqcC",
+    "title": "Terminal-Bench-Science: Evaluating AI agents on research workflows across scientific domains",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mwC8O9sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mwC8O9sAAAAJ:Tiz5es2fbqcC",
+    "authors": "Terminal-Bench-Science Team",
+    "venue": "",
+    "year": "",
+    "citations": 2,
+    "link": "https://scholar.google.com/scholar?cluster=11490945729680069129&hl=en&oi=scholarr",
+    "details_fetched": true
+  },
+  {
     "id": "mwC8O9sAAAAJ:k_IJM867U9cC",
     "title": "VeriBench: An End-to-End Formal Verification Benchmark for AI Coding Agents in Lean 4",
     "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mwC8O9sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mwC8O9sAAAAJ:k_IJM867U9cC",
@@ -338,17 +393,6 @@
     "year": "",
     "citations": 0,
     "link": "https://openreview.net/forum?id=gGR1gE7x3a",
-    "details_fetched": true
-  },
-  {
-    "id": "mwC8O9sAAAAJ:4DMP91E08xMC",
-    "title": "The Platonic Universe: Do Foundation Models See the Same Sky?",
-    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mwC8O9sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mwC8O9sAAAAJ:4DMP91E08xMC",
-    "authors": "Trinidad Borrell, Steven Dillmann, Kshitij Duraphe, Furkan Eris, Ashod Khederlarian, Aman Kumar, Giovanni Franco Gabriel Marraffini, Michael J Smith, Shashwat Sourav, Rocco Di Tella, John F Wu",
-    "venue": "Mechanistic Interpretability Workshop at ICML 2026, 0",
-    "year": "",
-    "citations": 0,
-    "link": "https://openreview.net/forum?id=QzapekDazG",
     "details_fetched": true
   },
   {
