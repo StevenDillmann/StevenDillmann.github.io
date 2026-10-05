@@ -45,6 +45,34 @@ ninja.data = [{
             window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
           
         },
+      },{id: "news-graduated-from-imperial-college-london-with-an-meng-in-aeronautics-with-spacecraft-engineering-receiving-the-head-of-department-award",
+          title: 'Graduated from Imperial College London with an MEng in Aeronautics with Spacecraft Engineering,...',
+          description: "",
+          section: "News",},{id: "news-graduated-from-the-university-of-cambridge-with-an-mphil-in-data-intensive-science",
+          title: 'Graduated from the University of Cambridge with an MPhil in Data Intensive Science....',
+          description: "",
+          section: "News",},{id: "news-started-a-phd-in-computational-mathematics-at-stanford-university",
+          title: 'Started a PhD in Computational Mathematics at Stanford University.',
+          description: "",
+          section: "News",},{id: "news-discovery-of-xrt-200515-a-new-extragalactic-fast-x-ray-transient-featured-by-the-royal-astronomical-society-space-com-phys-org-and-scitechdaily",
+          title: 'Discovery of XRT 200515, a new extragalactic fast X-ray transient, featured by the...',
+          description: "",
+          section: "News",},{id: "news-honored-to-receive-the-stanford-interdisciplinary-graduate-fellowship-sigf",
+          title: 'Honored to receive the Stanford Interdisciplinary Graduate Fellowship (SIGF).',
+          description: "",
+          section: "News",},{id: "news-released-terminal-bench-science-0-1-a-benchmark-to-evaluate-ai-agents-on-scientific-research-workflows",
+          title: 'Released Terminal-Bench-Science 0.1, a benchmark to evaluate AI agents on scientific research workflows....',
+          description: "",
+          section: "News",},{id: "news-honored-to-be-named-a-stanford-hai-data-science-scholar",
+          title: 'Honored to be named a Stanford HAI Data Science Scholar.',
+          description: "",
+          section: "News",},{
+        id: 'social-discord',
+        title: 'Discord',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://discord.com/users/838241195473502219", "_blank");
+        },
       },{
         id: 'social-stanford_profile',
         title: 'Stanford_profile',
@@ -71,7 +99,14 @@ ninja.data = [{
         title: 'X',
         section: 'Socials',
         handler: () => {
-          window.open("https://twitter.com/DillmannSteven", "_blank");
+          window.open("https://twitter.com/StevenDillmann", "_blank");
+        },
+      },{
+        id: 'social-discord_username',
+        title: 'Discord_username',
+        section: 'Socials',
+        handler: () => {
+          window.open("", "_blank");
         },
       },{
         id: 'social-letterboxd_username',
@@ -99,7 +134,7 @@ ninja.data = [{
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=tzcJtSAAAAAJ", "_blank");
+          window.open("https://scholar.google.com/citations?user=mwC8O9sAAAAJ", "_blank");
         },
       },{
       id: 'light-theme',
