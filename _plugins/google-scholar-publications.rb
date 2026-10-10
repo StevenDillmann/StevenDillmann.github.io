@@ -62,7 +62,8 @@ module Jekyll
 
     def read_cache(cache_file, fresh_only:)
       return nil unless File.exist?(cache_file)
-      return nil if fresh_only && (Time.now - File.mtime(cache_file)) >= CACHE_TTL_SECONDS
+      # SCHOLAR_REFRESH=1 forces a fetch: CI checkouts reset mtimes, so the cache always looks fresh there
+      return nil if fresh_only && (ENV['SCHOLAR_REFRESH'] == '1' || (Time.now - File.mtime(cache_file)) >= CACHE_TTL_SECONDS)
       data = JSON.parse(File.read(cache_file))
       data.is_a?(Array) && !data.empty? ? data : nil
     rescue

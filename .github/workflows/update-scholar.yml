@@ -33,6 +33,7 @@ jobs:
         env:
           LANG: en_US.UTF-8
           LC_ALL: en_US.UTF-8
+          SCHOLAR_REFRESH: "1"
         run: bundle exec jekyll build
 
       - name: Commit updated Scholar cache
