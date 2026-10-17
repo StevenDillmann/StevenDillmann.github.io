@@ -1,6 +1,6 @@
 name: Refresh Google Scholar citations
-# Refreshes Scholar data every ~3 days, fetching through SerpApi (SERPAPI_KEY secret) because
-# Scholar blocks most GitHub servers. Checks every 2 hours: once the data is over 60 hours old it
+# Refreshes Scholar data daily, fetching through SerpApi (SERPAPI_KEY secret) because
+# Scholar blocks most GitHub servers. Checks every 2 hours: once the data is over 22 hours old it
 # fetches, commits the cache and redeploys; if a fetch fails, the next check retries. Runs exit in
 # seconds while the data is fresh. "Run workflow" (manual) always fetches.
 
@@ -30,7 +30,7 @@ jobs:
           fetched=$(jq -r '.fetched_at // empty' "$file" 2>/dev/null || true)
           age_h=$(( ( $(date +%s) - $(date -d "${fetched:-1970-01-01}" +%s) ) / 3600 ))
           echo "Scholar data is ${age_h}h old."
-          if [ "$age_h" -ge 60 ]; then echo "due=true" >> "$GITHUB_OUTPUT"; else echo "Still fresh; skipping."; fi
+          if [ "$age_h" -ge 22 ]; then echo "due=true" >> "$GITHUB_OUTPUT"; else echo "Still fresh; skipping."; fi
 
       - name: Set up Ruby
         if: steps.due.outputs.due == 'true'
