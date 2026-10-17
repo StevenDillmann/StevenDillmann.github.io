@@ -14,7 +14,7 @@ profile:
     <p>Stanford University</p>
     <p class="contact-note">Reach out at <a href="mailto:stevendi@stanford.edu">stevendi@stanford.edu</a><br>about research or potential collaborations.</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # set to true to show the selected publications list on the homepage
 social: true # includes social icons at the bottom of the page
 
 announcements:
