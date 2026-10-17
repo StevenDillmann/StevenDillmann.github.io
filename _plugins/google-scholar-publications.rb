@@ -23,7 +23,7 @@ module Jekyll
 
       pubs = read_cache(cache_file, fresh_only: true)
       unless pubs
-        fetched = fetch_publications(scholar_id)
+        fetched = (SerpApiScholar.enabled? && fetch_publications_from_serpapi(scholar_id)) || fetch_publications(scholar_id)
         if fetched && !fetched.empty?
           add_details(fetched, read_cache(cache_file, fresh_only: false) || [])
           File.write(cache_file, JSON.pretty_generate(fetched))
@@ -68,6 +68,33 @@ module Jekyll
       data.is_a?(Array) && !data.empty? ? data : nil
     rescue
       nil
+    end
+
+    def fetch_publications_from_serpapi(scholar_id)
+      pubs = []
+      start = 0
+      loop do
+        data = SerpApiScholar.author_page(scholar_id, start)
+        return nil unless data
+        articles = data['articles'] || []
+        articles.each do |a|
+          year = a['year'].to_s.strip
+          venue = a['publication'].to_s.strip
+          venue = venue.sub(/,\s*#{Regexp.escape(year)}\z/, '') unless year.empty?
+          pubs << {
+            'id' => a['citation_id'],
+            'title' => a['title'].to_s.strip,
+            'url' => a['link'],
+            'authors' => a['authors'].to_s.strip,
+            'venue' => venue,
+            'year' => year,
+            'citations' => a.dig('cited_by', 'value').to_i
+          }
+        end
+        break if articles.length < SerpApiScholar::PAGE_SIZE
+        start += SerpApiScholar::PAGE_SIZE
+      end
+      pubs.empty? ? nil : pubs
     end
 
     def fetch_publications(scholar_id)
@@ -121,10 +148,18 @@ module Jekyll
           next
         end
 
-        sleep DETAIL_DELAY_SECONDS
-        details = fetch_details(pub['url'])
+        details = fetch_details_from_serpapi(pub['id']) if SerpApiScholar.enabled?
+        details ||= (sleep DETAIL_DELAY_SECONDS; fetch_details(pub['url']))
         pub.merge!(details) if details
       end
+    end
+
+    def fetch_details_from_serpapi(citation_id)
+      c = SerpApiScholar.citation(citation_id)
+      authors = c && (c['authors'] || c['inventors']).to_s.strip
+      return nil if authors.nil? || authors.empty?
+
+      { 'authors' => authors, 'link' => c['link'], 'details_fetched' => true }
     end
 
     def fetch_details(url)

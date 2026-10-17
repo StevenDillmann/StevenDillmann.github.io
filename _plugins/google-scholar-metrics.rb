@@ -21,7 +21,7 @@ module Jekyll
       metrics = read_fresh_cache(cache_file)
       unless metrics
         # Try to fetch new data
-        fetched = fetch_metrics_from_scholar(scholar_id)
+        fetched = (SerpApiScholar.enabled? && fetch_metrics_from_serpapi(scholar_id)) || fetch_metrics_from_scholar(scholar_id)
         if fetched && metrics_valid?(fetched)
           fetched['fetched_at'] = Time.now.utc.iso8601
           write_cache(cache_file, fetched)
@@ -103,6 +103,26 @@ module Jekyll
 
     def write_cache(cache_file, metrics)
       File.write(cache_file, metrics.to_json)
+    end
+
+    def fetch_metrics_from_serpapi(scholar_id)
+      data = SerpApiScholar.author_page(scholar_id)
+      table = (data&.dig('cited_by', 'table') || []).reduce({}, :merge)
+      citations_all = table.dig('citations', 'all')
+      h_index_all = table.dig('h_index', 'all')
+      i10_index_all = table.dig('i10_index', 'all')
+      return nil unless citations_all && h_index_all && i10_index_all
+
+      per_year = (data.dig('cited_by', 'graph') || []).map do |point|
+        { 'year' => point['year'].to_s, 'citations' => (point['citations'] || point['citation']).to_i }
+      end
+
+      {
+        'citations' => format_citations(citations_all.to_i),
+        'h_index' => h_index_all.to_s,
+        'i10_index' => i10_index_all.to_s,
+        'per_year' => per_year
+      }
     end
 
     def fetch_metrics_from_scholar(scholar_id)

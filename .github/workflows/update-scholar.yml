@@ -1,8 +1,8 @@
 name: Refresh Google Scholar citations
-# Aims to refresh Scholar data every ~3 days. Scholar blocks many GitHub servers, but each run
-# gets a different one, so this checks every 2 hours: once the data is over 60 hours old it keeps
-# trying until a run gets through, commits the cache and redeploys. Runs exit in seconds while the
-# data is fresh. "Run workflow" (manual) always fetches.
+# Refreshes Scholar data every ~3 days, fetching through SerpApi (SERPAPI_KEY secret) because
+# Scholar blocks most GitHub servers. Checks every 2 hours: once the data is over 60 hours old it
+# fetches, commits the cache and redeploys; if a fetch fails, the next check retries. Runs exit in
+# seconds while the data is fresh. "Run workflow" (manual) always fetches.
 
 on:
   schedule:
@@ -50,8 +50,10 @@ jobs:
           LANG: en_US.UTF-8
           LC_ALL: en_US.UTF-8
           SCHOLAR_REFRESH: "1"
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }} # fetch through SerpApi, which Scholar doesn't block
         run: |
           set -o pipefail
+          if [ -n "$SERPAPI_KEY" ]; then echo "Using SerpApi (key is set)."; else echo "::warning::SERPAPI_KEY secret is empty; reading Scholar directly."; fi
           bundle exec jekyll build 2>&1 | tee build.log
           if grep -q "Warning: Failed to fetch" build.log; then
             echo "::warning::Google Scholar blocked this server; nothing saved, a later run will retry."
