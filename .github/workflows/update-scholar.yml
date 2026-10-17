@@ -1,10 +1,12 @@
 name: Refresh Google Scholar citations
-# Runs every 3 days (and manually via "Run workflow"): fetches fresh Scholar data, commits the
-# cache, then redeploys the site. If Scholar blocks the request, the last good cache is kept.
+# Aims to refresh Scholar data every ~3 days. Scholar blocks many GitHub servers, but each run
+# gets a different one, so this checks every 2 hours: once the data is over 60 hours old it keeps
+# trying until a run gets through, commits the cache and redeploys. Runs exit in seconds while the
+# data is fresh. "Run workflow" (manual) always fetches.
 
 on:
   schedule:
-    - cron: "0 10 */3 * *" # every 3 days at 10:00 UTC (3am Pacific)
+    - cron: "17 */2 * * *" # every 2 hours
   workflow_dispatch: {}
 
 permissions:
@@ -20,39 +22,58 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check whether the data is due for a refresh
+        id: due
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "due=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          file=$(ls _cache/scholar_*.json | grep -v scholar_pubs_ | head -1)
+          fetched=$(jq -r '.fetched_at // empty' "$file" 2>/dev/null || true)
+          age_h=$(( ( $(date +%s) - $(date -d "${fetched:-1970-01-01}" +%s) ) / 3600 ))
+          echo "Scholar data is ${age_h}h old."
+          if [ "$age_h" -ge 60 ]; then echo "due=true" >> "$GITHUB_OUTPUT"; else echo "Still fresh; skipping."; fi
+
       - name: Set up Ruby
+        if: steps.due.outputs.due == 'true'
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
 
       - name: Install dependencies
+        if: steps.due.outputs.due == 'true'
         run: bundle install --jobs 4 --retry 3
 
-      - name: Build site (refreshes Scholar cache)
+      - name: Build site (fetches fresh Scholar data)
+        id: build
+        if: steps.due.outputs.due == 'true'
         env:
           LANG: en_US.UTF-8
           LC_ALL: en_US.UTF-8
           SCHOLAR_REFRESH: "1"
-        run: bundle exec jekyll build
+        run: |
+          set -o pipefail
+          bundle exec jekyll build 2>&1 | tee build.log
+          if grep -q "Warning: Failed to fetch" build.log; then
+            echo "::warning::Google Scholar blocked this server; nothing saved, a later run will retry."
+            git checkout -- _cache/
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Commit updated Scholar cache
         id: commit
+        if: steps.build.outputs.ok == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          # Add cache and data directories
-          git add _cache/ _data/
-          
-          # Check if there are any staged changes
+          git add _cache/
           if git diff --staged --quiet; then
             echo "No citation-related changes to commit."
           else
-            echo "Changes detected, committing..."
             git commit -m "chore: refresh Google Scholar cache"
+            git pull --rebase origin "${{ github.ref_name }}"
             git push
-            echo "Successfully committed and pushed changes."
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
