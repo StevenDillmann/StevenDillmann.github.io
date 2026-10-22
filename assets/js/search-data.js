@@ -88,13 +88,6 @@ ninja.data = [{
           window.open("mailto:%73%74%65%76%65%6E%64%69@%73%74%61%6E%66%6F%72%64.%65%64%75", "_blank");
         },
       },{
-        id: 'social-calendly_url',
-        title: 'Calendly_url',
-        section: 'Socials',
-        handler: () => {
-          window.open("", "_blank");
-        },
-      },{
         id: 'social-linkedin',
         title: 'LinkedIn',
         section: 'Socials',
