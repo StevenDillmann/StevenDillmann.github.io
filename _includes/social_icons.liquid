@@ -4,7 +4,6 @@
 {% endcomment %}
 {% assign s = site.data.socials %}
 {% if s.email %}<a class="soc-mail" href="mailto:{{ s.email | encode_email }}" title="Email" aria-label="Email">{% include icons/mail.svg %}</a>{% endif %}
-{% if s.calendly_url %}<a class="soc-calendar" href="{{ s.calendly_url }}" title="Book a meeting" aria-label="Book a meeting" target="_blank" rel="noopener noreferrer">{% include icons/calendar.svg %}</a>{% endif %}
 {% if s.discord_id %}<a class="soc-discord" href="https://discord.com/users/{{ s.discord_id }}" title="Discord{% if s.discord_username %}: {{ s.discord_username }}{% endif %}" aria-label="Discord" target="_blank" rel="noopener noreferrer">{% include icons/discord.svg %}</a>{% endif %}
 {% if s.x_username %}<a class="soc-x" href="https://x.com/{{ s.x_username }}" title="X" aria-label="X" target="_blank" rel="noopener noreferrer">{% include icons/x.svg %}</a>{% endif %}
 {% if s.linkedin_username %}<a class="soc-linkedin" href="https://www.linkedin.com/in/{{ s.linkedin_username }}" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>{% endif %}

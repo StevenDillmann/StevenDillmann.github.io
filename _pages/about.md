@@ -12,7 +12,7 @@ profile:
     <p>Stanford Artificial Intelligence Laboratory</p>
     <p>Gates Computer Science, Room 338</p>
     <p>Stanford University</p>
-    <p class="contact-note">Reach out at <a href="mailto:stevendi@stanford.edu">stevendi@stanford.edu</a><br>about research or potential collaborations,<br>or <a href="https://calendly.com/stevendi-stanford" target="_blank" rel="noopener noreferrer">find a time</a> to chat.</p>
+    <p class="contact-note">Reach out at <a href="mailto:stevendi@stanford.edu">stevendi@stanford.edu</a><br>about research or potential collaborations.</p>
 
 selected_papers: false # set to true to show the selected publications list on the homepage
 social: true # includes social icons at the bottom of the page
