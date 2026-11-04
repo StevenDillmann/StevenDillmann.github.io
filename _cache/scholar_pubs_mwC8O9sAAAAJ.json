@@ -50,7 +50,7 @@
     "authors": "Lin Shi, Haowei Lin, Zixuan Zhu, Xiaoyue Zhou, Xiang Li, Xiangning Lin, Yaxuan Deng, Han Xu, Yuangang Li, Shanda Li, Zizhao Chen, Hanwen Xing, Harsh Raj, Bo Chen, Quan Shi, Steven Dillmann, Yipeng Gao, Puneesh Khanna, Ruofan Lu, Chao Beyond Zhou, Michael Yang, Robert Zhang, Siyuan Chai, Jiayu Chang, Yizhao Chen, Xiaokun Chen, Yiwei Dai, Wenting Yang, Hange Liu, Minghao Liu, Zihan Wang, Adnan El Assadi, Benedikt Stroebl, E Kelly Buchanan, Han Meng, Junwei He, Longxuan Yu, Radin Shayanfar, Yukyung Lee, Zhikang Dong, Allen G Hart, Anjiang Wei, Anurag Kashyap, Arpandeep Khatua, Audrey Jixin Zheng, Chengrui Ma, David Heineman, Dubing Chen, Hai-Anh Trinh, Haishuo Fang, Hefan Zhang, Hui Shen, Issa Sugiura, Jiankai Sun, Jiechao Gao, Junhong Lin, Junnan Li, Kai Yang, Lei Hsiung, Maoyu Wang, Mengze Tang, Nabil Omi, Negin Raoof, Nicholas Edwards, Octavia Guo, Orfeas Menis Mastromichalakis, Pengliang Ji, PrzemysĹ Hejman, Qi Qi, Qunshu Lin, Richard Zhuang, Rui Yang, Ruichen Zheng, Ryan Marten, Shaghayegh Fazliani, Shizheng Hou, Sicong Jiang, Sijie Li, Song Bian, Terry Yue Zhuo, Tianqing Wu, Tom Tang, Wanjia Zhao, Weihao Xuan, Wenhua Liang, Xian Liu, Xin Lan, Xuan Zhang, Xuandong Zhao, Yanchuan Tang, Yifan Jiang, Yijiang Li, Yitong Guan, Yizhi Li, Yonghui Liu, Yuheng Tang, Yunfei Zhao, Yuxin Wang, Yuxuan Tang, Zhenheng Tang, Zhifei Li, Ziruo Wang, Ziyu She, Kaiyuan Liu, Iheb Chaabane, Yuxin Tang, Xiangyi Li, Andy Konwinski, Boxuan Li, Leon Liangyu Chen, Alex Dimakis, Nicholas Carlini, Soroush Vosoughi, Di He, Etash Guha, Benjamin Feuer, Mike Merrill, Ludwig Schmidt, Alex Shaw",
     "venue": "arXiv preprint arXiv:2609.04298",
     "year": "2026",
-    "citations": 1,
+    "citations": 2,
     "link": "https://arxiv.org/abs/2609.04298",
     "details_fetched": true
   },
@@ -85,6 +85,17 @@
     "year": "2026",
     "citations": 1,
     "link": "https://arxiv.org/abs/2608.11294",
+    "details_fetched": true
+  },
+  {
+    "id": "mwC8O9sAAAAJ:Tiz5es2fbqcC",
+    "title": "Terminal-Bench-Science: Evaluating AI agents on research workflows across scientific domains",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mwC8O9sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mwC8O9sAAAAJ:Tiz5es2fbqcC",
+    "authors": "Terminal-Bench-Science Team",
+    "venue": "Computer software",
+    "year": "2026",
+    "citations": 13,
+    "link": "https://scholar.google.com/scholar?cluster=11490945729680069129&hl=en&oi=scholarr",
     "details_fetched": true
   },
   {
@@ -127,8 +138,19 @@
     "authors": "Rishi Desai, Jesse Hu, Joan Cabezas, Neel Harsola, Pratyush Shukla, Roey Ben Chaim, Adnan El Assadi, Omkaar Mukund Kamath, Fenil Faldu, Prannay Hebbar, Jiankai Sun, Yiyuan Li, Pramod Srinivasan, Ishan Gupta, Christopher Settles, Daniel Wang, Derek Chen, Pranav Raja, Albert Liu, Marek Šuppa, Nevasini Sasikumar, Luyang Kong, Erik Quintanilla, Xiangyi Li, Ivan Bercovich, Steven Dillmann",
     "venue": "arXiv preprint arXiv:2606.07682",
     "year": "2026",
-    "citations": 20,
+    "citations": 21,
     "link": "https://arxiv.org/abs/2606.07682",
+    "details_fetched": true
+  },
+  {
+    "id": "mwC8O9sAAAAJ:08ZZubdj9fEC",
+    "title": "Agents' last exam",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mwC8O9sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mwC8O9sAAAAJ:08ZZubdj9fEC",
+    "authors": "Yiyou Sun, Xinyang Han, Weichen Zhang, Xiang Liu, Yuanbo Pang, Tianyu Wang, Yuhan Cao, Yixiao Huang, Zhaowei Zhang, Chris Duroiu, Haoyun Zhang, Jeffrey Lin, Weishu Zhang, Tyler Zeng, Ying Yan, Bo Liu, Hanson Wen, Mingyang Xu, Xiaoyuan Liu, Zimeng Chen, Weiyan Shi, Amanda Dsouza, Vincent Sunn Chen, Jingxu Xie, Sheldon Huang, Dewen Lei, Hanxuan Zhang, Zonglin Di, Patrick Bryant, Carl Boettiger, Yamini Rangan, Bradley Rothenberg, Kyle Steinfeld, Arvind Rao, Tapio Schneider, Georgios Yannakakis, Laure Zanna, Kaan Ozbay, Ida Sim, Tarek Zohdi, George Em Karniadakis, Jack Gallant, Teresa Head-Gordon, Chris Yuhao Liu, Rongwang Hu, Yafei Cheng, Aras Bacho, Zengyi Qin, Alan Yuille, Yixiong Chen, Hao Liu, Lin Zeng, Bo Chen, Zhendong Li, Litian Gong, Shashank Muralidhar Bharadwaj, Thorben Jansen, Haixiang Tang, Jianhong Tu, Jixian Liu, Maojia Song, Ruheng Wang, Shengcao Cao, Yanxin Zhang, Yingxuan Yang, Zongzheng Zhang, Honglin Bao, Hyunjun Kim, Peiran Xu, Shuo Lu, Zheng Zhang, Zhonghua Wang, Aditya Prakash, Bohan Lyu, Chang Ma, Haoxuan Chen, Hengduan Fan, Molei Tao, Roman Sitelew, Russell Alan Poldrack, Yang Liu, Yichen Wu, Yuanze Lin, Zhenglu Li, Zibu Wei, Zijiao Chen, Abderrahim Bendahi, Alexander Schubert, Chase Broderick, Chengzhi Liu, Haoran Sun, Haoyang Li, Haoyue Hua, Jiayuan Ding, Jing Huang, Shangding Gu, Tuan Vinh, Xiatao Sun, Yanqiong Jiang, Yiran Hu, Zechen Xu, Ziao Yang, Chenguang Wang, Costas Spanos, Dongrong Yang, Haocheng Wang, Jiayi Cheng, Jicheng Wang, Junbo Peng, Kangqi Zhang, Keying Kuang, Lichao Sun, Ming Yin, Orson Xu, Vincent Siu, Wanzhe Liao, Wenqi Shi, Wenxi Deng, Xiaopan Zhang, Yangjunfeng Zhu, Yifan Shen, Yi Jiang, Yinsheng Li, Yongshuo Zong, Youbang Pan, Yuan Li, Yuchen Zhu, Yunshi Zhang, Zhenning Yang, Ziyan Rao, Alireza Rafiei, Andrew Glover, Bixuan Ren, Boqin Yuan, Chonghao Cai, Deren Lei, Hanwen Xing, Haoran Jin, Hector Gomez, Ishaan Singh Chandok, Jiaming Hu, Jianxin Sun, Justin Purnomo, Kunyang Sun, Lei Ding, Longtai Liao, Lukas Kim, Ming Liu, Qingpo Wuwu, Ran Jin",
+    "venue": "arXiv preprint arXiv:2606.05405",
+    "year": "2026",
+    "citations": 38,
+    "link": "https://arxiv.org/abs/2606.05405",
     "details_fetched": true
   },
   {
@@ -149,7 +171,7 @@
     "authors": "Garyk Brixi, Matthew G Durrant, Jerome Ku, Mohsen Naghipourfar, Michael Poli, Gwanggyu Sun, Greg Brockman, Daniel Chang, Alison Fanton, Gabriel A Gonzalez, Samuel H King, David B Li, Aditi T Merchant, Eric Nguyen, Chiara Ricci-Tam, David W Romero, Jonathan C Schmok, Ali Taghibakhshi, Anton Vorontsov, Brandon Yang, Myra Deng, Liv Gorton, Nam Nguyen, Nicholas K Wang, Michael T Pearce, Elana Simon, Etowah Adams, Zachary J Amador, Euan A Ashley, Stephen A Baccus, Haoyu Dai, Steven Dillmann, Stefano Ermon, Daniel Guo, Michael H Herschl, Rajesh Ilango, Ken Janik, Amy X Lu, Reshma Mehta, Mohammad RK Mofrad, Madelena Y Ng, Jaspreet Pannu, Christopher Ré, John St. John, Jeremy Sullivan, Joseph Tey, Ben Viggiano, Kevin Zhu, Greg Zynda, Daniel Balsam, Patrick Collison, Anthony B Costa, Tina Hernandez-Boussard, Eric Ho, Ming-Yu Liu, Thomas McGrath, Kimberly Powell, Sudarshan Pinglay, Dave P Burke, Hani Goodarzi, Patrick D Hsu, Brian L Hie",
     "venue": "Nature 652 (8112), 1349-1361",
     "year": "2026",
-    "citations": 778,
+    "citations": 786,
     "link": "https://www.nature.com/articles/s41586-026-10176-5",
     "details_fetched": true
   },
@@ -160,7 +182,7 @@
     "authors": "Mike Merrill, Alexander Shaw, Nicholas Carlini, Boxuan Li, Harsh Raj, Ivan Bercovich, Lin Shi, Jeong Shin, Thomas Walshe, E Kelly Buchanan, Junhong Shen, Guanghao Ye, Haowei Lin, Jason Poulos, Maoyu Wang, Marianna Nezhurina, Di Lu, Orfeas Menis Mastromichalakis, Zhiwei Xu, Zizhao Chen, Yue Liu, Robert Zhang, Leon Liangyu Chen, Anurag Kashyap, Jan-Lucas Uslu, Jeffrey Li, Jianbo Wu, Minghao Yan, Song Bian, Vedang Sharma, Ke Sun, Steven Dillmann, Akshay Anand, Andrew Lanpouthakoun, Bardia Koopah, Changran Hu, Etash Guha, Gabriel Dreiman, Jiacheng Zhu, Karl Krauth, Li Zhong, Niklas Muennighoff, Robert Amanfu, Shangyin Tan, Shreyas Pimpalgaonkar, Tushar Aggarwal, Xiangning Lin, Xin Lan, Xuandong Zhao, Yiqing Liang, Yuanli Wang, Zilong Ryan Wang, Changzhi Zhou, David Heineman, Hange Liu, Harsh Trivedi, John Yang, Junhong Lin, Manish Shetty, Michael Yang, Nabil Omi, Negin Raoof, Shanda Li, Terry Yue Zhuo, Wuwei Lin, Yiwei Dai, Yuxin Wang, Wenhao Chai, Shang Zhou, Dariush Wahdany, Ziyu She, Jiaming Hu, Zhikang Dong, Yuxuan Zhu, Sasha Cui, Ahson Saiyed, Arinbjörn Kolbeinsson, Christopher Rytting, Ryan Marten, Yixin Wang, Jenia Jitsev, Alex Dimakis, Andy Konwinski, Ludwig Schmidt",
     "venue": "International Conference on Learning Representations 2026, 40903-40986",
     "year": "2026",
-    "citations": 702,
+    "citations": 723,
     "link": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/444a3737adaee10d86ad2ef5f74468e6-Abstract-Conference.html",
     "details_fetched": true
   },
@@ -215,7 +237,7 @@
     "authors": "Xiangyi Li, Yimin Liu, Wenbo Chen, Bingran You, Zonglin Di, Yifeng He, Shenghan Zheng, Kyoung Whan Choe, Jiankai Sun, Shuyi Wang, Chujun Tao, Binxu Li, Xuandong Zhao, Hejia Geng, Xiaojun Wu, Junwei Zhou, Xiaokun Chen, Hanwen Xing, Yubo Li, Qunhong Zeng, Di Wang, Yuanli Wang, Roey Ben Chaim, Penghao Jiang, Haotian Shen, Luyang Kong, Xinyi Liu, Runhui Wang, Xuanqing Liu, Jiachen Li, Xin Lan, Yueqian Lin, Wengao Ye, Junwei He, Songlin Li, Yue Zhang, Yipeng Gao, Yijiang Li, Ze Ma, Liqiang Jing, Tianyu Wang, Kaixin Li, Yiqi Xue, Haoran Lyu, Yizhuo He, Yuchen Tian, Shutong Wu, Bowei Wang, Yixuan Gao, Bo Chen, Litong Liu, Sikai Cheng, Jiajun Bao, Shuaicheng Tong, Shuwen Xu, Terry Yue Zhuo, Tinghan Ye, Qi Qi, Miao Li, Longtai Liao, Zelin Tan, Chang Shi, Xilin Tang, Srinath Tankasala, Boqin Yuan, Yaoyao Qian, Jianhong Tu, Chenguang Wang, Yizhou Sun, Wei Wang, Aaron Taylor, Ziyue Yang, Changkun Guan, Zhikang Dong, Xinyu Zhang, Steven Dillmann, Han-chung Lee, Dawn Song",
     "venue": "arXiv preprint arXiv:2602.12670",
     "year": "2026",
-    "citations": 276,
+    "citations": 279,
     "link": "https://arxiv.org/abs/2602.12670",
     "details_fetched": true
   },
@@ -237,7 +259,7 @@
     "authors": "Harbor Framework Team",
     "venue": "URL https://doi.org/10.5281/zenodo 20953922",
     "year": "2026",
-    "citations": 129,
+    "citations": 134,
     "link": null,
     "details_fetched": true
   },
@@ -358,7 +380,7 @@
     "authors": "Sandor Kruk, Pablo García-Martín, Marcel Popescu, Ben Aussel, Steven Dillmann, Megan E Perks, Tamina Lund, Bruno Merín, Ross Thomson, Samet Karadag, Mark J McCaughrean",
     "venue": "Nature Astronomy 7 (3), 262-268",
     "year": "2023",
-    "citations": 80,
+    "citations": 81,
     "link": "https://www.nature.com/articles/s41550-023-01903-3",
     "details_fetched": true
   },
@@ -374,24 +396,13 @@
     "details_fetched": true
   },
   {
-    "id": "mwC8O9sAAAAJ:Tiz5es2fbqcC",
-    "title": "Terminal-Bench-Science: Evaluating AI agents on research workflows across scientific domains, 2026",
-    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mwC8O9sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mwC8O9sAAAAJ:Tiz5es2fbqcC",
-    "authors": "Terminal-Bench-Science Team",
-    "venue": "URL https://github. com/harbor-framework/terminal-bench-science, 0",
-    "year": "",
-    "citations": 9,
-    "link": "https://scholar.google.com/scholar?cluster=11490945729680069129&hl=en&oi=scholarr",
-    "details_fetched": true
-  },
-  {
     "id": "mwC8O9sAAAAJ:k_IJM867U9cC",
     "title": "VeriBench: An End-to-End Formal Verification Benchmark for AI Coding Agents in Lean 4",
     "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mwC8O9sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mwC8O9sAAAAJ:k_IJM867U9cC",
     "authors": "Brando Miranda, Srivatsava Daruru, Ethan S Hersch, Zhanke Zhou, Allen Nie, Daneshvar Amrollahi, Leni Aniva, Iddah Mlauzi, Kirill Acharya, Elyas Obbad, Dilara Soylu, Weston Kirk, Zixiao Jolene Wang, Kai Fronsdal, Ying Li, Donald Poindexter Jr, Rakshit Kaushik, Shurui Liu, Yegor Denisov-Blanch, Steven Dillmann, Simon Obstbaum, Santiago Cuellar, John Sarracino, Rylan Schaeffer, Mo Tiwari, Donghyun Lee, Bo Han, Sanmi Koyejo",
     "venue": "3rd AI for Math Workshop: Toward Self-Evolving Scientific Agents, 0",
     "year": "",
-    "citations": 0,
+    "citations": 1,
     "link": "https://openreview.net/forum?id=lkL0qnUv3p",
     "details_fetched": true
   },
